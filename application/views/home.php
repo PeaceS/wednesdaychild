@@ -10,10 +10,10 @@
 		<label></label>
                 <div></div>
 		<ul>
-			<li>collection</li>
-			<li>shop</li>
-			<li>press</li>
-			<li>contacts</li>
+                    <li><a href="collection">collection</a></li>
+                    <li><a href="shop">shop</a></li>
+                    <li><a href="press">press</a></li>
+                    <li><a href="contacts">contacts</a></li>
 		</ul>
 	</div>
 </body>
