@@ -1,0 +1,33 @@
+div#sub_main{
+    position: absolute;
+    top: 19%;
+    left: 3%;
+    width: 94%;
+    height: 62%;
+    border: #CDCDCD solid 2px;
+    background-color: #FFFFFF;
+}
+span#prev_button{
+    position: absolute;
+    display: block;
+    left: 48%;
+    top: 15%;
+    z-index: 1;
+    width: 4.5%;
+    height: 8%;
+    cursor: pointer;
+    
+    background: red;
+}
+span#next_button{
+    position: absolute;
+    display: block;
+    left: 48%;
+    bottom: 15%;
+    z-index: 1;
+    width: 4.5%;
+    height: 8%;
+    cursor: pointer;
+    
+    background: red;
+}

@@ -1,0 +1,47 @@
+@font-face {
+    font-family: BEBAS;
+    src: url('../font/BEBAS___.ttf');
+}
+
+#home_banner{
+    position: fixed;
+    top: 5%;
+    left: 25%;
+    width: 50%;
+    height: 90%;
+    border: #CDCDCD solid 2px;
+}
+#home_banner label{
+    display: block;
+    position: absolute;
+    left: 25%;
+    top: 6.5%;
+    width: 50%;
+    height: 20%;
+    background-image: url('../image/home_logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#home_banner ul{
+    position: absolute;
+    left: 12.5%;
+    bottom: 5%;
+    width: 75%;
+    margin: 0;
+    padding: 0;
+}
+#home_banner ul li{
+    display: block;
+    float: left;
+    text-align: center;
+    width: 25%;
+}
+#home_banner ul li a{
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-family: BEBAS;
+    color: #FFFFFF;
+    background-color: #000000;
+    padding: 5px 10px;
+}

@@ -1,0 +1,18 @@
+ul#list{
+    position: absolute;
+    left: 3%;
+    bottom: 12%;
+    width: 94%;
+    margin: 0;
+    padding: 0;
+}
+ul#list li{
+    display: block;
+    float: left;
+    text-align: center;
+    margin-right: 15px;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+ul#list li a{ padding-bottom: 1px; }
+ul#list li a:hover{ border-bottom: #000000 solid 1px; }

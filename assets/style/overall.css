@@ -1,0 +1,19 @@
+//@color_black: #000000;
+//@color_gray: #CDCDCD;
+
+body{ margin: 0; }
+a:link {
+  color: #000000;
+  text-decoration: none;
+}
+a:visited { color: #000000; }
+a:hover { color: #000000; }
+a:active { color: #000000; }
+
+//@img_shop-menu: url('../content/image/shop_menu.png');
+/*
+@font-face{
+    font-family: AvenirNext;
+    src: url('../content/font/AvenirNext/AvenirNext_Regular.ttf')
+}
+*/

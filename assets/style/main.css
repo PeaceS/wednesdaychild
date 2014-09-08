@@ -1,0 +1,65 @@
+#main{
+    position: fixed;
+    top: 5%;
+    left: 3%;
+    width: 94%;
+    height: 90%;
+    border: #CDCDCD solid 2px;
+    background-color: #FFFFFF;
+}
+#main label#logo{
+    display: block;
+    position: absolute;
+    left: 40.5%;
+    top: 2%;
+    width: 19%;
+    height: 13.5%;
+    background-image: url('../image/home_logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#main div#top_menu{
+    position: absolute;
+    top: 12%;
+    right: 3%;
+    height: 6%;
+    width: 20%;
+    text-transform: uppercase;
+}
+#main div#top_menu span{
+    position: absolute;
+    cursor: pointer;
+    right: 0%;
+    bottom: 0%;
+}
+#main div#top_menu span#purchaseConfirm{
+    right: 0%;
+    bottom: 50%;
+}
+#main div#top_menu span#faq{
+    right: 65%;
+    bottom: 0%;
+}
+#main div#top_menu span#policy{
+    right: 30%;
+    bottom: 0%;
+}
+#main ul#bottom_menu{
+    position: absolute;
+    left: 29%;
+    bottom: 2%;
+    width: 42%;
+    margin: 0;
+    padding: 0;
+}
+#main ul#bottom_menu li{
+    display: block;
+    float: left;
+    text-align: center;
+    width: 25%;
+    font-size: 1.3em;
+    text-transform: uppercase;
+}
+#main ul#bottom_menu li a{ padding-bottom: 2px; }
+#main ul#bottom_menu li a:hover{ border-bottom: #000000 solid 2px; }
