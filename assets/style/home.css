@@ -1,8 +1,3 @@
-@font-face {
-    font-family: BEBAS;
-    src: url('../font/BEBAS___.ttf');
-}
-
 #home_banner{
     position: fixed;
     top: 5%;
@@ -25,25 +20,11 @@
     background-repeat: no-repeat;
     background-position: center center;
 }
-#home_banner ul{
+#home_banner ul#list_menu{
     position: absolute;
     left: 12.5%;
     bottom: 5%;
     width: 75%;
     margin: 0;
     padding: 0;
-}
-#home_banner ul li{
-    display: block;
-    float: left;
-    text-align: center;
-    width: 25%;
-}
-#home_banner ul li a{
-    font-size: 1.55vw;
-    text-transform: uppercase;
-    font-family: BEBAS;
-    color: #FFFFFF;
-    background-color: #000000;
-    padding: 3% 7%;
 }

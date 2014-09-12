@@ -3,12 +3,19 @@
 class Collection extends CI_Controller {
     public function index()
     {
+        $collection = 's14';
+        $directory = "./assets/image/collection/" . $collection . "/";
+
+        $collectionItemAmount = count(glob($directory . "*.jpg"));
+        $included['collection'] = $collection;
+        $data['itemAmount'] = $collectionItemAmount;
+        
         $this->load->helper('url');
-        $this->load->view('header');
-        $this->load->view('main_top');
-        $this->load->view('collection');
+        $this->load->view('header', $included);
+        $this->load->view('main');
+        $this->load->view('collection', $data);
         $this->load->view('list_collection');
-        $this->load->view('main_bottom');
+        $this->load->view('list_menu');
     }
 }
 

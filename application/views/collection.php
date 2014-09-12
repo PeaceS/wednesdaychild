@@ -1,7 +1,5 @@
-<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/collection.css" />
-	
-        <div id="sub_main">
-    
+        <div id="collection">
+            <?php for ($i = 0; $i < $itemAmount; $i++){ ?>
+            <div class="<?php echo "item" . $i; ?>"></div>
+            <?php } ?>
         </div>
-        <span id="prev_button"></span>
-        <span id="next_button"></span>

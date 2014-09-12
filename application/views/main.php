@@ -1,5 +1,3 @@
-<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/main.css" /> 
-
 <body>
     <div id="main">
         <label id="logo"></label>

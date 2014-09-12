@@ -10,6 +10,11 @@ a:visited { color: #000000; }
 a:hover { color: #000000; }
 a:active { color: #000000; }
 
+@font-face {
+    font-family: BEBAS;
+    src: url('../font/BEBAS___.ttf');
+}
+
 //@img_shop-menu: url('../content/image/shop_menu.png');
 /*
 @font-face{
