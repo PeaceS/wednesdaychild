@@ -3,7 +3,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/home.js"></script>
 
 <body>
-    <div id="home_banner">
+    <div id="home_banner" class="path0">
         <label></label>
         <ul>
             <li><a href="collection">collection</a></li>

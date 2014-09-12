@@ -9,7 +9,9 @@
     left: 25%;
     width: 50%;
     height: 90%;
-    border: #CDCDCD solid 2px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 #home_banner label{
     display: block;
@@ -38,10 +40,10 @@
     width: 25%;
 }
 #home_banner ul li a{
-    font-size: 1.3em;
+    font-size: 1.55vw;
     text-transform: uppercase;
     font-family: BEBAS;
     color: #FFFFFF;
     background-color: #000000;
-    padding: 5px 10px;
+    padding: 3% 7%;
 }
