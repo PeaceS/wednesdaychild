@@ -1,10 +1,24 @@
-#home_banner.path0{ background-color: #F12345; }
-#home_banner.path1{ background-color: #FEDCBA; }
-#home_banner.path2{ background-color: #987654; }
-#home_banner.path3{ background-color: #321012; }
-#home_banner.path4{ background-color: #012654; }
-#home_banner.path5{ background-color: #111111; }
-#home_banner.path6{ background-color: #222222; }
-#home_banner.path7{ background-color: #333333; }
-#home_banner.path8{ background-color: #444444; }
-#home_banner.path9{ background-color: #555555; }
+#preload{
+   	content:
+   		url('../../image/home/02/Intro_V2_00001.jpg')
+   		url('../../image/home/02/Intro_V2_00002.jpg')
+   		url('../../image/home/02/Intro_V2_00003.jpg')
+   		url('../../image/home/02/Intro_V2_00004.jpg')
+   		url('../../image/home/02/Intro_V2_00005.jpg')
+   		url('../../image/home/02/Intro_V2_00006.jpg')
+   		url('../../image/home/02/Intro_V2_00007.jpg')
+   		url('../../image/home/02/Intro_V2_00008.jpg')
+   		url('../../image/home/02/Intro_V2_00009.jpg')
+   		url('../../image/home/02/Intro_V2_00010.jpg');
+    display: none;
+}
+#home_banner.path0{ background-image: url('../../image/home/02/Intro_V2_00001.jpg'); }
+#home_banner.path1{ background-image: url('../../image/home/02/Intro_V2_00002.jpg'); }
+#home_banner.path2{ background-image: url('../../image/home/02/Intro_V2_00003.jpg'); }
+#home_banner.path3{ background-image: url('../../image/home/02/Intro_V2_00004.jpg'); }
+#home_banner.path4{ background-image: url('../../image/home/02/Intro_V2_00005.jpg'); }
+#home_banner.path5{ background-image: url('../../image/home/02/Intro_V2_00006.jpg'); }
+#home_banner.path6{ background-image: url('../../image/home/02/Intro_V2_00007.jpg'); }
+#home_banner.path7{ background-image: url('../../image/home/02/Intro_V2_00008.jpg'); }
+#home_banner.path8{ background-image: url('../../image/home/02/Intro_V2_00009.jpg'); }
+#home_banner.path9{ background-image: url('../../image/home/02/Intro_V2_00010.jpg'); }

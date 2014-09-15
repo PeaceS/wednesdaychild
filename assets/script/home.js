@@ -25,6 +25,8 @@ function event_slide_homeBanner(element, e){
     var x = e.clientX - $(element).offset().left;
     x = (x * 10) / $(element).width();
     x = Math.floor(x);
+    x = x > 0 ? x : 0;
+    x = x < 10 ? x : 10;
     
     var cursorPosition = "path" + x;
     if (slidePosition !== cursorPosition){

@@ -1,10 +1,24 @@
-#home_banner.path0{ background-image: url('../../image/home/01/S__4358404.jpg'); }
-#home_banner.path1{ background-image: url('../../image/home/01/S__4358405.jpg'); }
-#home_banner.path2{ background-image: url('../../image/home/01/S__4358406.jpg'); }
-#home_banner.path3{ background-image: url('../../image/home/01/S__4358407.jpg'); }
-#home_banner.path4{ background-image: url('../../image/home/01/S__4358408.jpg'); }
-#home_banner.path5{ background-image: url('../../image/home/01/S__4358409.jpg'); }
-#home_banner.path6{ background-image: url('../../image/home/01/S__4358410.jpg'); }
-#home_banner.path7{ background-image: url('../../image/home/01/S__4358411.jpg'); }
-#home_banner.path8{ background-image: url('../../image/home/01/S__4358412.jpg'); }
-#home_banner.path9{ background-image: url('../../image/home/01/S__4358413.jpg'); }
+#preload{
+   	content:
+   		url('../../image/home/01/Intro_V1_00001.jpg')
+   		url('../../image/home/01/Intro_V1_00002.jpg')
+   		url('../../image/home/01/Intro_V1_00003.jpg')
+   		url('../../image/home/01/Intro_V1_00004.jpg')
+   		url('../../image/home/01/Intro_V1_00005.jpg')
+   		url('../../image/home/01/Intro_V1_00006.jpg')
+   		url('../../image/home/01/Intro_V1_00007.jpg')
+   		url('../../image/home/01/Intro_V1_00008.jpg')
+   		url('../../image/home/01/Intro_V1_00009.jpg')
+   		url('../../image/home/01/Intro_V1_00010.jpg');
+    display: none;
+}
+#home_banner.path0{ background-image: url('../../image/home/01/Intro_V1_00001.jpg'); }
+#home_banner.path1{ background-image: url('../../image/home/01/Intro_V1_00002.jpg'); }
+#home_banner.path2{ background-image: url('../../image/home/01/Intro_V1_00003.jpg'); }
+#home_banner.path3{ background-image: url('../../image/home/01/Intro_V1_00004.jpg'); }
+#home_banner.path4{ background-image: url('../../image/home/01/Intro_V1_00005.jpg'); }
+#home_banner.path5{ background-image: url('../../image/home/01/Intro_V1_00006.jpg'); }
+#home_banner.path6{ background-image: url('../../image/home/01/Intro_V1_00007.jpg'); }
+#home_banner.path7{ background-image: url('../../image/home/01/Intro_V1_00008.jpg'); }
+#home_banner.path8{ background-image: url('../../image/home/01/Intro_V1_00009.jpg'); }
+#home_banner.path9{ background-image: url('../../image/home/01/Intro_V1_00010.jpg'); }
