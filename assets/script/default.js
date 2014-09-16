@@ -1,7 +1,8 @@
-
-setup_variable();
-setup_default();
-setup_eventHandle();
+$(document).ready(function(){
+    setup_variable();
+    setup_default();
+    setup_eventHandle();
+});
 
 function setup_variable(){
     

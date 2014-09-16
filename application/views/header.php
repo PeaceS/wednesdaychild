@@ -8,7 +8,6 @@
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/banner/banner_<?php echo $home; ?>.css" />
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/list_menu.css" />
         <?php } ?>
-        
         <?php if (isset($collection)) { ?>
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/main.css" />
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/collection.css" />
@@ -21,5 +20,8 @@
 
         <?php if (isset($home)) { ?>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/home.js"></script>
+        <?php } ?>
+        <?php if (isset($collection)) { ?>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/collection.js"></script>
         <?php } ?>
 </head>
