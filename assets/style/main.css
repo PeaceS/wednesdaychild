@@ -5,8 +5,6 @@
     width: 94%;
     height: 90%;
     overflow: hidden;
-    border: #CDCDCD solid 2px;
-    background-color: #FFFFFF;
 }
 #main label#logo{
     display: block;

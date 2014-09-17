@@ -2,7 +2,7 @@ ul#list_menu li{
     display: block;
     float: left;
     text-align: center;
-    width: 25%;
+    margin: 0% 5%;
 }
 ul#list_menu li a{
     font-size: 1.55vw;
@@ -10,5 +10,5 @@ ul#list_menu li a{
     font-family: BEBAS;
     color: #FFFFFF;
     background-color: #000000;
-    padding: 3% 7%;
+    padding: 1% 7% 3%;
 }

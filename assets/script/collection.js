@@ -22,6 +22,9 @@ function setup_eventHandle(){
     $("#menu #mode").click(function(){
         event_changeMode_collection();
     });
+    $("#collection").scroll(function(){
+        event_move_tear();
+    });
 }
 
 // private function
@@ -38,5 +41,14 @@ function event_slide_collection(direction){
     $("#collection").animate({ scrollTop : nextScrollPosition }, 1000);
 }
 function event_changeMode_collection(){
+    if ($("#collection").hasClass("gridView"))
+        $("#collection").removeClass("gridView");
+    else
+        $("#collection").addClass("gridView");
+}
+function event_move_tear(){
+    var percentScrolled = $("#collection").scrollTop() / ($("#collection")[0].scrollHeight - $("#collection").height());
+    var nextPosition = $("#tear1").offset().top -  ($("#tear1").offset().top * percentScrolled);
     
+    $("#tear1").offset({top : nextPosition, left : $("#tear1").offset().left});
 }
