@@ -41,10 +41,25 @@ function event_slide_collection(direction){
     $("#collection").animate({ scrollTop : nextScrollPosition }, 1000);
 }
 function event_changeMode_collection(){
-    if ($("#collection").hasClass("gridView"))
-        $("#collection").removeClass("gridView");
-    else
-        $("#collection").addClass("gridView");
+    $("#collection").animate({
+        marginLeft:"5%",
+        marginTop:"2.5%",
+        width:"90%",
+        height:"90%",
+        opacity:0
+    }, 500, function(){
+        if ($(this).hasClass("gridView"))
+            $(this).removeClass("gridView");
+        else
+            $(this).addClass("gridView");
+        $(this).animate({
+            marginLeft:"0%",
+            marginTop:"0%",
+            width:"102.5%",
+            height:"100%",
+            opacity:1
+        }, 750);
+    });
 }
 function event_move_tear(){
     var percentScrolled = $("#collection").scrollTop() / ($("#collection")[0].scrollHeight - $("#collection").height());
