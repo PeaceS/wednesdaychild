@@ -2,7 +2,7 @@ ul#list_menu li{
     display: block;
     float: left;
     text-align: center;
-    margin: 0% 5%;
+    margin: 0% 4%;
 }
 ul#list_menu li a{
     font-size: 1.55vw;
