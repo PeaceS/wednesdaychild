@@ -1,7 +1,19 @@
 //@color_black: #000000;
 //@color_gray: #CDCDCD;
 
-body{ margin: 0; }
+@font-face {
+    font-family: AmericanType;
+    src: url('../font/AmericanTypewriter.ttf');
+}
+@font-face {
+    font-family: BEBAS;
+    src: url('../font/BEBAS___.ttf');
+}
+
+body{
+    font-family: AmericanType;
+    margin: 0;
+}
 a:link {
   color: #000000;
   text-decoration: none;
@@ -9,11 +21,6 @@ a:link {
 a:visited { color: #000000; }
 a:hover { color: #000000; }
 a:active { color: #000000; }
-
-@font-face {
-    font-family: BEBAS;
-    src: url('../font/BEBAS___.ttf');
-}
 
 //@img_shop-menu: url('../content/image/shop_menu.png');
 /*
