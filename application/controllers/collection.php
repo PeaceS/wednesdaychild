@@ -28,7 +28,7 @@ class Collection extends CI_Controller {
         $this->load->view('header', $included);
         $this->load->view('main');
         $this->load->view('collection', $data);
-        $this->load->view('list_collection', $listCollection);
+        $this->load->view('list_collection', $data);
         $this->load->view('list_menu');
     }
 }
