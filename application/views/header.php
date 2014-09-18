@@ -19,6 +19,12 @@
         <?php if (isset($shop)) { ?>
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/shop.css" />
         <?php } ?>
+        <?php if (isset($product)) { ?>
+        <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/product.css" />
+        <?php } ?>
+        <?php if (isset($shop) || isset($product)) { ?>
+        <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/side_menu.css" />
+        <?php } ?>
 
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/lib/jquery-1.11.1.min.js"></script>
 

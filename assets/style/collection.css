@@ -9,6 +9,7 @@
     margin-bottom: 3%;
     float: left;
     background-size: cover;
+    background-position: center;
 }
 #collection span.tear{
     display: none;

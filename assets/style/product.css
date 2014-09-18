@@ -1,0 +1,35 @@
+#main{ background-color: gray; }
+#product{
+    position: absolute;
+    top: 19%;
+    left: 3%;
+    width: 71.5%;
+    height: 62%;
+}
+#product div, span{
+    position: absolute;
+    display: block;
+    height: 100%;
+}
+#product div#detail{
+    width: 30%;
+    left: 35%;
+}
+#product span#image{
+    width: 35%;
+    
+    background-color: red;
+}
+#product span#zoom_image{
+    width: 35%;
+    right: 0%;
+    
+    background-color: red;
+}
+#relate{
+    position: absolute;
+    top: 19%;
+    left: 76.25%;
+    width: 15%;
+    height: 62%;
+}

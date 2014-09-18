@@ -1,5 +1,5 @@
         <div id="shop">
-            <div id="scroll">
+            <div id="scroll" class="white_opacity">
                 <?php for ($i = 0; $i < count($listProduct); $i++) { ?>
                 <a href="/product/<?php echo $listProduct[$i]['product_no']; ?>">
                     <img class="<?php echo "col" . ($i % 5); ?>" src="<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $listProduct[$i]['image_url']; ?>" />
