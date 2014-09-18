@@ -1,21 +1,33 @@
 #main{ background-color: red; }
 #shop{
     position: absolute;
+    overflow: hidden;
     top: 19%;
     left: 3%;
     width: 92%;
     height: 62%;
+}
+#shop #scroll{
+    width: 102.5%;
+    height: 100%;
+    overflow-x: hidden;
     background-color: #FFFFFF;
-    background-size: 10% 100%;
     opacity: 0.75;
     filter:alpha(opacity=75); /* For IE8 and earlier */
 }
+#shop #scroll img{
+    width: 18%;
+    margin: 0% 1.12% 3%;
+    float: left;
+}
+#shop #scroll img.col0{ margin-left: 0%; }
+#shop #scroll img.col4{ margin-right: 0%; }
 ul#menu{
+    position: absolute;
     width: 4.5%;
     height: 25%;
     margin: 0;
     padding: 0;
-    position: absolute;
     z-index: 2;
     top: 42.5%;
     right: 3%;

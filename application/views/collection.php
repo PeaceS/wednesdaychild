@@ -1,5 +1,5 @@
         <div id="collection">
-            <?php for ($i = 0; $i < $itemAmount; $i++){ ?>
+            <?php for ($i = 0; $i < $itemAmount; $i++) { ?>
             <div class="<?php echo "item" . $i; ?>"></div>
             <?php } ?>
             <span class="tear" id="tear1" top="58"></span>

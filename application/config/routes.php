@@ -1,4 +1,4 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php  if ( ! defined('BASEPATH')) { exit('No direct script access allowed'); }
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
@@ -39,6 +39,8 @@
 */
 
 $route['collection/(:any)'] = 'collection/view/$1';
+$route['shop/(:any)'] = 'shop/view/$1';
+$route['product/(:any)'] = 'product/view/$1';
 $route['default_controller'] = "home";
 $route['404_override'] = '';
 
