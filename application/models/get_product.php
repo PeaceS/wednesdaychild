@@ -28,8 +28,31 @@ class Get_product extends CI_Model{
         }
         public function get_image($product)
         {
+            $this->db->select('image_no, image_url, image_zoom');
             $this->db->from('product_image');
             $this->db->where('product_no', $product);
+            $query = $this->db->get();
+            
+            return $query->result_array();
+        }
+        public function get_color($product)
+        {
+            $this->db->distinct();
+            $this->db->select('product_color');
+            $this->db->select('product_no');
+            $this->db->from('product');
+            $this->db->like('product_no', substr($product, 0, 5), 'after');
+            $query = $this->db->get();
+            
+            return $query->result_array();
+        }
+        public function get_size($product)
+        {
+            $this->db->distinct();
+            $this->db->select('product_size');
+            $this->db->select('product_no');
+            $this->db->from('product');
+            $this->db->like('product_no', substr($product, 0, 6), 'after');
             $query = $this->db->get();
             
             return $query->result_array();

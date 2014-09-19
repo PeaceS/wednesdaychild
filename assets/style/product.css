@@ -5,27 +5,62 @@
     left: 3%;
     width: 71.5%;
     height: 62%;
+    overflow: hidden;
 }
-#product div, span{
+#product div#detail{
+    position: absolute;
+    display: block;
+    height: 90%;
+    width: 26%;
+    left: 35%;
+    overflow-x: hidden;
+    padding: 2%;
+    padding-right: 7%;
+    font-size: 0.9vw;
+}
+#product div#detail #product_name{
+    margin: 0%;
+    font-size: 1.5vw;
+}
+#product div#detail #product_no{
+    margin: 1% 0% 3%;
+    font-size: 1vw;
+    text-transform: uppercase;
+}
+#product div#detail .product_detail{
+    text-indent: 30%;
+    line-height: 100%;
+    margin-bottom: 3%;
+}
+#product div#detail .product_detail ul{
+    text-indent: 0%;
+    margin: 0%;
+    padding-left: 0%;
+    list-style-type: none;
+}
+#product div#detail #product_price{
+    text-align: right;
+    margin: 4% 0%;
+}
+#product div#detail #product_price div{ padding: 1%; }
+#product div#detail #product_price label#stock_check{
+    text-transform: capitalize;
+    padding: 0.5% 7%;
+    border: 2px solid #000000;
+    float: left;
+    cursor: pointer;
+}
+#product div#detail .product_select{ margin: 4% 0%; }
+#product div#detail .product_select input{ width: 18% }
+#product span{
+    background-size: cover;
+    background-position: center;
     position: absolute;
     display: block;
     height: 100%;
-}
-#product div#detail{
-    width: 30%;
-    left: 35%;
-}
-#product span#image{
     width: 35%;
-    
-    background-color: red;
 }
-#product span#zoom_image{
-    width: 35%;
-    right: 0%;
-    
-    background-color: red;
-}
+#product span#zoom_image{ right: 0%; }
 #relate{
     position: absolute;
     top: 19%;

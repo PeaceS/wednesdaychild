@@ -1,17 +1,22 @@
 //@color_black: #000000;
 //@color_gray: #CDCDCD;
 
-@font-face {
-    font-family: AmericanType;
-    src: url('../font/AmericanTypewriter.ttf');
-}
+@font-face { font-family: init; }
 @font-face {
     font-family: BEBAS;
     src: url('../font/BEBAS___.ttf');
 }
+@font-face {
+    font-family: AmericanTypewriter;
+    src: url('../font/AmericanTypewriter.ttf');
+}
+@font-face {
+    font-family: AmericanTypewriter-Condensed;
+    src: url('../font/AmericanTypewriter-Condensed.ttf');
+}
 
 body{
-    font-family: AmericanType;
+    font-family: AmericanTypewriter;
     margin: 0;
 }
 a:link {
