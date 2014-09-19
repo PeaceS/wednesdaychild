@@ -1,12 +1,7 @@
 $(document).ready(function(){
-    setup_variable();
     setup_default();
     setup_eventHandle();
 });
-
-function setup_variable(){
-    
-}
 
 function setup_default(){
     
@@ -33,12 +28,17 @@ function event_slide_collection(direction){
     var currentScrollPosition = $("#collection").scrollTop();
     var maximumScroll = $("#collection").height();
     var nextScrollPosition = currentScrollPosition;
+    
+    if ($("#collection").hasClass("scrolling")) return false;
     if (direction === 0)
         nextScrollPosition -= maximumScroll * 0.8;
     else
         nextScrollPosition += maximumScroll * 0.8;
     
-    $("#collection").animate({ scrollTop : nextScrollPosition }, 1000);
+    $("#collection").addClass("scrolling");
+    $("#collection").animate({ scrollTop : nextScrollPosition }, 1000, function(){
+        $("#collection").removeClass("scrolling");
+    });
 }
 function event_changeMode_collection(){
     $("#collection").animate({
