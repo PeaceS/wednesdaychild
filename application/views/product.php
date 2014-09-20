@@ -9,13 +9,16 @@
                     <label id="stock_check">stock check</label>
                     <div>Price : <?php echo $product['product_price']; ?> B</div>
                 </div>
-                <p class="product_select">Color : <select>
+                <p class="product_select color">Color : 
                     <?php foreach ($product_color as $color) { ?>
-                    <option value="<?php echo $color['product_no']; ?>" <?php if ($color['product_no'] == $product['product_no']) { ?>selected="true"<?php } ?>>
-                        <?php echo $color['product_color']; ?>
-                    </option>
+                    <?php if (!strpos($color['product_color'], '.')) { ?>
+                    <span style="background-color: <?php echo $color['product_color'] ?>;" <?php if ($color['product_no'] == $product['product_no']) { ?>class="selected"<?php } ?>>
+                    <?php } else { ?>
+                    <span style="background-image: url(<?php echo base_url() . 'assets/image/color/' . $color['product_color'] ?>);" <?php if ($color['product_no'] == $product['product_no']) { ?>class="selected"<?php } ?>>
                     <?php } ?>
-                </select></p>
+                    </span>
+                    <?php } ?>
+                </p>
                 <p class="product_select">Quantity : <input type="number" value="1" min="1" max="<?php echo $product['product_stock']; ?>"></p>
                 <p class="product_select">Size Avaliable : <select>
                     <?php foreach ($product_size as $size) { ?>
@@ -25,8 +28,12 @@
                     <?php } ?>
                 </select></p>
             </div>
-            <span id="image" style="background-image: url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[0]['image_url']; ?>);"></span>
-            <span id="zoom_image" style="background-image: url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[0]['image_zoom']; ?>);"></span>
+            <div class="image normal">
+                <span style="background-image: url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[0]['image_url']; ?>);"></span>
+            </div>
+            <div class="image zoom">
+                <span style="background-image: url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[0]['image_zoom']; ?>);"></span>
+            </div>
         </div>
         <div id="relate" class="white_opacity">
             
