@@ -14,6 +14,10 @@
     font-family: AmericanTypewriter-Condensed;
     src: url('../font/AmericanTypewriter-Condensed.ttf');
 }
+@font-face {
+    font-family: AmericanTypewriter-Bold;
+    src: url('../font/AmericanTypewriter-Bold.ttf');
+}
 
 body{
     font-family: AmericanTypewriter;

@@ -5,9 +5,9 @@ class Get_config extends CI_Model{
             parent::__construct();
             $this->load->database();
 	}
-	public function get_policy()
+	public function get_config($param)
 	{
-            $query = $this->db->get_where('config', array('parameter' => 'text_policy'));
+            $query = $this->db->get_where('config', array('parameter' => $param));
             return $query->row()->value;
 	}
 }

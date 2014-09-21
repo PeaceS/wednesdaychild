@@ -4,12 +4,12 @@ class Policy extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-	$this->load->model('get_config');
+	$this->load->model('get_text');
     }
     public function index()
     {   
         $included['policy'] = true;
-        $data['policy'] = $this->get_config->get_policy();
+        $data['policy'] = $this->get_text->get_text('policy');
         
         $this->load->helper('url');
         $this->load->view('header', $included);

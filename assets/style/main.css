@@ -36,15 +36,15 @@
     right: 0%;
     bottom: 0%;
 }
-#main div#top_menu span#purchaseConfirm{
+#main div#top_menu span#menu_purchaseConfirm{
     right: 0%;
     bottom: 50%;
 }
-#main div#top_menu span#faq{
+#main div#top_menu span#menu_faq{
     right: 65%;
     bottom: 0%;
 }
-#main div#top_menu span#policy{
+#main div#top_menu span#menu_policy{
     right: 30%;
     bottom: 0%;
 }

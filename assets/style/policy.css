@@ -1,0 +1,40 @@
+#main{ background-color: red; }
+#policy{
+    position: absolute;
+    top: 19%;
+    left: 30%;
+    width: 35%;
+    height: 62%;
+    overflow: hidden;
+    text-align: center;
+}
+#policy label{
+    font-size: 1vw;
+    font-family: AmericanTypewriter-Bold;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 2%;
+}
+#policy #scroll{
+    height: 85%;
+    margin: 2%;
+    font-size: 0.9vw;
+    overflow: hidden;
+    text-align: left;
+    
+    background-color: gray;
+}
+#policy #scroll div{
+    overflow-x: hidden;
+    height: 90.5%;
+    width: 90%;
+    margin: 3.5% 5%;
+    padding-right: 8%;
+}
+#relate #scroll div span{
+    display: block;
+    height: 40%;
+    background-size: cover;
+    background-position: 0% 0%;
+    margin-bottom: 5%;
+}
