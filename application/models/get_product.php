@@ -57,4 +57,16 @@ class Get_product extends CI_Model{
             
             return $query->result_array();
         }
+	public function list_related($product)
+	{
+            $this->db->select('product_related.related_no, product_image.image_url');
+            $this->db->from('product_related');
+            $this->db->join('product_image', 'product_related.related_no = product_image.product_no');
+            $this->db->where('product_related.product_no', $product);
+            $this->db->where('product_image.image_no', 0);
+            $this->db->order_by('product_related.related_no', 'asc');
+            $query = $this->db->get();
+            
+            return $query->result_array();
+	}
 }

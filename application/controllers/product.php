@@ -30,6 +30,7 @@ class Product extends CI_Controller {
         $data['product_image'] = $this->get_product->get_image($product);
         $data['product_color'] = $this->get_product->get_color($product);
         $data['product_size'] = $this->get_product->get_size($product);
+        $data['product_related'] = $this->get_product->list_related($product);
         
         return $data;
     }
