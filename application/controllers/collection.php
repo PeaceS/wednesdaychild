@@ -31,5 +31,3 @@ class Collection extends CI_Controller {
         $this->load->view('list_menu');
     }
 }
-
-/* Location: ./application/controllers/collection.php */

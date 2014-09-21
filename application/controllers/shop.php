@@ -31,5 +31,3 @@ class Shop extends CI_Controller {
         $this->load->view('list_menu');
     }
 }
-
-/* Location: ./application/controllers/shop.php */

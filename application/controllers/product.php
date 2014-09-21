@@ -58,5 +58,3 @@ class Product extends CI_Controller {
         return $data;
     }
 }
-
-/* Location: ./application/controllers/shop.php */
