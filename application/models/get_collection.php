@@ -5,6 +5,15 @@ class Get_collection extends CI_Model{
             parent::__construct();
             $this->load->database();
 	}
+	public function get_latestCollection()
+	{
+            $this->db->from('collection');
+            $this->db->limit(1);
+            $this->db->order_by('release_date', 'desc');
+            $query = $this->db->get();
+            
+            return $query->row()->collection_code;
+	}
 	public function list_collection()
 	{
             $this->db->select('collection_code, collection_name');

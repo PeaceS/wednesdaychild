@@ -8,8 +8,7 @@ class Collection extends CI_Controller {
     }
     public function index()
     {
-	$this->load->model('get_config');
-        $this->load($this->get_config->get_collection(), $this->get_collection->list_collection());
+        $this->load($this->get_collection->get_latestCollection(), $this->get_collection->list_collection());
     }
     public function view($collection)
     {

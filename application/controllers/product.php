@@ -4,7 +4,6 @@ class Product extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-	$this->load->model('get_config');
 	$this->load->model('get_collection');
         $this->load->model('get_product');
     }
@@ -24,7 +23,7 @@ class Product extends CI_Controller {
     
     private function load_data($product)
     {
-        $data['collection'] = $this->get_config->get_collection();
+        $data['collection'] = substr($product, 0, 3);
         $data['listCollection'] = $this->get_collection->list_collection();
         $data['product'] = $this->transform_data($product);
         $data['product_image'] = $this->get_product->get_image($product);

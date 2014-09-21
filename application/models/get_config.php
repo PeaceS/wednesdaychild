@@ -5,9 +5,9 @@ class Get_config extends CI_Model{
             parent::__construct();
             $this->load->database();
 	}
-	public function get_collection()
+	public function get_policy()
 	{
-            $query = $this->db->get_where('config', array('parameter' => 'latest_collection'));
+            $query = $this->db->get_where('config', array('parameter' => 'text_policy'));
             return $query->row()->value;
 	}
 }
