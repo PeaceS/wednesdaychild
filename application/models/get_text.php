@@ -10,4 +10,14 @@ class Get_text extends CI_Model{
             $query = $this->db->get_where('text_display', array('section' => $param));
             return $query->row()->text;
 	}
+        public function get_faq()
+        {
+            $this->db->select('text');
+            $this->db->from('text_display');
+            $this->db->like('section', 'faq_', 'after');
+            $this->db->order_by('section', 'asc');
+            $query = $this->db->get();
+            
+            return $query->result_array();
+        }
 }

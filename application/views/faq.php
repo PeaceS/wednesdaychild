@@ -1,6 +1,10 @@
-        <div id="policy" class="white_opacity">
-            <label>policy</label>
+        <div id="faq" class="white_opacity">
+            <span>
+                <label>faq</label>
+            </span>
             <div id="scroll">
-                <div><?php echo $policy; ?></div>
+                <?php foreach ($faq as $question) { ?>
+                <div><?php echo $question['text']; ?></div>
+                <?php } ?>
             </div>
         </div>
