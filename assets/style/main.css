@@ -31,6 +31,7 @@
     font-family: AmericanTypewriter-Condensed;
     font-weight: bold;
     text-transform: uppercase;
+    font-size: 1.2vw;
     z-index: 1;
 }
 #main div#top_menu span{
