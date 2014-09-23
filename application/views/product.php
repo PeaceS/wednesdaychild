@@ -27,6 +27,15 @@
                     </option>
                     <?php } ?>
                 </select></p>
+                <table class="product_action">
+                    <tr>
+                        <td><label>add to bag</label></td>
+                        <td>
+                            <span></span>
+                            <span></span>
+                        </td>
+                    </tr>
+                </table>
             </div>
             <div class="image normal">
                 <span style="background-image: url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[0]['image_url']; ?>);"></span>

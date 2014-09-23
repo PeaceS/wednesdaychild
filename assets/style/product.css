@@ -9,12 +9,11 @@
 }
 #product div#detail{
     position: absolute;
-    height: 90%;
+    height: 95%;
     width: 26%;
     left: 35%;
     overflow-x: hidden;
-    padding: 2%;
-    padding-right: 7%;
+    padding: 2% 7% 0% 2%;
     font-size: 0.9vw;
 }
 #product div#detail #product_name{
@@ -56,6 +55,20 @@
     width: 7%;
 }
 #product div#detail .product_select input{ width: 18% }
+#product div#detail .product_action{
+    height: 25%;
+    width: 100%;
+}
+#product div#detail .product_action label{
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: BEBAS;
+    background-color: #888888;
+    width: 40%;
+    padding: 1%;
+    padding-bottom: 1.5%;
+}
 #product div.image{
     position: absolute;
     width: 35%;
