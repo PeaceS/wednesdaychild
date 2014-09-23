@@ -38,10 +38,13 @@
 #collection ul#menu li{
     display: block;
     width: 100%;
-    height: 30%;
-    margin: 2% 0%;
+    height: 25%;
+    margin: 25% 0%;
     cursor: pointer;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-#collection ul#menu li#up{ background: red; }
-#collection ul#menu li#down{ background: blue; }
-#collection ul#menu li#mode{ background: green; }
+#collection ul#menu li#up{ background-image: url('../image/icon_arrow-up.png'); }
+#collection ul#menu li#down{ background-image: url('../image/icon_arrow-down.png'); }
+#collection ul#menu li#mode{ background-image: url('../image/icon_grid.png'); }

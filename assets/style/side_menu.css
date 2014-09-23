@@ -11,9 +11,12 @@ ul#menu{
 ul#menu li{
     display: block;
     width: 100%;
-    height: 40%;
-    margin: 5% 0%;
+    height: 25%;
+    margin: 25% 0%;
     cursor: pointer;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-ul#menu li#up{ background: green; }
-ul#menu li#down{ background: blue; }
+ul#menu li#up{ background-image: url('../image/icon_arrow-up.png'); }
+ul#menu li#down{ background-image: url('../image/icon_arrow-down.png'); }

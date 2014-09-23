@@ -5,6 +5,9 @@
     width: 94%;
     height: 90%;
     overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 #main label#logo{
     display: block;
@@ -57,7 +60,5 @@
     padding: 0;
 }
 div.white_opacity{
-    background-color: #FFFFFF;
-    opacity: 0.75;
-    filter:alpha(opacity=75); /* For IE8 and earlier */
+    background-image: url('../image/background_transparent.png');
 }

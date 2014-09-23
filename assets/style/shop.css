@@ -1,4 +1,4 @@
-#main{ background-color: red; }
+#main{ background-image: url('../image/background_shop.jpg'); }
 #shop{
     position: absolute;
     overflow: hidden;

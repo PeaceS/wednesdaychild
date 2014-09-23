@@ -4,7 +4,7 @@ $(document).ready(function(){
 });
 
 function setup_default(){
-    default_change_scrollWidthMinusPaddingScrollbar();
+    
 }
 
 function setup_eventHandle(){
@@ -21,9 +21,6 @@ function setup_eventHandle(){
 
 // private function
 
-function default_change_scrollWidthMinusPaddingScrollbar(){
-    $("#relate #scroll div").width($("#relate #scroll div").width() - 15);
-}
 function event_zoom_productImage(element, e){
     var x = e.clientX - $(element).offset().left;
     var y = e.clientY - $(element).offset().top;

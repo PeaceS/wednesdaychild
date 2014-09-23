@@ -1,4 +1,4 @@
-#main{ background-color: green; }
+#main{ background-image: url('../image/background_faq.jpg'); }
 #faq{
     position: absolute;
     overflow: hidden;

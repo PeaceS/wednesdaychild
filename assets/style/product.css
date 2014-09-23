@@ -1,4 +1,4 @@
-#main{ background-color: gray; }
+#main{ background-image: url('../image/background_product.jpg'); }
 #product{
     position: absolute;
     top: 19%;
@@ -95,16 +95,16 @@
     margin: 5% 15px;
 }
 #relate #scroll{
-    width: 100%;
+    width: 90%;
     height: 85%;
-    margin: 5% 0%;
+    margin: 5%;
     overflow: hidden;
 }
 #relate #scroll div{
     overflow-x: hidden;
-    padding: 0px 15px;
+    padding-right: 10%;
     height: 100%;
-    width: 100%;
+    width: 110%;
 }
 #relate #scroll div span{
     display: block;
