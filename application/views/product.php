@@ -6,7 +6,7 @@
                 <div class="product_detail"><?php echo $product['product_fabric']; ?></div>
                 <div class="product_detail"><?php echo $product['product_fit']; ?></div>
                 <div id="product_price">
-                    <label id="stock_check">stock check</label>
+                    <a href="/check/<?php echo $product_no; ?>"><label id="stock_check">stock check</label></a>
                     <div>Price : <?php echo $product['product_price']; ?> B</div>
                 </div>
                 <p class="product_select color">Color : 
@@ -29,10 +29,11 @@
                 </select></p>
                 <table class="product_action">
                     <tr>
-                        <td><label>add to bag</label></td>
-                        <td>
-                            <span></span>
-                            <span></span>
+                        <td><a href="/buy/<?php echo $product_no; ?>"><label>add to bag</label></a></td>
+                        <td id="product_image">
+                            <?php for($i = 1; $i < count($product_image); $i++) { ?>
+                            <div title="image <?php echo $i; ?>" style="background-image: url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[$i]['image_url']; ?>);">&nbsp;</div>
+                            <?php } ?>
                         </td>
                     </tr>
                 </table>

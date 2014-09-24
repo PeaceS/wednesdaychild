@@ -57,18 +57,32 @@
 #product div#detail .product_select input{ width: 18% }
 #product div#detail .product_action{
     height: 25%;
-    width: 100%;
+    width: 115%;
 }
+#product div#detail .product_action td:first-child{ width: 40%; }
 #product div#detail .product_action label{
     display: block;
     text-align: center;
     text-transform: uppercase;
     font-family: BEBAS;
+    font-size: 0.75vw;
     background-color: #888888;
-    width: 40%;
+    width: 100%;
     padding: 1%;
     padding-bottom: 1.5%;
+    cursor: pointer;
 }
+#product div#detail .product_action div{
+    width: 35%;
+    height: 100%;
+    float: left;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+#product div#detail .product_action div:first-child{ margin-left: 25%; }
+#product div#detail .product_action div:last-child{ margin-left: 5%; }
 #product div.image{
     position: absolute;
     width: 35%;

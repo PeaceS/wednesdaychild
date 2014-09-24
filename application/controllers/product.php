@@ -26,6 +26,7 @@ class Product extends CI_Controller {
         $data['collection'] = substr($product, 0, 3);
         $data['listCollection'] = $this->get_collection->list_collection();
         $data['product'] = $this->transform_data($product);
+        $data['product_no'] = $product;
         $data['product_image'] = $this->get_product->get_image($product);
         $data['product_color'] = $this->get_product->get_color($product);
         $data['product_size'] = $this->get_product->get_size($product);
