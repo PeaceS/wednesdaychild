@@ -20,11 +20,3 @@
     background-repeat: no-repeat;
     background-position: center center;
 }
-#home_banner ul#list_menu{
-    position: absolute;
-    left: 12.5%;
-    bottom: 5%;
-    width: 75%;
-    margin: 0;
-    padding: 0;
-}
