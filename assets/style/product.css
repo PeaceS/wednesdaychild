@@ -75,14 +75,13 @@
 #product div#detail .product_action div{
     width: 35%;
     height: 100%;
-    float: left;
+    float: right;
+    margin-left: 5%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
 }
-#product div#detail .product_action div:first-child{ margin-left: 25%; }
-#product div#detail .product_action div:last-child{ margin-left: 5%; }
 #product div.image{
     position: absolute;
     width: 35%;

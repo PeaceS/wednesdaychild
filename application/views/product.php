@@ -31,15 +31,15 @@
                     <tr>
                         <td><a href="/buy/<?php echo $product_no; ?>"><label>add to bag</label></a></td>
                         <td id="product_image">
-                            <?php for($i = 1; $i < count($product_image); $i++) { ?>
-                            <div title="image <?php echo $i; ?>" style="background-image: url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[$i]['image_url']; ?>);">&nbsp;</div>
+                            <?php for($i = count($product_image) - 1; $i > 0; $i--) { ?>
+                            <div title="image <?php echo $i; ?>" style="background-image: url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[$i]['image_url']; ?>);" zoom="url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[$i]['image_zoom']; ?>)">&nbsp;</div>
                             <?php } ?>
                         </td>
                     </tr>
                 </table>
             </div>
             <div class="image normal">
-                <span style="background-image: url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[0]['image_url']; ?>);"></span>
+                <span title="image 0" style="background-image: url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[0]['image_url']; ?>);"></span>
             </div>
             <div class="image zoom">
                 <span style="background-image: url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[0]['image_zoom']; ?>);"></span>

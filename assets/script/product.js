@@ -17,6 +17,9 @@ function setup_eventHandle(){
     $("#menu #down").click(function(){
         event_slide_related(1);
     });
+    $("#product_image div").click(function(){
+        event_change_image(this);
+    });
 }
 
 // private function
@@ -52,4 +55,16 @@ function event_slide_related(direction){
     $("#relate #scroll div").animate({ scrollTop : nextScrollPosition }, 1000, function(){
         $("#relate #scroll div").removeClass("scrolling");
     });
+}
+function event_change_image(element){
+    var image = $(element).css("background-image");
+    var zoom = $(element).attr("zoom");
+    var title = $(element).attr("title");
+    
+    $(element).css("background-image", $(".image.normal span").css("background-image"));
+    $(element).attr("title", $(".image.normal span").attr("title"));
+    $(element).attr("zoom", $(".image.zoom span").css("background-image"));
+    $(".image.normal span").attr("title", title);
+    $(".image.normal span").css("background-image", image);
+    $(".image.zoom span").css("background-image", zoom);
 }
