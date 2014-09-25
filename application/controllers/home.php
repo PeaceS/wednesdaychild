@@ -8,7 +8,6 @@ class Home extends CI_Controller {
         $bannerStyleAmount = count(glob($directory . "banner_*.css"));
         $included['home'] = rand(1, $bannerStyleAmount);
 
-        $this->load->helper('url');
         $this->load->view('header', $included);
         $this->load->view('home');
         $this->load->view('list_menu');

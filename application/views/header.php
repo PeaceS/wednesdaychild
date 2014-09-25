@@ -1,6 +1,7 @@
 <head>
 	<title>Wednesday Child</title>
-
+        <meta charset="UTF-8">
+        
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/overall.css" />
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/list_menu.css" />
 

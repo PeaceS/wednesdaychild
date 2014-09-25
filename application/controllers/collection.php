@@ -5,7 +5,6 @@ class Collection extends CI_Controller {
     {
         parent::__construct();
 	$this->load->model('get_collection');
-        $this->load->helper('url');
     }
     public function index()
     {

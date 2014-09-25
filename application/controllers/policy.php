@@ -5,7 +5,6 @@ class Policy extends CI_Controller {
     {
         parent::__construct();
 	$this->load->model('get_text');
-        $this->load->helper('url');
     }
     public function index()
     {   

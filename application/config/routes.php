@@ -38,6 +38,7 @@
 |
 */
 
+$route['stock/(:any)'] = 'stock/check/$1';
 $route['collection/(:any)'] = 'collection/view/$1';
 $route['shop/(:any)'] = 'shop/view/$1';
 $route['product/(:any)'] = 'product/view/$1';

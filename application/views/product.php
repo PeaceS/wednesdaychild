@@ -1,4 +1,4 @@
-        <div id="product" class="white_opacity">
+        <div id="product" class="white_opacity" no="<?php echo $product_no; ?>">
             <div id="detail">
                 <p id="product_name"><?php echo $product['product_name']; ?></p>
                 <p id="product_no"><?php echo $product['product_no']; ?></p>
@@ -6,7 +6,7 @@
                 <div class="product_detail"><?php echo $product['product_fabric']; ?></div>
                 <div class="product_detail"><?php echo $product['product_fit']; ?></div>
                 <div id="product_price">
-                    <a href="/check/<?php echo $product_no; ?>"><label id="stock_check">stock check</label></a>
+                    <a href="javascript:buy(<?php echo $product['product_name']; ?>);"><label id="stock_check">stock check</label></a>
                     <div>Price : <?php echo $product['product_price']; ?> B</div>
                 </div>
                 <p class="product_select color">Color : 
@@ -29,7 +29,7 @@
                 </select></p>
                 <table class="product_action">
                     <tr>
-                        <td><a href="javascript:buy(<?php echo $product['product_name']; ?>);"><label product="<?php echo $product_no; ?>">add to bag</label></a></td>
+                        <td><a href="javascript:buy(<?php echo $product['product_name']; ?>);"><label>add to bag</label></a></td>
                         <td id="product_image">
                             <?php for($i = count($product_image) - 1; $i > 0; $i--) { ?>
                             <div title="image <?php echo $i; ?>" style="background-image: url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[$i]['image_url']; ?>);" zoom="url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[$i]['image_zoom']; ?>)">&nbsp;</div>
