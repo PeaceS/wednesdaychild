@@ -19,7 +19,7 @@
                     </span>
                     <?php } ?>
                 </p>
-                <p class="product_select">Quantity : <input type="number" value="1" min="1" max="<?php echo $product['product_stock']; ?>"></p>
+                <p class="product_select qty">Quantity : <input type="number" value="1" min="1" max="<?php echo $product['product_stock']; ?>"></p>
                 <p class="product_select">Size Avaliable : <select>
                     <?php foreach ($product_size as $size) { ?>
                     <option value="<?php echo $size['product_no']; ?>" <?php if ($size['product_no'] == $product['product_no']) { ?>selected="true"<?php } ?>>
@@ -29,7 +29,7 @@
                 </select></p>
                 <table class="product_action">
                     <tr>
-                        <td><a href="/buy/<?php echo $product_no; ?>"><label>add to bag</label></a></td>
+                        <td><a href="javascript:buy(<?php echo $product['product_name']; ?>);"><label product="<?php echo $product_no; ?>">add to bag</label></a></td>
                         <td id="product_image">
                             <?php for($i = count($product_image) - 1; $i > 0; $i--) { ?>
                             <div title="image <?php echo $i; ?>" style="background-image: url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[$i]['image_url']; ?>);" zoom="url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[$i]['image_zoom']; ?>)">&nbsp;</div>

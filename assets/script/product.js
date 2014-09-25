@@ -20,6 +20,10 @@ function setup_eventHandle(){
     $("#product_image div").click(function(){
         event_change_image(this);
     });
+    $(".product_action label").click(function(){
+        var amount = $(".product_select.qty input").val();
+        event_buy_product($(this).attr("product"), amount);
+    });
 }
 
 // private function
@@ -67,4 +71,11 @@ function event_change_image(element){
     $(".image.normal span").attr("title", title);
     $(".image.normal span").css("background-image", image);
     $(".image.zoom span").css("background-image", zoom);
+}
+function event_buy_product(product, amount){
+    var data = {"product" : product, "qty" : amount};
+    
+    $.post("/buy", data, function(result){
+            alert(result);
+    });
 }

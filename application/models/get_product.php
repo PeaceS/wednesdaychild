@@ -69,4 +69,13 @@ class Get_product extends CI_Model{
             
             return $query->result_array();
 	}
+        public function get_stock($product)
+        {
+            $this->db->select('product_stock');
+            $this->db->from('product');
+            $this->db->where('product_no', $product);
+            $query = $this->db->get();
+            
+            return $query->row()->product_stock;
+        }
 }

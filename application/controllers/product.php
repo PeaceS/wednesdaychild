@@ -6,6 +6,7 @@ class Product extends CI_Controller {
         parent::__construct();
 	$this->load->model('get_collection');
         $this->load->model('get_product');
+        $this->load->helper('url');
     }
     public function view($product)
     {
@@ -13,7 +14,6 @@ class Product extends CI_Controller {
         $data = $this->load_data($product);
         if ($data['product'] == null){ exit('product not found'); }
         
-        $this->load->helper('url');
         $this->load->view('header', $included);
         $this->load->view('main');
         $this->load->view('product', $data);

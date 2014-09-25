@@ -5,6 +5,7 @@ class Collection extends CI_Controller {
     {
         parent::__construct();
 	$this->load->model('get_collection');
+        $this->load->helper('url');
     }
     public function index()
     {
@@ -23,7 +24,6 @@ class Collection extends CI_Controller {
         $data['itemAmount'] = count(glob($directory . "*.jpg"));
         $data['listCollection'] = $listCollection;
         
-        $this->load->helper('url');
         $this->load->view('header', $included);
         $this->load->view('main');
         $this->load->view('collection', $data);

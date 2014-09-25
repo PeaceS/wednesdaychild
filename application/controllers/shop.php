@@ -6,6 +6,7 @@ class Shop extends CI_Controller {
         parent::__construct();
 	$this->load->model('get_collection');
         $this->load->model('get_product');
+        $this->load->helper('url');
     }
     public function index()
     {
@@ -23,7 +24,6 @@ class Shop extends CI_Controller {
         $data['listCollection'] = $listCollection;
         $data['listProduct'] = $this->get_product->list_product($collection);
         
-        $this->load->helper('url');
         $this->load->view('header', $included);
         $this->load->view('main');
         $this->load->view('shop', $data);

@@ -52,6 +52,10 @@
     right: 30%;
     bottom: 0%;
 }
+ul#list_menu{
+    left: 29%;
+    width: 42%;
+}
 div.white_opacity{
     background-image: url('../image/background_transparent.png');
 }
