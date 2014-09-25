@@ -2,14 +2,13 @@
 	<title>Wednesday Child</title>
 
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/overall.css" />
+        <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/list_menu.css" />
 
         <?php if (isset($home)) { ?>
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/home.css" />
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/banner/banner_<?php echo $home; ?>.css" />
-        <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/list_menu.css" />
         <?php } else { ?>
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/main.css" />
-        <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/list_menu.css" />
         <?php } ?>
         <?php if (isset($collection)) { ?>
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/collection.css" />
