@@ -10,10 +10,11 @@ class Policy extends CI_Controller {
     {   
         $included['policy'] = true;
         $data['policy'] = $this->get_text->get_text('policy');
+        $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
         
         $this->load->view('header', $included);
-        $this->load->view('main');
-        $this->load->view('policy', $data);
+        $this->load->view('main', $data);
+        $this->load->view('policy');
         $this->load->view('list_menu');
     }
 }

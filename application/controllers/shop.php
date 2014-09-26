@@ -22,11 +22,12 @@ class Shop extends CI_Controller {
         $data['collection'] = $collection;
         $data['listCollection'] = $listCollection;
         $data['listProduct'] = $this->get_product->list_product($collection);
+        $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
         
         $this->load->view('header', $included);
-        $this->load->view('main');
-        $this->load->view('shop', $data);
-        $this->load->view('list_collection', $data);
+        $this->load->view('main', $data);
+        $this->load->view('shop');
+        $this->load->view('list_collection');
         $this->load->view('list_menu');
     }
 }

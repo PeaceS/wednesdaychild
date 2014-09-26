@@ -27,7 +27,6 @@ function setup_eventHandle(){
     $("#product_price label").click(function(){
         event_check_stock($("#product").attr("no"));
     });
-    
 }
 
 // private function
@@ -80,7 +79,10 @@ function event_buy_product(product, amount){
     var data = {"product" : product, "qty" : amount};
     
     $.post("/wednesdaychild/buy", data, function(result){
-        alert(result);
+        if (!isNaN(result)){
+            alert("Add!");
+            $("#menu_mybag amount").text(result);
+        }
     });
 }
 function event_check_stock(product){

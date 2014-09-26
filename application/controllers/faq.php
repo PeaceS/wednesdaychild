@@ -10,10 +10,11 @@ class Faq extends CI_Controller {
     {   
         $included['faq'] = true;
         $data['faq'] = $this->get_text->get_faq();
+        $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
         
         $this->load->view('header', $included);
-        $this->load->view('main');
-        $this->load->view('faq', $data);
+        $this->load->view('main', $data);
+        $this->load->view('faq');
         $this->load->view('list_menu');
     }
 }

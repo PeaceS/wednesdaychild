@@ -22,11 +22,12 @@ class Collection extends CI_Controller {
         $included['collection'] = $collection;
         $data['itemAmount'] = count(glob($directory . "*.jpg"));
         $data['listCollection'] = $listCollection;
+        $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
         
         $this->load->view('header', $included);
-        $this->load->view('main');
-        $this->load->view('collection', $data);
-        $this->load->view('list_collection', $data);
+        $this->load->view('main', $data);
+        $this->load->view('collection');
+        $this->load->view('list_collection');
         $this->load->view('list_menu');
     }
 }

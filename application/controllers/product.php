@@ -11,12 +11,13 @@ class Product extends CI_Controller {
     {
         $included['product'] = true;
         $data = $this->load_data($product);
+        $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
         if ($data['product'] == null){ exit('product not found'); }
         
         $this->load->view('header', $included);
-        $this->load->view('main');
-        $this->load->view('product', $data);
-        $this->load->view('list_collection', $data);
+        $this->load->view('main', $data);
+        $this->load->view('product');
+        $this->load->view('list_collection');
         $this->load->view('list_menu');
     }
     

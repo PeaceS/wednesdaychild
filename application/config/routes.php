@@ -38,6 +38,8 @@
 |
 */
 
+$route['bag'] = 'buy/checkInsideBag';
+$route['buy'] = 'buy/putInBag';
 $route['stock/(:any)'] = 'stock/check/$1';
 $route['collection/(:any)'] = 'collection/view/$1';
 $route['shop/(:any)'] = 'shop/view/$1';

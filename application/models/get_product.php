@@ -78,4 +78,15 @@ class Get_product extends CI_Model{
             
             return $query->row()->product_stock;
         }
+        public function get_listProduct($products)
+        {
+            $this->db->select('product.product_no, product_image.image_url, product.product_name, product.product_size, product.product_color, product.product_price');
+            $this->db->from('product');
+            $this->db->join('product_image', 'product.product_no = product_image.product_no');
+            $this->db->where_in('product.product_no', $products);
+            $this->db->where('product_image.image_no', 0);
+            $query = $this->db->get();
+            
+            return $query->result_array();
+        }
 }
