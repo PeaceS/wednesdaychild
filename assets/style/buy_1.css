@@ -24,11 +24,27 @@
     top: 3%;
     left: 29%;
     overflow: hidden;
+    font-size: 1.25vw;
 }
 #bag #scroll #sub_scroll{
     overflow-x: hidden;
     width: 100%;
     padding-right: 2.5%;
 }
-#bag #scroll #sub_scroll table{ width: 100%; }
+#bag #scroll #sub_scroll table{
+    width: 100%;
+    font-size: 1.25vw;
+}
 #bag #scroll #sub_scroll table tr{ line-height: 200% }
+#bag #scroll #sub_scroll table td{ height: 100% }
+#bag #scroll #sub_scroll table span{
+    display: block;
+    height: 60%;
+    width: 30%;
+}
+#bag #scroll #sub_scroll table #item_image{
+    background-size: cover;
+    background-position: 0%;
+    background-repeat: no-repeat;
+    height: 100%;
+}

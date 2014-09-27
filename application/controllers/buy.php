@@ -96,7 +96,7 @@ class Buy extends CI_Controller {
     {
         foreach ($details as $item_detail) {
             if ($item['product'] == $item_detail['product_no']){
-                $item['image'] = $item_detail['image_url'];
+                $item['image'] = base_url() . 'assets/image/product/' . substr($item['product'], 0, 3) . '/' . $item_detail['image_url'];
                 $item['price'] = $item_detail['product_price'];
                 $item['name'] = $item_detail['product_name'];
                 $item['size'] = $item_detail['product_size'];
