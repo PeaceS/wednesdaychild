@@ -14,12 +14,14 @@ class Buy extends CI_Controller {
         $included['buy'] = 1;
         $data['bag'] = $this->getListItemInBag();
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
+        $this->loadView($included, $data);
+    }
+    public function fillInAddress()
+    {
+        if (!$this->session->userdata('wednesdaychild_cart')){ exit('No product'); }
         
-        $this->load->view('header', $included);
-        $this->load->view('main', $data);
-        $this->load->view('buy_1');
-        $this->load->view('buy_menu');
-        $this->load->view('list_menu');
+        $included['buy'] = 2;
+        $this->loadViews($included, null);
     }
     
     private function getListItemInBag()
@@ -50,5 +52,13 @@ class Buy extends CI_Controller {
         $item['color'] = $this->get_product->get_color($item['product']);
         $item['size'] = $this->get_product->get_size($item['product']);
         return $item;
+    }
+    private function loadView($included, $data)
+    {
+        $this->load->view('header', $included);
+        $this->load->view('main', $data);
+        $this->load->view('buy_' . $included['buy']);
+        $this->load->view('buy_menu');
+        $this->load->view('list_menu');
     }
 }

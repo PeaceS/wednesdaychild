@@ -1,3 +1,23 @@
+#main{ background-image: url('../image/background_faq.jpg'); }
+#menu{
+    position: absolute;
+    width: 70%;
+    bottom: 7%;
+    left: 29%;
+}
+#menu label{
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: BEBAS;
+    font-size: 1vw;
+    background-color: #888888;
+    width: 12%;
+    padding-bottom: 0.5%;
+    cursor: pointer;
+    float: left;
+}
+#menu label.next{ float: right; }
 #payment_menu{
     position: absolute;
     bottom: 2%;

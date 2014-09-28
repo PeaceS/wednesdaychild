@@ -33,9 +33,7 @@
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/faq.css" />
         <?php } ?>
         <?php if (isset($buy)) { ?>
-        <?php if ($buy == 1) { ?>
-        <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/buy_1.css" />
-        <?php } ?>
+        <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/buy_<?php echo $buy; ?>.css" />
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/buy_menu.css" />
         <?php } ?>
 
