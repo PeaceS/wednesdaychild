@@ -36,5 +36,5 @@
             <label>*required field</label>
             <div id="menu">
                 <a href="/buy/1"><label class="back">back</label></a>
-                <a href="/buy/3"><label class="next">checkout</label></a>
+                <a href="/buy/3"><label class="next">next</label></a>
             </div>

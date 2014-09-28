@@ -1,8 +1,37 @@
 #shipping{
     position: absolute;
     overflow: hidden;
+    text-transform: capitalize;
     top: 19%;
     left: 32.5%;
     width: 35%;
     height: 62%;
+    padding: 1% 2%;
+}
+#shipping table{
+    width: 100%;
+    font-size: 1vw;
+}
+#shipping table tr{ line-height: 200%; }
+#shipping table tr input{ width: 100%; }
+#shipping table tr textarea{
+    width: 100%;
+}
+#shipping table tr.first td:first-child{ width: 35%; }
+#shipping table tr.address td{ vertical-align: top; }
+#shipping label{
+    font-size: 1vw;
+    position: absolute;
+    bottom: 10%;
+}
+#shipping #menu{
+    height: 5%;
+    width: 57%;
+    bottom: 9%;
+    right: 6%;
+}
+#shipping #menu label{ width: 30%; }
+#shipping #menu .next{
+    position: absolute;
+    right: 0%;
 }

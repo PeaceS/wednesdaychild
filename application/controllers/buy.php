@@ -21,7 +21,8 @@ class Buy extends CI_Controller {
         if (!$this->session->userdata('wednesdaychild_cart')){ exit('No product'); }
         
         $included['buy'] = 2;
-        $this->loadViews($included, null);
+        $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
+        $this->loadView($included, $data);
     }
     
     private function getListItemInBag()
