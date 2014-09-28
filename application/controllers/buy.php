@@ -22,9 +22,7 @@ class Buy extends CI_Controller {
     }
     public function checkInsideBag()
     {
-        if (!$this->session->userdata('wednesdaychild_cart')){
-            exit('No product');
-        }
+        if (!$this->session->userdata('wednesdaychild_cart')){ exit('No product'); }
         
         $included['buy'] = 1;
         $data['bag'] = $this->getListItemInBag();
@@ -33,6 +31,7 @@ class Buy extends CI_Controller {
         $this->load->view('header', $included);
         $this->load->view('main', $data);
         $this->load->view('buy_1');
+        $this->load->view('buy_menu');
         $this->load->view('list_menu');
     }
     

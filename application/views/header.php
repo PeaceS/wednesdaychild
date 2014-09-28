@@ -32,8 +32,11 @@
         <?php if (isset($faq)) { ?>
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/faq.css" />
         <?php } ?>
-        <?php if (isset($buy) && $buy == 1) { ?>
+        <?php if (isset($buy)) { ?>
+        <?php if ($buy == 1) { ?>
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/buy_1.css" />
+        <?php } ?>
+        <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/buy_menu.css" />
         <?php } ?>
 
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/lib/jquery-1.11.1.min.js"></script>

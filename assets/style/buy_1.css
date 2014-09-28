@@ -10,7 +10,7 @@
 #bag span#bag_background{
     position: absolute;
     display: block;
-    height: 85%;
+    height: 88.5%;
     width: 27%;
     top: 3%;
     left: 1%;
@@ -19,7 +19,7 @@
 }
 #bag #scroll{
     position: absolute;
-    height: 93%;
+    height: 85%;
     width: 70%;
     top: 3%;
     left: 29%;

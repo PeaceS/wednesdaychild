@@ -11,6 +11,9 @@ function setup_eventHandle(){
     $("#bag table input#select_qty").change(function(){
         event_set_price($(this).parents("tr"));
     });
+    $("#bag table .remove").click(function(){
+        event_remove_item($(this).parents("tr").attr("product"));
+    });
 }
 
 // private function
@@ -26,6 +29,16 @@ function event_set_price(row){
     
     if (qty > row.find("input#select_qty").attr("max") || qty < row.find("input#select_qty").attr("min")) return false;
     row.find("#price").text((price * qty).toLocaleString());
+}
+function event_remove_item(product){
+    var url = "/wednesdaychild/remove/" + product;
+    
+    $.post(url, function(result){
+        if (!isNaN(result)){
+            alert("Remove!");
+            $("#menu_mybag amount").text(result);
+        }
+    });
 }
 function event_check_stock(product){
     var url = "/wednesdaychild/stock/" + product;

@@ -14,7 +14,7 @@
                             <td width="7%">Remove</td>
                         </tr>
                         <?php foreach ($bag as $item) { ?>
-                        <tr class="item">
+                        <tr class="item" product="<?php echo $item['product']; ?>">
                             <td><span id="item_image" style="background-image: url('<?php echo $item['image']; ?>');"></span></td>
                             <td><?php echo $item['name']; ?></td>
                             <td>
@@ -38,10 +38,9 @@
                             </td>
                             <td><input id="select_qty" type="number" value="<?php echo $item['qty']; ?>" min="1" max="<?php echo $item['stock']; ?>" /></td>
                             <td id="price" price="<?php echo $item['price']; ?>"><?php echo number_format($item['price'], 2, '.', ','); ?></td>
-                            <td>X</td>
+                            <td class="remove">X</td>
                         </tr>
                         <?php } ?>
                     </table>
                 </div>
             </div>
-        </div>
