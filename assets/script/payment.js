@@ -12,7 +12,10 @@ function setup_eventHandle(){
         event_set_price($(this).parents("tr"));
     });
     $("#bag table .remove").click(function(){
-        event_remove_item($(this).parents("tr").attr("product"));
+        event_remove_row($(this).parents("tr"));
+    });
+    $("#bag #menu .update").click(function(){
+        event_update_bag();
     });
 }
 
@@ -30,21 +33,19 @@ function event_set_price(row){
     if (qty > row.find("input#select_qty").attr("max") || qty < row.find("input#select_qty").attr("min")) return false;
     row.find("#price").text((price * qty).toLocaleString());
 }
-function event_remove_item(product){
-    var url = "/wednesdaychild/remove/" + product;
+function event_remove_row(row){
+    row.addClass("remove");
+}
+function event_update_bag(){
+    var data = new Array();
+    $.each($("#bag table .item").not(".remove"), function(){
+        data.push({"product" : $(this).attr("product"), "qty" : $(this).find("input#select_qty").val()});
+    });
     
-    $.post(url, function(result){
+    $.post("/wednesdaychild/update", {"products" : data}, function(result){
         if (!isNaN(result)){
-            alert("Remove!");
+            alert("Update!");
             $("#menu_mybag amount").text(result);
         }
-    });
-}
-function event_check_stock(product){
-    var url = "/wednesdaychild/stock/" + product;
-    
-    $.post(url, function(result){
-        if (result)
-            alert("OK Check");
     });
 }

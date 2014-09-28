@@ -38,9 +38,13 @@
                             </td>
                             <td><input id="select_qty" type="number" value="<?php echo $item['qty']; ?>" min="1" max="<?php echo $item['stock']; ?>" /></td>
                             <td id="price" price="<?php echo $item['price']; ?>"><?php echo number_format($item['price'], 2, '.', ','); ?></td>
-                            <td class="remove">X</td>
+                            <td class="remove"><a href="javascript:remove(<?php echo $item['name']; ?>);">X</a></td>
                         </tr>
                         <?php } ?>
                     </table>
                 </div>
+            </div>
+            <div id="menu">
+                <a href="javascript:update();"><label class="update">update</label></a>
+                <a href="/wednesday/buy_2"><label class="next">checkout</label></a>
             </div>
