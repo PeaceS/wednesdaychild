@@ -97,13 +97,17 @@ class Buy extends CI_Controller {
         foreach ($details as $item_detail) {
             if ($item['product'] == $item_detail['product_no']){
                 $item['image'] = base_url() . 'assets/image/product/' . substr($item['product'], 0, 3) . '/' . $item_detail['image_url'];
-                $item['price'] = $item_detail['product_price'];
                 $item['name'] = $item_detail['product_name'];
-                $item['size'] = $item_detail['product_size'];
-                $item['color'] = $item_detail['product_color'];
+                $item['stock'] = $item_detail['product_stock'];
                 $item['price'] = $item_detail['product_price'];
-                return $item;
+                return $this->addSelectSizeAndColor($item);
             }
         }
+    }
+    private function addSelectSizeAndColor($item)
+    {
+        $item['color'] = $this->get_product->get_color($item['product']);
+        $item['size'] = $this->get_product->get_size($item['product']);
+        return $item;
     }
 }

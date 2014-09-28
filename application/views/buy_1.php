@@ -5,29 +5,39 @@
                 <div id="sub_scroll">
                     <table>
                         <tr>
-                            <td>Item Pics</td>
-                            <td>Item Name</td>
-                            <td>Size</td>
-                            <td>Color</td>
-                            <td>Quantity</td>
-                            <td>Price(s)</td>
-                            <td>Remove</td>
+                            <td width="12%">Item Pics</td>
+                            <td width="42%">Item Name</td>
+                            <td width="6%">Size</td>
+                            <td width="7%">Color</td>
+                            <td width="12%">Quantity</td>
+                            <td width="14%">Price(s)</td>
+                            <td width="7%">Remove</td>
                         </tr>
                         <?php foreach ($bag as $item) { ?>
-                        <tr>
+                        <tr class="item">
                             <td><span id="item_image" style="background-image: url('<?php echo $item['image']; ?>');"></span></td>
                             <td><?php echo $item['name']; ?></td>
-                            <td><?php echo $item['size']; ?></td>
                             <td>
-                                <?php if (!strpos($item['color'], '.')) { ?>
-                                <span id="item_color" style="background-color: <?php echo $item['color'] ?>;">
+                                <select>
+                                    <?php foreach ($item['size'] as $size) { ?>
+                                    <option value="<?php echo $size['product_no']; ?>" <?php if ($size['product_no'] == $item['product']) { ?>selected="true"<?php } ?>>
+                                        <?php echo $size['product_size']; ?>
+                                    </option>
+                                    <?php } ?>
+                                </select>
+                            </td>
+                            <td>
+                                <?php foreach ($item['color'] as $color) { ?>
+                                <?php if (!strpos($color['product_color'], '.')) { ?>
+                                <span product="<?php echo $color['product_no'] ?>;" style="background-color: <?php echo $color['product_color'] ?>;" class="color <?php if ($color['product_no'] == $item['product']) { echo "selected"; } ?>">
                                 <?php } else { ?>
-                                <span id="item_color" style="background-image: url(<?php echo base_url() . 'assets/image/color/' . $item['color'] ?>);">
+                                <span product="<?php echo $color['product_no'] ?>;" style="background-image: url(<?php echo base_url() . 'assets/image/color/' . $color['product_color'] ?>);" class="color <?php if ($color['product_no'] == $item['product']) { echo "selected"; } ?>">
                                 <?php } ?>
                                 </span>
+                                <?php } ?>
                             </td>
-                            <td><?php echo $item['qty']; ?></td>
-                            <td><?php echo number_format($item['price'], 2, '.', ','); ?></td>
+                            <td><input id="select_qty" type="number" value="<?php echo $item['qty']; ?>" min="1" max="<?php echo $item['stock']; ?>" /></td>
+                            <td id="price" price="<?php echo $item['price']; ?>"><?php echo number_format($item['price'], 2, '.', ','); ?></td>
                             <td>X</td>
                         </tr>
                         <?php } ?>

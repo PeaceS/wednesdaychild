@@ -40,11 +40,16 @@
 #bag #scroll #sub_scroll table span{
     display: block;
     height: 60%;
-    width: 30%;
+    width: 40%;
+}
+#bag #scroll #sub_scroll table span.color{ display: none; }
+#bag #scroll #sub_scroll table span.color.selected{ display: block; }
+#bag #scroll #sub_scroll table #select_qty{
+    width: 50%;
 }
 #bag #scroll #sub_scroll table #item_image{
     background-size: cover;
     background-position: 0%;
     background-repeat: no-repeat;
-    height: 100%;
+    height: 90%;
 }
