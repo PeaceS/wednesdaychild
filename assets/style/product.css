@@ -49,11 +49,14 @@
     cursor: pointer;
 }
 #product div#detail .product_select{ margin: 4% 0%; }
+#product div#detail .product_select.color{ margin-bottom: 12%; }
 #product div#detail .product_select.color span{
+    float: left;
     display: block;
     height: 5%;
     width: 7%;
 }
+#product div#detail .product_select.color span.selected{ border: 1px yellow solid; }
 #product div#detail .product_select input{ width: 18% }
 #product div#detail .product_action{
     height: 25%;

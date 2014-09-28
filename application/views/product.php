@@ -9,16 +9,18 @@
                     <a href="javascript:buy(<?php echo $product['product_name']; ?>);"><label id="stock_check">stock check</label></a>
                     <div>Price : <?php echo $product['product_price']; ?> B</div>
                 </div>
-                <p class="product_select color">Color : 
-                    <?php foreach ($product_color as $color) { ?>
-                    <?php if (!strpos($color['product_color'], '.')) { ?>
-                    <span style="background-color: <?php echo $color['product_color'] ?>;" <?php if ($color['product_no'] == $product['product_no']) { ?>class="selected"<?php } ?>>
-                    <?php } else { ?>
-                    <span style="background-image: url(<?php echo base_url() . 'assets/image/color/' . $color['product_color'] ?>);" <?php if ($color['product_no'] == $product['product_no']) { ?>class="selected"<?php } ?>>
-                    <?php } ?>
-                    </span>
-                    <?php } ?>
-                </p>
+                <div class="product_select color">Color : 
+                    <div>
+                        <?php foreach ($product_color as $color) { ?>
+                        <?php if (!strpos($color['product_color'], '.')) { ?>
+                        <span product="<?php echo $color['product_no'] ?>;" style="background-color: <?php echo $color['product_color'] ?>;" <?php if ($color['product_no'] == $product['product_no']) { ?>class="selected"<?php } ?>>
+                        <?php } else { ?>
+                        <span product="<?php echo $color['product_no'] ?>;" style="background-image: url(<?php echo base_url() . 'assets/image/color/' . $color['product_color'] ?>);" <?php if ($color['product_no'] == $product['product_no']) { ?>class="selected"<?php } ?>>
+                        <?php } ?>
+                        </span>
+                        <?php } ?>
+                    </div>
+                </div>
                 <p class="product_select qty">Quantity : <input type="number" value="1" min="1" max="<?php echo $product['product_stock']; ?>"></p>
                 <p class="product_select">Size Avaliable : <select>
                     <?php foreach ($product_size as $size) { ?>

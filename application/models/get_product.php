@@ -38,10 +38,11 @@ class Get_product extends CI_Model{
         public function get_color($product)
         {
             $this->db->distinct();
-            $this->db->select('product_color');
-            $this->db->select('product_no');
+            $this->db->select('product_color, product_no');
             $this->db->from('product');
             $this->db->like('product_no', substr($product, 0, 5), 'after');
+            $this->db->group_by('product_color'); 
+            $this->db->order_by('product_no', 'asc');
             $query = $this->db->get();
             
             return $query->result_array();
@@ -49,10 +50,11 @@ class Get_product extends CI_Model{
         public function get_size($product)
         {
             $this->db->distinct();
-            $this->db->select('product_size');
-            $this->db->select('product_no');
+            $this->db->select('product_size, product_no');
             $this->db->from('product');
             $this->db->like('product_no', substr($product, 0, 6), 'after');
+            $this->db->group_by('product_size');
+            $this->db->order_by('product_no', 'asc');
             $query = $this->db->get();
             
             return $query->result_array();
@@ -80,7 +82,7 @@ class Get_product extends CI_Model{
         }
         public function get_listProduct($products)
         {
-            $this->db->select('product.product_no, product_image.image_url, product.product_name, product.product_size, product.product_color, product.product_price');
+            $this->db->select('product.product_no, product_image.image_url, product.product_name, product.product_size, product.product_color, product.product_stock, product.product_price');
             $this->db->from('product');
             $this->db->join('product_image', 'product.product_no = product_image.product_no');
             $this->db->where_in('product.product_no', $products);
