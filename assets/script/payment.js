@@ -8,13 +8,16 @@ function setup_default(){
 }
 
 function setup_eventHandle(){
-    $("#bag table input#select_qty").change(function(){
+    $("#bag table .qty input").change(function(){
         event_set_price($(this).parents("tr"));
+    });
+    $("#bag table .size select").change(function(){
+        event_change_product($(this));
     });
     $("#bag table .remove").click(function(){
         event_remove_row($(this).parents("tr"));
     });
-    $("#bag #menu .update").click(function(){
+    $("#bag #menu .update, #bag #menu .next").click(function(){
         event_update_bag();
     });
 }
@@ -27,11 +30,16 @@ function default_set_price(){
     });
 }
 function event_set_price(row){
-    var qty = row.find("input#select_qty").val();
-    var price = parseFloat(row.find("#price").attr("price"));
+    var qty = row.find(".qty input").val();
+    var price = parseFloat(row.find(".price").attr("price"));
     
-    if (qty > row.find("input#select_qty").attr("max") || qty < row.find("input#select_qty").attr("min")) return false;
-    row.find("#price").text((price * qty).toLocaleString());
+    if (qty > row.find(".qty input").attr("max") || qty < row.find(".qty input").attr("min")) return false;
+    row.find(".price").text((price * qty).toLocaleString());
+}
+function event_change_product(element){
+    var product = element.attr("product") ? element.attr("product") : element.val();
+    
+    element.parents("tr").attr("product", product);
 }
 function event_remove_row(row){
     row.addClass("remove");
@@ -39,7 +47,7 @@ function event_remove_row(row){
 function event_update_bag(){
     var data = new Array();
     $.each($("#bag table .item").not(".remove"), function(){
-        data.push({"product" : $(this).attr("product"), "qty" : $(this).find("input#select_qty").val()});
+        data.push({"product" : $(this).attr("product"), "qty" : $(this).find(".qty input").val()});
     });
     
     $.post("/wednesdaychild/update", {"products" : data}, function(result){

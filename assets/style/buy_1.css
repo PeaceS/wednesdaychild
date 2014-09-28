@@ -45,10 +45,10 @@
 }
 #bag #scroll #sub_scroll table span.color{ display: none; }
 #bag #scroll #sub_scroll table span.color.selected{ display: block; }
-#bag #scroll #sub_scroll table #select_qty{
+#bag #scroll #sub_scroll table td.qty input{
     width: 50%;
 }
-#bag #scroll #sub_scroll table #item_image{
+#bag #scroll #sub_scroll table td.image span{
     background-size: cover;
     background-position: 0%;
     background-repeat: no-repeat;
