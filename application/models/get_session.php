@@ -38,4 +38,16 @@ class Get_session extends CI_Model{
             }
             return $products;
         }
+        public function list_shhippingAddress()
+        {
+            if (!$this->session->userdata('wednesdaychild_shippingAddress')){ return NULL; }
+            
+            $shippingAddress = array();
+            $items = explode(",", $this->session->userdata('wednesdaychild_shippingAddress'));
+            foreach ($items as $value) {
+                $valueWithType = explode(":", $value);
+                $shippingAddress[$valueWithType[0]] = $valueWithType[1];
+            }
+            return $shippingAddress;
+        }
 }

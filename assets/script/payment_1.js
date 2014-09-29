@@ -50,7 +50,7 @@ function event_update_bag(){
         data.push({"product" : $(this).attr("product"), "qty" : $(this).find(".qty input").val()});
     });
     
-    $.post("/wednesdaychild/update", {"products" : data}, function(result){
+    $.post("/wednesdaychild/update/bag", {"products" : data}, function(result){
         if (!isNaN(result)){
             alert("Update!");
             $("#menu_mybag amount").text(result);

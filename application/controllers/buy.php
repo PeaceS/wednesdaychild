@@ -22,6 +22,8 @@ class Buy extends CI_Controller {
         
         $included['buy'] = 2;
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
+        $data['shippingAddress'] = $this->get_session->list_shhippingAddress();
+        
         $this->loadView($included, $data);
     }
     

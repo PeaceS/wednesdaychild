@@ -1,40 +1,40 @@
         <div id="shipping" class="white_opacity">
             <table>
-                <tr class="first">
+                <tr type="first">
                     <td>first name *</td>
-                    <td><input /></td>
+                    <td><input validate="alphabet" value="<?php echo $shippingAddress['first']; ?>" /></td>
                 </tr>
-                <tr class="last">
+                <tr type="last">
                     <td>last name *</td>
-                    <td><input /></td>
+                    <td><input validate="alphabet" value="<?php echo $shippingAddress['last']; ?>" /></td>
                 </tr>
-                <tr class="address">
+                <tr type="address">
                     <td>address *</td>
-                    <td><textarea></textarea></td>
+                    <td><textarea validate="require"><?php echo $shippingAddress['address']; ?></textarea></td>
                 </tr>
-                <tr class="zip">
+                <tr type="zip">
                     <td>zip code *</td>
-                    <td><input /></td>
+                    <td><input validate="number" value="<?php echo $shippingAddress['zip']; ?>" /></td>
                 </tr>
-                <tr class="city">
+                <tr type="city">
                     <td>city *</td>
-                    <td><input /></td>
+                    <td><input validate="alphabet" value="<?php echo $shippingAddress['city']; ?>" /></td>
                 </tr>
-                <tr class="country">
+                <tr type="country">
                     <td>country *</td>
-                    <td><input /></td>
+                    <td><input validate="alphabet" value="<?php echo $shippingAddress['country']; ?>" /></td>
                 </tr>
-                <tr class="phone">
+                <tr type="phone">
                     <td>phone *</td>
-                    <td><input /></td>
+                    <td><input validate="number" value="<?php echo $shippingAddress['phone']; ?>" /></td>
                 </tr>
-                <tr class="email">
+                <tr type="email">
                     <td>email *</td>
-                    <td><input /></td>
+                    <td><input validate="email" value="<?php echo $shippingAddress['email']; ?>" /></td>
                 </tr>
             </table>
             <label>*required field</label>
             <div id="menu">
-                <a href="/buy/1"><label class="back">back</label></a>
-                <a href="/buy/3"><label class="next">next</label></a>
+                <a href="javascript:back();"><label class="back">back</label></a>
+                <a href="javascript:next();"><label class="next">next</label></a>
             </div>

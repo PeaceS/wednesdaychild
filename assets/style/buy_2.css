@@ -12,6 +12,7 @@
     width: 100%;
     font-size: 1vw;
 }
+#shipping table tr td:first-child{ width: 30%; }
 #shipping table tr{ line-height: 200%; }
 #shipping table tr input{ width: 100%; }
 #shipping table tr textarea{

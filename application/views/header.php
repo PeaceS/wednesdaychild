@@ -49,6 +49,6 @@
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/product.js"></script>
         <?php } ?>
         <?php if (isset($buy)) { ?>
-        <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/payment.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/payment_<?php echo $buy; ?>.js"></script>
         <?php } ?>
 </head>

@@ -38,10 +38,11 @@
 |
 */
 
+$route['buy'] = 'bag/putInBag';
 $route['buy/1'] = 'buy/checkInsideBag';
 $route['buy/2'] = 'buy/fillInAddress';
-$route['buy'] = 'bag/putInBag';
-$route['update'] = 'bag/updateBag';
+$route['update/bag'] = 'bag/updateBag';
+$route['update/address'] = 'shipping/updateAddress';
 $route['stock/(:any)'] = 'stock/check/$1';
 $route['collection/(:any)'] = 'collection/view/$1';
 $route['shop/(:any)'] = 'shop/view/$1';
