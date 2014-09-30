@@ -47,13 +47,15 @@ function event_remove_row(row){
 function event_update_bag(){
     var data = new Array();
     $.each($("#bag table .item").not(".remove"), function(){
+        var qty = $(this).find(".qty input").val();
+        if (qty > $(this).find(".qty input").attr("max") || qty < $(this).find(".qty input").attr("min")) return false;
         data.push({"product" : $(this).attr("product"), "qty" : $(this).find(".qty input").val()});
     });
     
     $.post("/wednesdaychild/update/bag", {"products" : data}, function(result){
         if (!isNaN(result)){
             alert("Update!");
-            $("#menu_mybag amount").text(result);
+            window.location = "/buy/1";
         }
     });
 }

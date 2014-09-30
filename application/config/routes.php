@@ -39,8 +39,10 @@
 */
 
 $route['buy'] = 'bag/putInBag';
-$route['buy/1'] = 'buy/checkInsideBag';
+$route['buy/1'] = 'buy/checkInsideBag/1';
 $route['buy/2'] = 'buy/fillInAddress';
+$route['buy/3'] = 'buy/checkInsideBag/3';
+$route['buy/4'] = 'buy/paymentMethod';
 $route['update/bag'] = 'bag/updateBag';
 $route['update/address'] = 'shipping/updateAddress';
 $route['stock/(:any)'] = 'stock/check/$1';

@@ -7,13 +7,18 @@ class Buy extends CI_Controller {
         $this->load->model('get_product');
         $this->stock = $this->get_product->get_stock($this->input->post('product'));
     }
-    public function checkInsideBag()
+    public function checkInsideBag($step)
     {
         if (!$this->session->userdata('wednesdaychild_cart')){ exit('No product'); }
         
-        $included['buy'] = 1;
+        $included['buy'] = $step;
         $data['bag'] = $this->getListItemInBag();
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
+        if ($included['buy'] == 3){
+            if (!$this->session->userdata('wednesdaychild_shippingAddress')){ exit('Access deny'); }
+            $data['shippingAddress'] = $this->get_session->list_shhippingAddress();
+        }
+        
         $this->loadView($included, $data);
     }
     public function fillInAddress()
@@ -23,6 +28,16 @@ class Buy extends CI_Controller {
         $included['buy'] = 2;
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
         $data['shippingAddress'] = $this->get_session->list_shhippingAddress();
+        
+        $this->loadView($included, $data);
+    }
+    public function paymentMethod()
+    {
+        if (!$this->session->userdata('wednesdaychild_cart')){ exit('No product'); }
+        if (!$this->session->userdata('wednesdaychild_shippingAddress')){ exit('Access deny'); }
+        
+        $included['buy'] = 4;
+        $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
         
         $this->loadView($included, $data);
     }
