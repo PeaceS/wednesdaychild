@@ -8,7 +8,7 @@
                     <td>last name *</td>
                     <td><input validate="alphabet" value="<?php echo $shippingAddress['last']; ?>" /></td>
                 </tr>
-                <tr type="address">
+                <tr type="address" class="address">
                     <td>address *</td>
                     <td><textarea validate="require"><?php echo $shippingAddress['address']; ?></textarea></td>
                 </tr>

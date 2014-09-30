@@ -41,7 +41,7 @@ function event_update_address(element){
     });
     
     $.post("/wednesdaychild/update/address", {"shippingAddress" : data}, function(){
-        if (validation)
+        if (element.hasClass("back") || validation)
             window.location = element.hasClass("next") ? "/buy/3" : "/buy/1";
     });
     

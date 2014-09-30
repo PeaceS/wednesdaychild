@@ -23,7 +23,7 @@
     top: 3%;
     left: 29%;
     overflow: hidden;
-    font-size: 1.25vw;
+    font-size: 1vw;
 }
 #bag #scroll #sub_scroll{
     overflow-x: hidden;
@@ -32,7 +32,7 @@
 }
 #bag #scroll #sub_scroll table{
     width: 100%;
-    font-size: 1.25vw;
+    font-size: 1vw;
 }
 #bag #scroll #sub_scroll table tr{ line-height: 200%; }
 #bag #scroll #sub_scroll table tr.remove{ display: none; }

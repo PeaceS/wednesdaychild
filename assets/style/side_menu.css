@@ -18,5 +18,5 @@ ul#menu li{
     background-position: center;
     background-repeat: no-repeat;
 }
-ul#menu li#up{ background-image: url('../image/icon_arrow-up.png'); }
-ul#menu li#down{ background-image: url('../image/icon_arrow-down.png'); }
+ul#menu li#up{ background-image: url('../image/icon_arrow-up.svg'); }
+ul#menu li#down{ background-image: url('../image/icon_arrow-down.svg'); }

@@ -45,6 +45,6 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-#collection ul#menu li#up{ background-image: url('../image/icon_arrow-up.png'); }
-#collection ul#menu li#down{ background-image: url('../image/icon_arrow-down.png'); }
-#collection ul#menu li#mode{ background-image: url('../image/icon_grid.png'); }
+#collection ul#menu li#up{ background-image: url('../image/icon_arrow-up.svg'); }
+#collection ul#menu li#down{ background-image: url('../image/icon_arrow-down.svg'); }
+#collection ul#menu li#mode{ background-image: url('../image/icon_grid.svg'); }
