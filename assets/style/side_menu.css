@@ -1,17 +1,17 @@
 ul#menu{
     position: absolute;
-    width: 4.5%;
+    width: 3%;
     height: 25%;
     margin: 0;
     padding: 0;
     z-index: 2;
     top: 42.5%;
-    right: 3%;
+    right: 3.5%;
 }
 ul#menu li{
     display: block;
     width: 100%;
-    height: 25%;
+    height: 40%;
     margin: 25% 0%;
     cursor: pointer;
     background-size: contain;
