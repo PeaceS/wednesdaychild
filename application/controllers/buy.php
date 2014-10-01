@@ -17,6 +17,7 @@ class Buy extends CI_Controller {
         if ($included['buy'] == 3){
             if (!$this->session->userdata('wednesdaychild_shippingAddress')){ exit('Access deny'); }
             $data['shippingAddress'] = $this->get_session->list_shhippingAddress();
+            $data['totalPrice'] = $this->calculateTotalPrice($data['bag']);
         }
         
         $this->loadView($included, $data);
@@ -70,6 +71,15 @@ class Buy extends CI_Controller {
         $item['color'] = $this->get_product->get_color($item['product']);
         $item['size'] = $this->get_product->get_size($item['product']);
         return $item;
+    }
+    private function calculateTotalPrice($items)
+    {
+        $result = 0;
+        foreach ($items as $item) {
+            $result += intval($item['price']) * intval($item['qty']);
+        }
+        //TODO: need to add shipping cost?
+        return $result;
     }
     private function loadView($included, $data)
     {

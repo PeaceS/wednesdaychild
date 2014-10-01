@@ -7,10 +7,23 @@
     width: 35%;
     height: 62%;
     padding: 1% 2%;
-    font-size: 1vw;
 }
 #summary table{
     width: 100%;
     font-size: 1vw;
 }
 #summary table tr{ line-height: 200%; }
+#summary #scroll{
+    position: absolute;
+    height: 81%;
+    width: 70%;
+    top: 3%;
+    left: 29%;
+    overflow: hidden;
+    font-size: 1vw;
+}
+#summary #scroll #sub_scroll{
+    overflow-x: hidden;
+    width: 100%;
+    padding-right: 2.5%;
+}
