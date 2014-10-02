@@ -11,7 +11,7 @@ ul#list li{
     float: left;
     text-align: center;
     margin-right: 15px;
-    font-size: 0.8em;
+    font-size: 1vw;
     text-transform: capitalize;
 }
 ul#list li.selected{ border-bottom: #000000 solid 1px; }

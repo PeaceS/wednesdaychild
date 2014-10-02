@@ -9,7 +9,7 @@
 }
 #product div#detail{
     position: absolute;
-    height: 95%;
+    height: 45%;
     width: 26%;
     left: 35%;
     overflow-x: hidden;
@@ -36,34 +36,44 @@
     padding-left: 0%;
     list-style-type: none;
 }
-#product div#detail #product_price{
+#product div#select{
+    position: absolute;
+    height: 55%;
+    width: 26%;
+    top: 40%;
+    left: 35%;
+    overflow: hidden;
+    padding: 2% 7% 0% 2%;
+    font-size: 0.9vw;
+}
+#product div#select #product_price{
     text-align: right;
     margin: 4% 0%;
 }
-#product div#detail #product_price div{ padding: 1%; }
-#product div#detail #product_price label#stock_check{
+#product div#select #product_price div{ padding: 1%; }
+#product div#select #product_price label#stock_check{
     text-transform: capitalize;
     padding: 0.5% 7%;
     border: 2px solid #000000;
     float: left;
     cursor: pointer;
 }
-#product div#detail .product_select{ margin: 4% 0%; }
-#product div#detail .product_select.color{ margin-bottom: 12%; }
-#product div#detail .product_select.color span{
+#product div#select .product_select{ margin: 4% 0%; }
+#product div#select .product_select.color{ margin-bottom: 12%; }
+#product div#select .product_select.color span{
     float: left;
     display: block;
-    height: 5%;
+    height: 8%;
     width: 7%;
 }
-#product div#detail .product_select.color span.selected{ border: 1px yellow solid; }
-#product div#detail .product_select input{ width: 18% }
-#product div#detail .product_action{
+#product div#select .product_select.color span.selected{ border: 1px yellow solid; }
+#product div#select .product_select input{ width: 18% }
+#product div#select .product_action{
     height: 25%;
-    width: 115%;
+    width: 100%;
 }
-#product div#detail .product_action td:first-child{ width: 40%; }
-#product div#detail .product_action label{
+#product div#select .product_action td:first-child{ width: 40%; }
+#product div#select .product_action label{
     display: block;
     text-align: center;
     text-transform: uppercase;
@@ -75,7 +85,7 @@
     padding-bottom: 1.5%;
     cursor: pointer;
 }
-#product div#detail .product_action div{
+#product div#select .product_action div{
     width: 35%;
     height: 100%;
     float: right;
