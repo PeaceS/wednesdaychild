@@ -16,9 +16,8 @@
 #summary #scroll{
     position: absolute;
     height: 81%;
-    width: 70%;
+    width: 90%;
     top: 3%;
-    left: 29%;
     overflow: hidden;
     font-size: 1vw;
 }

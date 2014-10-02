@@ -1,25 +1,23 @@
         <div id="summary" class="white_opacity">
             <div id="scroll">
-                Purchased List
-                <table>
-                    <tr>
-                        <td width="50%">Item Name</td>
-                        <td width="15%">Size</td>
-                        <td width="15%">Color</td>
-                        <td width="20%">Price(s)</td>
-                    </tr>
-                </table>
                 <div id="sub_scroll">
+                    Purchased List
                     <table>
+                        <tr>
+                            <td width="50%">Item Name</td>
+                            <td width="15%">Size</td>
+                            <td width="15%">Color</td>
+                            <td width="20%">Price(s)</td>
+                        </tr>
                         <?php foreach ($bag as $item) { ?>
                         <tr class="item" product="<?php echo $item['product']; ?>">
-                            <td width="50%" class="name"><?php echo $item['name']; ?></td>
-                            <td width="15%" class="size">
+                            <td class="name"><?php echo $item['name']; ?></td>
+                            <td class="size">
                                 <?php foreach ($item['size'] as $size) { ?>
                                 <?php if ($size['product_no'] == $item['product']) { echo $size['product_size']; } ?>
                                 <?php } ?>
                             </td>
-                            <td width="15%" class="color">
+                            <td class="color">
                                 <?php foreach ($item['color'] as $color) { ?>
                                 <?php if ($color['product_no'] == $item['product']) { ?>
                                 <?php if (!strpos($color['product_color'], '.')) { ?>
@@ -31,9 +29,29 @@
                                 <?php } ?>
                                 <?php } ?>
                             </td>
-                            <td width="20%" class="price"><?php echo number_format($item['price'], 2, '.', ','); ?></td>
+                            <td class="price"><?php echo number_format($item['price'], 2, '.', ','); ?></td>
                         </tr>
                         <?php } ?>
+                        <tr>
+                            <td colspan="3">Shipping Cost</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Total Price</td>
+                            <td></td>
+                        </tr>
+                        <tr><td colspan="4">Billing Address</td></tr>
+                        <tr><td colspan="4"><?php echo $shippingAddress['first'] . " " . $shippingAddress['last']; ?></td></tr>
+                        <tr>
+                            <td colspan="4">
+                                <?php echo $shippingAddress['address'] . ", " . $shippingAddress['city'] . " " . $shippingAddress['zip'] . ", " . $shippingAddress['country']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <?php echo $shippingAddress['phone'] . " | " . $shippingAddress['email']; ?>
+                            </td>
+                        </tr>
                     </table>
                 </div>
             </div>
