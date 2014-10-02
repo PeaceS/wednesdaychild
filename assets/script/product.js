@@ -24,9 +24,11 @@ function setup_eventHandle(){
         var amount = $(".product_select.qty input").val();
         event_buy_product($("#product").attr("no"), amount);
     });
+    /*
     $("#product_price label").click(function(){
         event_check_stock($("#product").attr("no"));
     });
+    */
 }
 
 // private function
@@ -85,6 +87,7 @@ function event_buy_product(product, amount){
         }
     });
 }
+/*
 function event_check_stock(product){
     var url = "/stock/" + product;
     
@@ -93,3 +96,4 @@ function event_check_stock(product){
             alert("OK Check");
     });
 }
+*/

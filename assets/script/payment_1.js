@@ -46,7 +46,7 @@ function event_remove_row(row){
 }
 function event_update_bag(){
     var data = new Array();
-    $.each($("#bag table .item").not(".remove"), function(){
+    $.each($("#bag table .item").not(".remove, .preremove"), function(){
         var qty = $(this).find(".qty input").val();
         if (qty > $(this).find(".qty input").attr("max") || qty < $(this).find(".qty input").attr("min")) return false;
         data.push({"product" : $(this).attr("product"), "qty" : $(this).find(".qty input").val()});

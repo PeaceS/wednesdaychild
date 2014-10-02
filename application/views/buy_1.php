@@ -14,7 +14,13 @@
                             <td width="7%">Remove</td>
                         </tr>
                         <?php foreach ($bag as $item) { ?>
+                        <?php if ($item['stock'] == 0) { ?>
+                        <tr class="item preremove" product="<?php echo $item['product']; ?>">
+                        <?php } elseif ($item['qty'] > $item['stock']) { ?>
+                        <tr class="item change" product="<?php echo $item['product']; ?>">
+                        <?php } else { ?>
                         <tr class="item" product="<?php echo $item['product']; ?>">
+                        <?php } ?>
                             <td class="image"><span style="background-image: url('<?php echo $item['image']; ?>');"></span></td>
                             <td><?php echo $item['name']; ?></td>
                             <td class="size">
@@ -36,9 +42,13 @@
                                 </span>
                                 <?php } ?>
                             </td>
-                            <td class="qty"><input type="number" value="<?php echo $item['qty']; ?>" min="1" max="<?php echo $item['stock']; ?>" /></td>
+                            <?php if ($item['stock'] > 0) { ?>
+                            <td class="qty"><input type="number" value="<?php echo $item['qty'] > $item['stock'] ? $item['stock'] : $item['qty']; ?>" min="1" max="<?php echo $item['stock']; ?>" /></td>
                             <td class="price" price="<?php echo $item['price']; ?>"><?php echo number_format($item['price'], 2, '.', ','); ?></td>
                             <td class="remove"><a href="javascript:remove(<?php echo $item['name']; ?>);">X</a></td>
+                            <?php } else { ?>
+                            <td colspan="3">OUT OF STOCK</td>
+                            <?php } ?>
                         </tr>
                         <?php } ?>
                     </table>

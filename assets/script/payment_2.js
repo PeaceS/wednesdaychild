@@ -45,7 +45,6 @@ function event_update_address(element){
             window.location = element.hasClass("next") ? "/buy/3" : "/buy/1";
     });
     
-    
     function validateData(value, type){
         if (value === '' || value === null || value === undefined) return false;
         switch(type){
