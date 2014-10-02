@@ -34,13 +34,14 @@ class Buy extends CI_Controller {
     }
     public function paymentMethod()
     {
-        if (!$this->session->userdata('wednesdaychild_cart')){ exit('No product'); }
-        if (!$this->session->userdata('wednesdaychild_shippingAddress')){ exit('Access deny'); }
-        
-        $included['buy'] = 4;
-        $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
-        
-        $this->loadView($included, $data);
+        if (!$this->session->userdata('wednesdaychild_shippingAddress')){
+            $this->fillInAddress();
+        }else{
+            $included['buy'] = 4;
+            $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
+
+            $this->loadView($included, $data);
+        }
     }
     
     private function getListItemInBag()
