@@ -20,6 +20,7 @@
 }
 #shipping table tr.address td{ vertical-align: top; }
 #shipping table tr.validate_fail td:last-child{
+    //background-image: url('../image/icon_validate-fail.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right;
