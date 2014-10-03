@@ -4,10 +4,11 @@
                     Purchased List
                     <table>
                         <tr>
-                            <td width="50%">Item Name</td>
-                            <td width="15%">Size</td>
-                            <td width="15%">Color</td>
-                            <td width="20%">Price(s)</td>
+                            <td width="40%">Item Name</td>
+                            <td width="12%">Size</td>
+                            <td width="13%">Color</td>
+                            <td width="17%">Quantity</td>
+                            <td width="18%">Price(s)</td>
                         </tr>
                         <?php foreach ($bag as $item) { ?>
                         <tr class="item" product="<?php echo $item['product']; ?>">
@@ -29,6 +30,7 @@
                                 <?php } ?>
                                 <?php } ?>
                             </td>
+                            <td class="qty"><?php echo $item['qty']; ?></td>
                             <td class="price"><?php echo number_format($item['price'], 2, '.', ','); ?></td>
                         </tr>
                         <?php } ?>
