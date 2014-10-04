@@ -45,7 +45,6 @@ $route['buy/3'] = 'buy/checkInsideBag/3';
 $route['buy/4'] = 'buy/paymentMethod';
 $route['update/bag'] = 'bag/updateBag';
 $route['update/address'] = 'shipping/updateAddress';
-//$route['stock/(:any)'] = 'stock/check/$1';
 $route['collection/(:any)'] = 'collection/view/$1';
 $route['shop/(:any)'] = 'shop/view/$1';
 $route['product/(:any)'] = 'product/view/$1';
