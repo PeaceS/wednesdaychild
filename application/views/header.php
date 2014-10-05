@@ -45,6 +45,9 @@
         <?php if (isset($collection)) { ?>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/collection.js"></script>
         <?php } ?>
+        <?php if (isset($shop)) { ?>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/shop.js"></script>
+        <?php } ?>
         <?php if (isset($product)) { ?>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/product.js"></script>
         <?php } ?>
