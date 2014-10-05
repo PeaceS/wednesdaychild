@@ -9,12 +9,11 @@ ul#list_menu li{
     float: left;
     text-align: center;
     margin: 0% 3.25%;
-    background-color: #000000;
     padding: 0% 2% 0.5%;
+    background-image: url('../image/background_transparent.png');
 }
 ul#list_menu li a{
     font-size: 1.55vw;
     text-transform: uppercase;
     font-family: BEBAS;
-    color: #FFFFFF;
 }
