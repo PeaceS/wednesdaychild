@@ -56,5 +56,5 @@
             </div>
             <div id="menu">
                 <a href="javascript:update();"><label class="update">update</label></a>
-                <a href="/buy/2"><label class="next">checkout</label></a>
+                <a href="javascript:checkout();"><label class="next">checkout</label></a>
             </div>

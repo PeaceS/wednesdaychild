@@ -18,7 +18,7 @@ function setup_eventHandle(){
         event_remove_row($(this).parents("tr"));
     });
     $("#bag #menu .update, #bag #menu .next").click(function(){
-        event_update_bag();
+        event_update_bag($(this).hasClass("next"));
     });
 }
 
@@ -44,7 +44,7 @@ function event_change_product(element){
 function event_remove_row(row){
     row.addClass("remove");
 }
-function event_update_bag(){
+function event_update_bag(next){
     var data = new Array();
     $.each($("#bag table .item").not(".remove, .preremove"), function(){
         var qty = $(this).find(".qty input").val();
@@ -54,8 +54,11 @@ function event_update_bag(){
     
     $.post("/wednesdaychild/update/bag", {"products" : data}, function(result){
         if (!isNaN(result)){
-            alert("Update!");
-            window.location = "/buy/1";
+            if (!next){
+                alert("Update!");
+                window.location = "/buy/1";
+            }else
+                window.location = "/buy/3";
         }
     });
 }

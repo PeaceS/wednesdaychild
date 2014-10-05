@@ -34,23 +34,25 @@
                             <td class="price"><?php echo number_format($item['price'], 2, '.', ','); ?></td>
                         </tr>
                         <?php } ?>
+                    </table>
+                    <table id="price_and_shipping">
                         <tr>
-                            <td colspan="3">Shipping Cost</td>
-                            <td></td>
+                            <td width="82%">Shipping Cost</td>
+                            <td width="18%"></td>
                         </tr>
                         <tr>
-                            <td colspan="3">Total Price</td>
+                            <td>Total Price</td>
                             <td></td>
                         </tr>
-                        <tr><td colspan="4">Billing Address</td></tr>
-                        <tr><td colspan="4"><?php echo $shippingAddress['first'] . " " . $shippingAddress['last']; ?></td></tr>
+                        <tr><td>Billing Address</td></tr>
+                        <tr><td><?php echo $shippingAddress['first'] . " " . $shippingAddress['last']; ?></td></tr>
                         <tr>
-                            <td colspan="4">
+                            <td>
                                 <?php echo $shippingAddress['address'] . ", " . $shippingAddress['city'] . " " . $shippingAddress['zip'] . ", " . $shippingAddress['country']; ?>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="4">
+                            <td>
                                 <?php echo $shippingAddress['phone'] . " | " . $shippingAddress['email']; ?>
                             </td>
                         </tr>

@@ -19,7 +19,8 @@
 #summary #scroll #sub_scroll{
     overflow-x: hidden;
     width: 100%;
-    padding-right: 2.5%;
+    height: 100%;
+    padding-right: 5%;
 }
 #summary #scroll #sub_scroll table{
     width: 100%;
@@ -32,6 +33,7 @@
     width: 30%;
     display: block;
 }
+#summary #scroll #sub_scroll table#price_and_shipping{ margin-top: 8%; }
 #summary ul#menu{
     position: absolute;
     width: 5%;
