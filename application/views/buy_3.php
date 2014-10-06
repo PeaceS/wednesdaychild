@@ -38,11 +38,11 @@
                     <table id="price_and_shipping">
                         <tr>
                             <td width="82%">Shipping Cost</td>
-                            <td width="18%"></td>
+                            <td width="18%"><?php echo $shippingCost; ?></td>
                         </tr>
                         <tr>
                             <td>Total Price</td>
-                            <td></td>
+                            <td><?php echo $totalPrice; ?></td>
                         </tr>
                         <tr><td>Billing Address</td></tr>
                         <tr><td><?php echo $shippingAddress['first'] . " " . $shippingAddress['last']; ?></td></tr>

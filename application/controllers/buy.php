@@ -6,26 +6,24 @@ class Buy extends CI_Controller {
         parent::__construct();
         $this->load->model('get_product');
         $this->stock = $this->get_product->get_stock($this->input->post('product'));
+        if (!$this->session->userdata('wednesdaychild_cart')){ exit('No product'); }
     }
     public function checkInsideBag($step)
     {
-        if (!$this->session->userdata('wednesdaychild_cart')){ exit('No product'); }
-        
         $included['buy'] = $step;
         $data['bag'] = $this->getListItemInBag();
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
         if ($included['buy'] == 3){
             if (!$this->session->userdata('wednesdaychild_shippingAddress')){ exit('Access deny'); }
             $data['shippingAddress'] = $this->get_session->list_shhippingAddress();
-            $data['totalPrice'] = $this->calculateTotalPrice($data['bag']);
+            $data['shippingCost'] = $this->calculateShippingCost($data['bag']);
+            $data['totalPrice'] = $this->calculateTotalPrice($data['bag']) + $data['shippingCost'];
         }
         
         $this->loadView($included, $data);
     }
     public function fillInAddress()
     {
-        if (!$this->session->userdata('wednesdaychild_cart')){ exit('No product'); }
-        
         $included['buy'] = 2;
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
         $data['shippingAddress'] = $this->get_session->list_shhippingAddress();
@@ -63,6 +61,7 @@ class Buy extends CI_Controller {
                 $item['name'] = $item_detail['product_name'];
                 $item['stock'] = $item_detail['product_stock'];
                 $item['price'] = $item_detail['product_price'];
+                $item['weight'] = $item_detail['product_weight'];
                 return $this->addSelectSizeAndColor($item);
             }
         }
@@ -73,13 +72,24 @@ class Buy extends CI_Controller {
         $item['size'] = $this->get_product->get_size($item['product']);
         return $item;
     }
+    private function calculateShippingCost($items)
+    {
+        $weight = 0;
+        foreach ($items as $item) {
+            $weight += floatval($item['weight']) * intval($item['qty']);
+        }
+        
+        //TODO: get table rate of shipping, for each country
+        
+        return $weight;
+    }
     private function calculateTotalPrice($items)
     {
         $result = 0;
         foreach ($items as $item) {
-            $result += intval($item['price']) * intval($item['qty']);
+            $result += floatval($item['price']) * intval($item['qty']);
         }
-        //TODO: need to add shipping cost?
+        
         return $result;
     }
     private function loadView($included, $data)
