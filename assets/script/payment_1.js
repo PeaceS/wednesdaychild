@@ -58,7 +58,7 @@ function event_update_bag(next){
                 alert("Update!");
                 window.location = "/buy/1";
             }else
-                window.location = "/buy/3";
+                window.location = "/buy/2";
         }
     });
 }
