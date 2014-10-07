@@ -5,9 +5,12 @@ class Get_config extends CI_Model{
             parent::__construct();
             $this->load->database();
 	}
-	public function get_config($param)
+	public function get_bankwireDetail()
 	{
-            $query = $this->db->get_where('config', array('parameter' => $param));
-            return $query->row()->value;
+            $this->db->from('config');
+            $this->db->like('parameter', 'bankwire_', 'after');
+            $query = $this->db->get();
+            
+            return $query->result_array();
 	}
 }

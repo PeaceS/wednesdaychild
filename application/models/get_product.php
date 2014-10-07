@@ -91,4 +91,22 @@ class Get_product extends CI_Model{
             
             return $query->result_array();
         }
+        public function get_price($product)
+        {
+            $this->db->select('product_price');
+            $this->db->from('product');
+            $this->db->where('product_no', $product);
+            $query = $this->db->get();
+            
+            return $query->row()->product_price;
+        }
+        public function get_weight($product)
+        {
+            $this->db->select('product_weight');
+            $this->db->from('product');
+            $this->db->where('product_no', $product);
+            $query = $this->db->get();
+            
+            return $query->row()->product_weight;
+        }
 }
