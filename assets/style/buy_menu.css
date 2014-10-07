@@ -17,5 +17,6 @@
     bottom: 2%;
     left: 1%;
     font-size: 0.85vw;
+    cursor: default;
 }
 #payment_menu a.selected{ text-decoration: underline; }
