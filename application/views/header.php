@@ -51,7 +51,7 @@
         <?php if (isset($product)) { ?>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/product.js"></script>
         <?php } ?>
-        <?php if (isset($buy)) { ?>
+        <?php if (isset($buy) && $buy != 4) { ?>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/payment_<?php echo $buy; ?>.js"></script>
         <?php } ?>
 </head>

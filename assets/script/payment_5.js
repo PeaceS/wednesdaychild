@@ -12,7 +12,7 @@ function setup_eventHandle(){
         if (!window.confirm)
             return "This should create a pop-up";
     });
-    $("#bankwire #confirm").click(function(){
+    $("#bankwire .next").click(function(){
         window.confirm = true;
     });
 }

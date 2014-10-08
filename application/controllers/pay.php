@@ -16,7 +16,7 @@ class Pay extends CI_Controller {
         $bag = $this->getListItemInBag();
         
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
-        $data['totalAmount'] = $this->calculateShippingCost($bag) + $this->calculateTotalPrice($bag);
+        $data['totalAmount'] = number_format($this->calculateShippingCost($bag) + $this->calculateTotalPrice($bag));
         $data['bankDetail'] = $this->get_config->get_bankwireDetail();
 
         $this->load->view('header', $included);

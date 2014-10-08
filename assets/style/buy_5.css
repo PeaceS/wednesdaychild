@@ -1,0 +1,73 @@
+#bankwire{
+    position: absolute;
+    overflow: hidden;
+    top: 19%;
+    left: 32.5%;
+    width: 35%;
+    height: 62%;
+    padding: 1% 2%;
+}
+#bankwire #scroll{
+    position: absolute;
+    height: 81%;
+    width: 90%;
+    top: 3%;
+    overflow: hidden;
+    font-size: 1vw;
+}
+#bankwire #scroll #sub_scroll{
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    padding-right: 5%;
+}
+#bankwire #scroll #sub_scroll label{
+    font-size: 1vw;
+    font-weight: bold;
+}
+#bankwire #scroll #sub_scroll table{
+    width: 20%;
+    font-size: 1vw;
+    margin-top: 3%;
+}
+#bankwire #scroll #sub_scroll table tr{ line-height: 200%; }
+#bankwire #scroll #sub_scroll table tr td{
+    height: 100%;
+    text-align: center;
+    border: #000000 1px solid;
+    cursor: pointer;
+}
+#bankwire #scroll #sub_scroll p.upper{ text-transform: uppercase; }
+#bankwire ul#menu{
+    position: absolute;
+    width: 5%;
+    height: 25%;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    top: 37.5%;
+    right: 3.5%;
+}
+#bankwire ul#menu li{
+    display: block;
+    width: 100%;
+    height: 40%;
+    margin: 25% 0%;
+    cursor: pointer;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#bankwire ul#menu li#up{ background-image: url('../image/icon_arrow-up.svg'); }
+#bankwire ul#menu li#down{ background-image: url('../image/icon_arrow-down.svg'); } 
+#bankwire div#menu{
+    height: 5%;
+    width: 40%;
+    bottom: 10%;
+    right: 8%;
+}
+#bankwire div#menu label{ width: 40%; }
+#bankwire div#menu .next{
+    position: absolute;
+    right: 0%;
+}
