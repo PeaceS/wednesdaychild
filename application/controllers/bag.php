@@ -30,6 +30,18 @@ class Bag extends CI_Controller {
         $itemCount = count(explode(",", $this->session->userdata('wednesdaychild_cart')));
         exit(strval($itemCount));
     }
+    public function paymentByBankwire()
+    {
+        if (!$this->session->userdata('wednesdaychild_cart') || !$this->session->userdata('wednesdaychild_shippingAddress')){
+            exit(false);
+        }
+        
+        // TODO: check stock, if changed, use redirect('/buy/1');
+        
+        $this->session->unset_userdata('wednesdaychild_cart');
+        $this->session->unset_userdata('wednesdaychild_shippingAddress');
+        exit(strval(0));
+    }
     
     private function putInSession($product, $qty)
     {
