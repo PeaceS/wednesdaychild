@@ -6,8 +6,8 @@
                 <?php if ($buy >= 3 || isset($shippingAddress)) { ?><a <?php if ($buy == 3) { ?>class="selected"<?php } ?> href="/buy/3"><?php } ?>
                     Summary
                 <?php if ($buy >= 3 || isset($shippingAddress)) { ?></a><?php } ?>/
-                <?php if ($buy == 4 || isset($shippingAddress)) { ?><a <?php if ($buy == 4) { ?>class="selected"<?php } ?> href="/buy/4"><?php } ?>
+                <?php if ($buy >= 4 || isset($shippingAddress)) { ?><a <?php if ($buy == 4) { ?>class="selected"<?php } ?> href="/buy/4"><?php } ?>
                     Payment Method
-                <?php if ($buy == 4 || isset($shippingAddress)) { ?></a><?php } ?>/
+                <?php if ($buy >= 4 || isset($shippingAddress)) { ?></a><?php } ?>/
             </div>
         </div>
