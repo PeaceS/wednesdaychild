@@ -31,5 +31,5 @@
             </ul>
             <div id="menu">
                 <a href="/buy/4"><label class="back">back</label></a>
-                <a href="/buy/bankwire/confirm"><label class="next">confirm</label></a>
+                <a href="javascript:confirm();"><label class="next">confirm</label></a>
             </div>

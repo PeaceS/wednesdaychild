@@ -5,6 +5,7 @@ class Get_product extends CI_Model{
             parent::__construct();
             $this->load->database();
 	}
+        //TODO: Separate to new model, maybe list one
 	public function list_product($collection)
 	{
             $this->db->select('product.product_no, product_image.image_url');
@@ -108,5 +109,14 @@ class Get_product extends CI_Model{
             $query = $this->db->get();
             
             return $query->row()->product_weight;
+        }
+        public function get_listStock($products)
+        {
+            $this->db->select('product_no, product_stock');
+            $this->db->from('product');
+            $this->db->where_in('product_no', $products);
+            $query = $this->db->get();
+            
+            return $query->result_array();
         }
 }
