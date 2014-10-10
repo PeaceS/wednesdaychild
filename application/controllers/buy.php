@@ -41,6 +41,19 @@ class Buy extends CI_Controller {
             $this->loadView($included, $data);
         }
     }
+    public function bankwireMethod()
+    {
+        $this->load->model('get_config');
+        $included['buy'] = 5;
+        
+        $bag = $this->getListItemInBag();
+        
+        $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
+        $data['totalAmount'] = number_format($this->calculateShippingCost($bag) + $this->calculateTotalPrice($bag));
+        $data['bankDetail'] = $this->get_config->get_bankwireDetail();
+
+        $this->loadView($included, $data);
+    }
     
     private function getListItemInBag()
     {
