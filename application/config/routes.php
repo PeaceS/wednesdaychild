@@ -44,14 +44,14 @@ $route['buy/2'] = 'buy/fillInAddress';
 $route['buy/3'] = 'buy/checkInsideBag/3';
 $route['buy/4'] = 'buy/paymentMethod';
 $route['buy/bankwire'] = 'buy/bankwireMethod';
-$route['buy/bankwire/confirm'] = 'pay/paymentByBankwire';
-$route['buy/paypal'] = 'pay/paypalMethod';
+$route['buy/bankwire/confirm'] = 'pay/payment/bankwire';
+$route['buy/paypal'] = 'pay/payment/paypal';
 $route['update/bag'] = 'bag/updateBag';
 $route['update/address'] = 'shipping/updateAddress';
 $route['collection/(:any)'] = 'collection/view/$1';
 $route['shop/(:any)'] = 'shop/view/$1';
 $route['product/(:any)'] = 'product/view/$1';
-$route['default_controller'] = "home";
+$route['default_controller'] = 'home';
 $route['404_override'] = '';
 
 

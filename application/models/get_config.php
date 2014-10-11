@@ -15,4 +15,14 @@ class Get_config extends CI_Model{
             
             return $query->result_array();
 	}
+        public function get_paypalAccount()
+        {
+            $this->db->select('value');
+            $this->db->from('config');
+            $this->db->where('parameter', 'paypal_account');
+            $this->db->order_by('parameter');
+            $query = $this->db->get();
+            
+            return $query->row()->value;
+        }
 }

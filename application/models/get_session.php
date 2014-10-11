@@ -4,6 +4,7 @@ class Get_session extends CI_Model{
 	{
             parent::__construct();
 	}
+        //TODO: GET session here, no GET_SESSION direct anymore
 	public function get_itemCountInBag()
 	{
             $count = 0; 
