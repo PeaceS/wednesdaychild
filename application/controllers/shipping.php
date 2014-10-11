@@ -17,7 +17,7 @@ class Shipping extends CI_Controller {
     {
         $shippingAddress = '';
         foreach ($this->input->post('shippingAddress') as $type => $detail) {
-            $shippingAddress .= $shippingAddress != '' ? ',' : '';
+            $shippingAddress .= $shippingAddress != '' ? ';; ' : '';
             $shippingAddress .= $type . ':' . $detail;
         }
         return $shippingAddress;

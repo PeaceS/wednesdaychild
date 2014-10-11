@@ -10,7 +10,7 @@ function setup_default(){
 function setup_eventHandle(){
     $(window).on("beforeunload", function(){
         if (!window.confirm)
-            return "This should create a pop-up";
+            return "Please be aware, the order will be sent, only after clicking 'Confirm' button";
     });
     $("#bankwire .next").click(function(){
         window.confirm = true;
@@ -18,7 +18,7 @@ function setup_eventHandle(){
             if (!result)
                 window.location = "/buy/1";
             else
-                window.location = "/collection";
+                window.location = "/shop";
         });
     });
 }
