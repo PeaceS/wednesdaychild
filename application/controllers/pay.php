@@ -79,8 +79,16 @@ class Pay extends CI_Controller {
     private function sendToPaypal()
     {
         $this->load->model('get_config');
+        $included['paypal'] = true;
+        $data = $this->prepareDataForPaypal();
+        
+        $this->load->view('header', $included);
+        $this->load->view('paypal', $data);
+    }
+    private function prepareDataForPaypal()
+    {
         $addressDetail = $this->get_session->list_shhippingAddress();
-        $data = array(
+        return array(
             'business' => $this->get_config->get_paypalAccount(),
             'invoice' => $this->invoiceNo,
             'item_number' => $this->invoiceNo,
@@ -94,10 +102,9 @@ class Pay extends CI_Controller {
             'country' => $addressDetail['country'],
             'night_phone_b' => $addressDetail['phone']
         );
-        
-        $this->load->view('paypal', $data);
     }
-    private function get_invoice() {
+    private function get_invoice()
+    {
         $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $randomString = '';
         for ($i = 0; $i < 8; $i++) {

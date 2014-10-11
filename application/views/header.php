@@ -54,4 +54,7 @@
         <?php if (isset($buy) && $buy != 4) { ?>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/payment_<?php echo $buy; ?>.js"></script>
         <?php } ?>
+        <?php if (isset($paypal)) { ?>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/paypal.js"></script>
+        <?php } ?>
 </head>
