@@ -87,7 +87,6 @@ class Pay extends CI_Controller {
         $addressDetail = $this->get_session->list_shhippingAddress();
         return array(
             'business' => $this->get_config->get_paypalAccount(),
-            'invoice' => $this->invoiceNo,
             'item_number' => $this->invoiceNo,
             'amount' => $this->fareDetail['totalPrice'] + $this->fareDetail['shippingCost'],
             'email' => $addressDetail['email'],
@@ -97,7 +96,7 @@ class Pay extends CI_Controller {
             'city' => $addressDetail['city'],
             'zip' => $addressDetail['zip'],
             'country' => $addressDetail['country'],
-            'night_phone_b' => $addressDetail['phone']
+            'day_phone_b' => $addressDetail['phone']
         );
     }
     private function get_invoice()
