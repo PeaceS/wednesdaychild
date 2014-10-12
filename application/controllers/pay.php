@@ -16,14 +16,11 @@ class Pay extends CI_Controller {
         
         if ($this->checkStock($this->get_session->list_itemInBag())){
             $this->updateStockAndSaveTransaction($this->get_session->list_itemWithQtyInBag());
-            $this->session->unset_userdata('wednesdaychild_cart');
+            //$this->session->unset_userdata('wednesdaychild_cart');
             $status = true;
         }
-        if ($method == 'paypal'){
-            $this->sendToPaypal();
-        }
-        
-        exit(isset($status));
+        if ($method == 'paypal'){ $this->sendToPaypal(); }
+        else{ exit(isset($status)); }
     }
     
     private function checkStock($productInBag)
