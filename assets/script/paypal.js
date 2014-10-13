@@ -3,5 +3,5 @@ $(document).ready(function(){
 });
 
 function setup_default(){
-    $('form').submit();
+    $("form").submit();
 }
