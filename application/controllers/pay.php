@@ -85,13 +85,22 @@ class Pay extends CI_Controller {
     private function prepareDataForPaypal()
     {
         $this->load->model('get_paypal');
-        $data = array_merge(
+        return array_merge(
                 array('business' => $this->get_config->get_paypalAccount()),
                 $this->get_paypal->get_shippingAddress($this->get_session->list_shhippingAddress()),
                 $this->get_paypal->get_itemQtyInBag($this->get_session->list_itemWithQtyInBag()),
-                $this->get_paypal->get_itemDetailInBag($this->get_session->list_itemInBag(), $this->get_product->get_listProduct($this->get_session->list_itemInBag()))
+                $this->get_paypal->get_itemDetailInBag($this->get_itemDetail())
                 );
-        return $data;
+    }
+    private function get_itemDetail()
+    {
+        $this->load->model('get_shipping');
+        $address = $this->get_session->list_shhippingAddress();
+        return array(
+            'itemInBag' => $this->get_session->list_itemInBag(),
+            'itemDetail' => $this->get_product->get_listProduct($this->get_session->list_itemInBag()),
+            'shippingRate' => $this->get_shipping->get_rate($address['country'])
+        );
     }
     private function get_invoice()
     {

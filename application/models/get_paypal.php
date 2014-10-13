@@ -25,17 +25,19 @@ class Get_paypal extends CI_Model{
             }
             return $data;
         }
-        public function get_itemDetailInBag($itemInBag, $itemDetail)
+        public function get_itemDetailInBag($data)
         {
-            $data = array();
-            for ($i = 0; $i < count($itemInBag); $i++){
-                foreach ($itemDetail as $detail) {
-                    if ($itemInBag[$i]['product'] == $detail['product_no']){
-                        $data['item_name_' . ($i + 1)] = $detail['product_name'] . '-' . $detail['product_no'];
-                        $data['amount_' . ($i + 1)] = $detail['product_price'];
+            $result = array();
+            for ($i = 0; $i < count($data['itemInBag']); $i++){
+                foreach ($data['$itemDetail'] as $detail) {
+                    if ($data['itemInBag'][$i]['product'] == $detail['product_no']){
+                        $result['item_name_' . ($i + 1)] = $detail['product_name'] . '-' . $detail['product_no'];
+                        $result['amount_' . ($i + 1)] = $detail['product_price'];
+                        $result['shipping_' . ($i + 1)] = intval($detail['product_weight']) * doubleval($data['shippingRate']);
+                        $result['shipping2_' . ($i + 1)] = intval($detail['product_weight']) * doubleval($data['shippingRate']);
                     }
                 }
             }
-            return $data;
+            return $result;
         }
 }
