@@ -43,23 +43,21 @@ class Pay extends CI_Controller {
         $data = array();
         
         foreach ($productInBag as $product) {
-            $this->fareDetail['totalPrice'] += floatval($this->get_product->get_price($product['product']));
-            $this->fareDetail['weight'] += floatval($this->get_product->get_weight($product['product']));
+            $this->fareDetail['totalPrice'] += doubleval($this->get_product->get_price($product['product']));
+            $this->fareDetail['weight'] += doubleval($this->get_product->get_weight($product['product']));
             array_push($data, array('product_no' => $product['product'], 'product_stock' => intval($this->get_product->get_stock($product['product'])) - $product['qty']));
         }
-        
         $this->set_product->update_stock($data);
         $this->saveTransaction($this->fareDetail);
     }
     private function saveTransaction($fare)
     {
         $this->load->model('set_transaction');
-        $shippingCost = $this->calculateShippingCost($fare['weight']);
         $data = array(
             'transaction_products' => $this->session->userdata('wednesdaychild_cart'),
             'transaction_address' => $this->session->userdata('wednesdaychild_shippingAddress'),
             'transaction_fare' => $fare['totalPrice'],
-            'transaction_shipping' => $shippingCost,
+            'transaction_shipping' => $this->calculateShippingCost($fare['weight']),
             'transaction_method' => $this->method
         );
         
@@ -67,8 +65,10 @@ class Pay extends CI_Controller {
     }
     private function calculateShippingCost($weight)
     {
-        //TODO: Calculate by get_session country
-        $result = $weight;
+        $this->load->model('get_shipping');
+        $address = $this->get_session->list_shhippingAddress();
+        
+        $result = $weight * doubleval($this->get_shipping->get_rate($address['country']));
         
         $this->fareDetail['shippingCost'] = $result;
         return $result;
@@ -77,7 +77,7 @@ class Pay extends CI_Controller {
     {
         $this->load->model('get_config');
         $included['paypal'] = true;
-        $data = $this->prepareDataForPaypal();
+        $data['data'] = $this->prepareDataForPaypal();
         
         $this->load->view('header', $included);
         $this->load->view('paypal', $data);
@@ -87,7 +87,6 @@ class Pay extends CI_Controller {
         $this->load->model('get_paypal');
         return array_merge(
                 array('business' => $this->get_config->get_paypalAccount()),
-                $this->get_paypal->get_shippingAddress($this->get_session->list_shhippingAddress()),
                 $this->get_paypal->get_itemQtyInBag($this->get_session->list_itemWithQtyInBag()),
                 $this->get_paypal->get_itemDetailInBag($this->get_itemDetail())
                 );

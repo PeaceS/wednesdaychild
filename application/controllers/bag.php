@@ -15,7 +15,7 @@ class Bag extends CI_Controller {
             exit(false);
         }
         $this->putInSession($this->input->post('product'), $this->input->post('qty'));
-        $itemCount = count(explode(",", $this->session->userdata('wednesdaychild_cart')));
+        $itemCount = count(explode(";;", $this->session->userdata('wednesdaychild_cart')));
         exit(strval($itemCount));
     }
     public function updateBag()
@@ -27,7 +27,7 @@ class Bag extends CI_Controller {
             $this->putInSession($item['product'], $item['qty']);
         }
         
-        $itemCount = count(explode(",", $this->session->userdata('wednesdaychild_cart')));
+        $itemCount = count(explode(";;", $this->session->userdata('wednesdaychild_cart')));
         exit(strval($itemCount));
     }
     
@@ -36,7 +36,7 @@ class Bag extends CI_Controller {
         if ($this->checkProductInSession($product)){
             $cart = $this->updateProductInSession($product, $qty);
         }else{
-            $cart = $this->session->userdata('wednesdaychild_cart') ? $this->session->userdata('wednesdaychild_cart') . ',' : '';
+            $cart = $this->session->userdata('wednesdaychild_cart') ? $this->session->userdata('wednesdaychild_cart') . ';;' : '';
             $cart.= $product . ':' . $qty;
         }
         $this->session->set_userdata('wednesdaychild_cart', $cart);
@@ -44,7 +44,7 @@ class Bag extends CI_Controller {
     private function checkProductInSession($product)
     {
         if ($this->session->userdata('wednesdaychild_cart')){
-            $items = explode(",", $this->session->userdata('wednesdaychild_cart'));
+            $items = explode(";;", $this->session->userdata('wednesdaychild_cart'));
             foreach ($items as $item) {
                 $item_detail = explode(":", $item);
                 if ($product == $item_detail[0]){
@@ -57,10 +57,10 @@ class Bag extends CI_Controller {
     private function updateProductInSession($product, $qty)
     {
         $cart = '';
-        $items = explode(",", $this->session->userdata('wednesdaychild_cart'));
+        $items = explode(";;", $this->session->userdata('wednesdaychild_cart'));
         foreach ($items as $item) {
             $item = $this->checkUpdateProduct($product, $qty, $item);
-            $cart = $cart == '' ? $item : $cart . ',' . $item;
+            $cart = $cart == '' ? $item : $cart . ';;' . $item;
         }
         return $cart;
     }

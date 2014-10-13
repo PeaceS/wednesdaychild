@@ -9,7 +9,7 @@ class Get_session extends CI_Model{
 	{
             $count = 0; 
             if ($this->session->userdata('wednesdaychild_cart')){
-                $items = explode(",", $this->session->userdata('wednesdaychild_cart'));
+                $items = explode(";;", $this->session->userdata('wednesdaychild_cart'));
                 $count = count($items);
             }
             
@@ -20,11 +20,12 @@ class Get_session extends CI_Model{
             if (!$this->session->userdata('wednesdaychild_cart')){ return NULL; }
             
             $products = array();
-            $items = explode(",", $this->session->userdata('wednesdaychild_cart'));
+            $items = explode(";;", $this->session->userdata('wednesdaychild_cart'));
             foreach ($items as $itemWithQty) {
                 $item = explode(":", $itemWithQty);
                 array_push($products, $item[0]);
             }
+            
             return $products;
         }
         public function list_itemWithQtyInBag()
@@ -32,7 +33,7 @@ class Get_session extends CI_Model{
             if (!$this->session->userdata('wednesdaychild_cart')){ return NULL; }
             
             $products = array();
-            $items = explode(",", $this->session->userdata('wednesdaychild_cart'));
+            $items = explode(";;", $this->session->userdata('wednesdaychild_cart'));
             foreach ($items as $itemWithQty) {
                 $item = explode(":", $itemWithQty);
                 array_push($products, array('product'=>$item[0], 'qty'=>$item[1]));

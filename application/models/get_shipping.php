@@ -9,7 +9,7 @@ class Get_shipping extends CI_Model{
 	{
             $this->db->select('shipping_rate');
             $this->db->from('shipping');
-            $this->db->where('shipping_country', $country);
+            $this->db->where('shipping_country', strtolower($country));
             $query = $this->db->get();
             
             return $query->row()->shipping_rate;

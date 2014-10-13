@@ -28,15 +28,17 @@ class Get_paypal extends CI_Model{
         public function get_itemDetailInBag($data)
         {
             $result = array();
-            for ($i = 0; $i < count($data['itemInBag']); $i++){
-                foreach ($data['$itemDetail'] as $detail) {
-                    if ($data['itemInBag'][$i]['product'] == $detail['product_no']){
-                        $result['item_name_' . ($i + 1)] = $detail['product_name'] . '-' . $detail['product_no'];
-                        $result['amount_' . ($i + 1)] = $detail['product_price'];
-                        $result['shipping_' . ($i + 1)] = intval($detail['product_weight']) * doubleval($data['shippingRate']);
-                        $result['shipping2_' . ($i + 1)] = intval($detail['product_weight']) * doubleval($data['shippingRate']);
+            $counter = 1;
+            foreach ($data['itemInBag'] as $item){
+                foreach ($data['itemDetail'] as $detail) {
+                    if ($item == $detail['product_no']){
+                        $result['item_name_' . $counter] = $detail['product_name'] . '-' . $detail['product_no'];
+                        $result['amount_' . $counter] = $detail['product_price'];
+                        $result['shipping_' . $counter] = intval($detail['product_weight']) * doubleval($data['shippingRate']);
+                        $result['shipping2_' . $counter] = intval($detail['product_weight']) * doubleval($data['shippingRate']);
                     }
                 }
+                $counter++;
             }
             return $result;
         }
