@@ -87,14 +87,15 @@ class Buy extends CI_Controller {
     }
     private function calculateShippingCost($items)
     {
+        $this->load->model('get_shipping');
+        $address = $this->get_session->list_shhippingAddress();
         $weight = 0;
+        
         foreach ($items as $item) {
             $weight += floatval($item['weight']) * intval($item['qty']);
         }
         
-        //TODO: get table rate of shipping, for each country
-        
-        return $weight;
+        return $weight * doubleval($this->get_shipping->get_rate($address['country']));
     }
     private function calculateTotalPrice($items)
     {
