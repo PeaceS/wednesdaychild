@@ -14,6 +14,7 @@ class Product extends CI_Controller {
         $data = $this->load_data($product);
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
         if ($data['product'] == null){ exit('product not found'); }
+        if (intval($data['product_stock']) == 0){ $data = $this->get_others($data); }
         
         $this->load->view('header', $included);
         $this->load->view('main', $data);
@@ -57,6 +58,19 @@ class Product extends CI_Controller {
             return $output;
         }
         
+        return $data;
+    }
+    private function get_others($data)
+    {
+        if (count($data['product_size']) > 0){
+            redirect('/product/' . $data['product_size'][0]['product_no']);
+        }else if (count($data['product_color']) > 0){
+            redirect('/product/' . $product = $data['product_color'][0]['product_no']);
+        }else{
+            // TODO: check cross over diff size and color, ex: XXXXX11
+        }
+        
+        $data['outOfStock'] = true;
         return $data;
     }
 }
