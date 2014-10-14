@@ -4,7 +4,7 @@ $(document).ready(function(){
 });
 
 function setup_default(){
-    
+    default_set_price();
 }
 
 function setup_eventHandle(){
@@ -18,6 +18,14 @@ function setup_eventHandle(){
 
 // private function
 
+function default_set_price(){
+    $.each($("#summary table .item"), function(){
+        var qty = $(this).find(".qty").text();
+        var price = parseFloat($(this).find(".price").attr("price"));
+
+        $(this).find(".price").text((price * qty).toLocaleString());
+    });
+}
 function event_slide_summary(direction){
     var currentScrollPosition = $("#summary #scroll #sub_scroll").scrollTop();
     var maximumScroll = $("#summary #scroll #sub_scroll").height();

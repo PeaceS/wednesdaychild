@@ -31,7 +31,7 @@
                                 <?php } ?>
                             </td>
                             <td class="qty"><?php echo $item['qty']; ?></td>
-                            <td class="price"><?php echo number_format($item['price'], 2, '.', ','); ?></td>
+                            <td class="price" price="<?php echo $item['price']; ?>"><?php echo number_format($item['price'], 2, '.', ','); ?></td>
                         </tr>
                         <?php } ?>
                     </table>
