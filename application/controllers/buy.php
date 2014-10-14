@@ -47,7 +47,7 @@ class Buy extends CI_Controller {
         $bag = $this->getListItemInBag();
         
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
-        $data['totalAmount'] = number_format($this->calculateTotalPrice($bag));
+        $data['totalAmount'] = number_format($this->calculateShippingCost($bag) + $this->calculateTotalPrice($bag));
         $data['bankDetail'] = $this->get_config->get_bankwireDetail();
 
         $this->loadView($included, $data);
@@ -68,7 +68,7 @@ class Buy extends CI_Controller {
     private function getItemDetail($item, $details)
     {
         foreach ($details as $item_detail) {
-            if ($item['product'] == $item_detail['product_no']){
+            if ($item['product'] == $item_detail['product_no']) {
                 $item['image'] = base_url() . 'assets/image/product/' . substr($item['product'], 0, 3) . '/' . $item_detail['image_url'];
                 $item['name'] = $item_detail['product_name'];
                 $item['stock'] = $item_detail['product_stock'];
@@ -85,19 +85,22 @@ class Buy extends CI_Controller {
         $item['size'] = $this->get_productDetail->get_size($item['product']);
         return $item;
     }
-    private function calculateTotalPrice($items)
+    private function calculateShippingCost($items)
     {
         $this->load->model('get_shipping');
         $address = $this->get_session->list_shhippingAddress();
-        $result = 0;
+        
         $weight = 0;
+        foreach ($items as $item) { $weight += floatval($item['weight']) * intval($item['qty']); }
         
-        foreach ($items as $item) {
-            $result += floatval($item['price']) * intval($item['qty']);
-            $weight += floatval($item['weight']) * intval($item['qty']);
-        }
+        return $weight * doubleval($this->get_shipping->get_rate($address['country']));
+    }
+    private function calculateTotalPrice($items)
+    {
+        $result = 0;
+        foreach ($items as $item) { $result += floatval($item['price']) * intval($item['qty']); }
         
-        return $result + ($weight * doubleval($this->get_shipping->get_rate($address['country'])));
+        return $result;
     }
     private function loadView($included, $data)
     {

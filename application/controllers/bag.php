@@ -4,7 +4,7 @@ class Bag extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        if (!$this->input->post('products')){ exit('false'); }
+        if (!$this->input->post('product') && !$this->input->post('products')){ exit('false'); }
     }
     public function putInBag()
     {
