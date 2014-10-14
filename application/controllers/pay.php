@@ -4,22 +4,24 @@ class Pay extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        if (!$this->session->userdata('wednesdaychild_cart') || !$this->session->userdata('wednesdaychild_shippingAddress')){
-            exit(false);
-        }
+        if (!$this->session->userdata('wednesdaychild_cart') || !$this->session->userdata('wednesdaychild_shippingAddress')){ exit(false); }
         $this->load->model('get_product');
         $this->invoiceNo = $this->get_invoice();
+        
+        $address = $this->get_session->list_shhippingAddress();
+        $this->country = $address['country'];
     }
     public function payment($method)
     {
         $this->method = $method;
         
         if ($this->checkStock($this->get_session->list_itemInBag())){
-            $this->updateStockAndSaveTransaction($this->get_session->list_itemWithQtyInBag());
-            //$this->session->unset_userdata('wednesdaychild_cart');
+            $this->updateStock($this->get_session->list_itemWithQtyInBag());
+            $this->saveTransaction($this->fareDetail);
+            //$this->get_session->free_itemInCart();
             $status = true;
         }
-        if ($method == 'paypal'){ $this->sendToPaypal(); }
+        if ($method == 'paypal' && $status == true){ $this->sendToPaypal(); }
         else{ exit(isset($status)); }
     }
     
@@ -36,42 +38,35 @@ class Pay extends CI_Controller {
         }
         return true;
     }
-    private function updateStockAndSaveTransaction($productInBag)
+    private function updateStock($productInBag)
     {
+        $this->load->model('get_productDetail');
         $this->load->model('set_product');
         $this->fareDetail = array('totalPrice' => 0.0, 'weight' => 0.0);
         $data = array();
         
         foreach ($productInBag as $product) {
-            $this->fareDetail['totalPrice'] += doubleval($this->get_product->get_price($product['product']));
-            $this->fareDetail['weight'] += doubleval($this->get_product->get_weight($product['product']));
-            array_push($data, array('product_no' => $product['product'], 'product_stock' => intval($this->get_product->get_stock($product['product'])) - $product['qty']));
+            $this->fareDetail['totalPrice'] += doubleval($this->get_productDetail->get_price($product['product']));
+            $this->fareDetail['weight'] += doubleval($this->get_productDetail->get_weight($product['product']));
+            array_push($data, array('product_no' => $product['product'], 'product_stock' => intval($this->get_productDetail->get_stock($product['product'])) - $product['qty']));
         }
         $this->set_product->update_stock($data);
-        $this->saveTransaction($this->fareDetail);
     }
     private function saveTransaction($fare)
     {
         $this->load->model('set_transaction');
-        $data = array(
+        $this->set_transaction->insert_transaction(array(
             'transaction_products' => $this->session->userdata('wednesdaychild_cart'),
             'transaction_address' => $this->session->userdata('wednesdaychild_shippingAddress'),
             'transaction_fare' => $fare['totalPrice'],
             'transaction_shipping' => $this->calculateShippingCost($fare['weight']),
             'transaction_method' => $this->method
-        );
-        
-        $this->set_transaction->insert_transaction($data);
+        ));
     }
     private function calculateShippingCost($weight)
     {
         $this->load->model('get_shipping');
-        $address = $this->get_session->list_shhippingAddress();
-        
-        $result = $weight * doubleval($this->get_shipping->get_rate($address['country']));
-        
-        $this->fareDetail['shippingCost'] = $result;
-        return $result;
+        return $weight * doubleval($this->get_shipping->get_rate($this->country));
     }
     private function sendToPaypal()
     {
@@ -94,11 +89,10 @@ class Pay extends CI_Controller {
     private function get_itemDetail()
     {
         $this->load->model('get_shipping');
-        $address = $this->get_session->list_shhippingAddress();
         return array(
             'itemInBag' => $this->get_session->list_itemInBag(),
             'itemDetail' => $this->get_product->get_listProduct($this->get_session->list_itemInBag()),
-            'shippingRate' => $this->get_shipping->get_rate($address['country'])
+            'shippingRate' => $this->get_shipping->get_rate($this->country)
         );
     }
     private function get_invoice()

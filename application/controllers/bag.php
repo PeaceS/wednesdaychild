@@ -4,14 +4,13 @@ class Bag extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('get_product');
-        $this->stock = $this->input->post('product') ? $this->get_product->get_stock($this->input->post('product')) : NULL;
+        if (!$this->input->post('products')){ exit('false'); }
     }
     public function putInBag()
     {
-        if (!$this->input->post('product') || !$this->input->post('qty') ||
-            !is_numeric($this->input->post('qty')) || $this->input->post('qty') <= 0 ||
-            $this->stock < $this->input->post('qty')){
+        $this->load->model('get_productDetail');
+        if (!$this->input->post('qty') || !is_numeric($this->input->post('qty')) || $this->input->post('qty') <= 0 ||
+            $this->get_productDetail->get_stock($this->input->post('product')) < $this->input->post('qty')){
             exit(false);
         }
         $this->putInSession($this->input->post('product'), $this->input->post('qty'));
@@ -19,8 +18,6 @@ class Bag extends CI_Controller {
     }
     public function updateBag()
     {
-        if (!$this->input->post('products')){ exit('false'); }
-        
         $this->get_session->free_itemInCart();
         foreach ($this->input->post('products') as $item) {
             $this->putInSession($item['product'], $item['qty']);

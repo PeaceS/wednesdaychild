@@ -4,8 +4,6 @@ class Buy extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('get_product');
-        $this->stock = $this->get_product->get_stock($this->input->post('product'));
         if ($this->get_session->get_itemCountInBag() == 0){ exit('No product'); }
     }
     public function checkInsideBag($step)
@@ -57,6 +55,7 @@ class Buy extends CI_Controller {
     
     private function getListItemInBag()
     {
+        $this->load->model('get_product');
         $items = $this->get_session->list_itemWithQtyInBag();
         $details = $this->get_product->get_listProduct($this->get_session->list_itemInBag());
         $itemInBag = array();
@@ -81,8 +80,9 @@ class Buy extends CI_Controller {
     }
     private function addSelectSizeAndColor($item)
     {
-        $item['color'] = $this->get_product->get_color($item['product']);
-        $item['size'] = $this->get_product->get_size($item['product']);
+        $this->load->model('get_productDetail');
+        $item['color'] = $this->get_productDetail->get_color($item['product']);
+        $item['size'] = $this->get_productDetail->get_size($item['product']);
         return $item;
     }
     private function calculateTotalPrice($items)
