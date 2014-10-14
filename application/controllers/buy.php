@@ -6,7 +6,7 @@ class Buy extends CI_Controller {
         parent::__construct();
         $this->load->model('get_product');
         $this->stock = $this->get_product->get_stock($this->input->post('product'));
-        if (!$this->session->userdata('wednesdaychild_cart')){ exit('No product'); }
+        if ($this->get_session->get_itemCountInBag() == 0){ exit('No product'); }
     }
     public function checkInsideBag($step)
     {
@@ -14,7 +14,7 @@ class Buy extends CI_Controller {
         $data['bag'] = $this->getListItemInBag();
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
         if ($included['buy'] == 3){
-            if (!$this->session->userdata('wednesdaychild_shippingAddress')){ exit('Access deny'); }
+            if ($this->get_session->check_shippingAddress() == false) { exit('Access deny'); }
             $data['shippingAddress'] = $this->get_session->list_shhippingAddress();
             $data['shippingCost'] = $this->calculateShippingCost($data['bag']);
             $data['totalPrice'] = $this->calculateTotalPrice($data['bag']) + $data['shippingCost'];
@@ -32,7 +32,7 @@ class Buy extends CI_Controller {
     }
     public function paymentMethod()
     {
-        if (!$this->session->userdata('wednesdaychild_shippingAddress')){
+        if ($this->get_session->check_shippingAddress() == false){
             $this->fillInAddress();
         }else{
             $included['buy'] = 4;
@@ -49,7 +49,7 @@ class Buy extends CI_Controller {
         $bag = $this->getListItemInBag();
         
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
-        $data['totalAmount'] = number_format($this->calculateShippingCost($bag) + $this->calculateTotalPrice($bag));
+        $data['totalAmount'] = number_format($this->calculateTotalPrice($bag));
         $data['bankDetail'] = $this->get_config->get_bankwireDetail();
 
         $this->loadView($included, $data);
@@ -85,26 +85,19 @@ class Buy extends CI_Controller {
         $item['size'] = $this->get_product->get_size($item['product']);
         return $item;
     }
-    private function calculateShippingCost($items)
+    private function calculateTotalPrice($items)
     {
         $this->load->model('get_shipping');
         $address = $this->get_session->list_shhippingAddress();
+        $result = 0;
         $weight = 0;
         
         foreach ($items as $item) {
+            $result += floatval($item['price']) * intval($item['qty']);
             $weight += floatval($item['weight']) * intval($item['qty']);
         }
         
-        return $weight * doubleval($this->get_shipping->get_rate($address['country']));
-    }
-    private function calculateTotalPrice($items)
-    {
-        $result = 0;
-        foreach ($items as $item) {
-            $result += floatval($item['price']) * intval($item['qty']);
-        }
-        
-        return $result;
+        return $result + ($weight * doubleval($this->get_shipping->get_rate($address['country'])));
     }
     private function loadView($included, $data)
     {

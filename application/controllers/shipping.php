@@ -8,9 +8,7 @@ class Shipping extends CI_Controller {
     public function updateAddress()
     {
         if (!$this->input->post('shippingAddress')){ exit('false'); }
-        $this->session->set_userdata('wednesdaychild_shippingAddress', $this->convertObjToString());
-        
-        exit($this->session->userdata('wednesdaychild_shippingAddress'));
+        $this->get_session->save_shippingAddress($this->convertObjToString());
     }
     
     private function convertObjToString()

@@ -4,7 +4,6 @@ class Get_session extends CI_Model{
 	{
             parent::__construct();
 	}
-        //TODO: GET session here, no GET_SESSION direct anymore
 	public function get_itemCountInBag()
 	{
             $count = 0; 
@@ -40,6 +39,18 @@ class Get_session extends CI_Model{
             }
             return $products;
         }
+        public function free_itemInCart()
+        {
+            $this->session->unset_userdata('wednesdaychild_cart');
+        }
+        public function save_intoCart($data)
+        {
+            $this->session->set_userdata('wednesdaychild_cart', $data);
+        }
+        public function get_cartAsText()
+        {
+            return $this->session->userdata('wednesdaychild_cart');
+        }
         public function list_shhippingAddress()
         {
             if (!$this->session->userdata('wednesdaychild_shippingAddress')){ return NULL; }
@@ -51,5 +62,13 @@ class Get_session extends CI_Model{
                 $shippingAddress[$valueWithType[0]] = $valueWithType[1];
             }
             return $shippingAddress;
+        }
+        public function check_shippingAddress()
+        {
+            return $this->session->userdata('wednesdaychild_shippingAddress');
+        }
+        public function save_shippingAddress($data)
+        {
+            $this->session->set_userdata('wednesdaychild_shippingAddress', $data);
         }
 }
