@@ -44,7 +44,7 @@
                             </td>
                             <?php if ($item['stock'] > 0) { ?>
                             <td class="qty"><input type="number" value="<?php echo $item['qty'] > $item['stock'] ? $item['stock'] : $item['qty']; ?>" min="1" max="<?php echo $item['stock']; ?>" /></td>
-                            <td class="price" price="<?php echo $item['price']; ?>"><?php echo number_format($item['price'], 2, '.', ','); ?></td>
+                            <td class="price" price="<?php echo $item['price']; ?>"></td>
                             <td class="remove"><a href="javascript:remove(<?php echo $item['name']; ?>);">X</a></td>
                             <?php } else { ?>
                             <td colspan="3">OUT OF STOCK</td>
