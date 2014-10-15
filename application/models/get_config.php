@@ -25,4 +25,14 @@ class Get_config extends CI_Model{
             
             return $query->row()->value;
         }
+        public function get_email()
+        {
+            $this->db->select('value');
+            $this->db->from('config');
+            $this->db->where('parameter', 'owner_email');
+            $this->db->order_by('parameter');
+            $query = $this->db->get();
+            
+            return $query->row()->value;
+        }
 }

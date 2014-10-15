@@ -20,4 +20,13 @@ class Get_text extends CI_Model{
             
             return $query->result_array();
         }
+        public function get_mailNotificationConfirm($data)
+        {
+            $this->db->select('text');
+            $this->db->from('text_display');
+            $this->db->where('section', 'mail_notificationConfirm');
+            $query = $this->db->get();
+            
+            return $query->row()->text;
+        }
 }
