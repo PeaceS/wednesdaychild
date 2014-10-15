@@ -46,6 +46,9 @@
     padding: 2% 7% 0% 2%;
     font-size: 0.9vw;
 }
+#product div#select #product_outOfStock{
+    text-transform: uppercase;
+}
 #product div#select #product_price{
     text-align: right;
     margin: 4% 0%;

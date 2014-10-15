@@ -7,6 +7,9 @@
                 <div class="product_detail"><?php echo $product['product_fit']; ?></div>
             </div>
             <div id="select">
+                <?php if (isset($outOfStock)) { ?>
+                <div id="product_outOfStock">out of stock</div>
+                <?php } else { ?>
                 <div id="product_price">
                     <!--<a href="javascript:buy(<?php //echo $product['product_name']; ?>);"><label id="stock_check">stock check</label></a>-->
                     <div>Price : <?php echo $product['product_price']; ?> B</div>
@@ -31,6 +34,7 @@
                     </option>
                     <?php } ?>
                 </select></p>
+                <?php } ?>
                 <table class="product_action">
                     <tr>
                         <td><a href="javascript:buy(<?php echo $product['product_name']; ?>);"><label>add to bag</label></a></td>

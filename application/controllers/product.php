@@ -66,8 +66,6 @@ class Product extends CI_Controller {
             redirect('/product/' . $data['product_size'][0]['product_no']);
         }else if (count($data['product_color']) > 0){
             redirect('/product/' . $product = $data['product_color'][0]['product_no']);
-        }else{
-            // TODO: check cross over diff size and color, ex: XXXXX11
         }
         
         $data['outOfStock'] = true;
