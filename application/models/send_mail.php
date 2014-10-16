@@ -7,8 +7,10 @@ class Send_mail extends CI_Model{
 	}
         public function send($data)
         {
+            $mail_from = isset($data['from']) ? $data['from'] : 'no-reply@wednesday-child.com';
+            
             $this->email->initialize($this->get_config());
-            $this->email->from('no-reply@wednesday-child.com');
+            $this->email->from($mail_from);
             $this->email->to($data['email']);
 
             $this->email->subject($data['topic']);

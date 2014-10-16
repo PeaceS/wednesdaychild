@@ -37,10 +37,12 @@ class Get_config extends CI_Model{
         }
         public function get_contact()
         {
-            $contact = array('owner_address', 'owner_email', 'owner_facebook', 'owner_instagram', 'bankwire_0');
+            $contact = array('bankwire_0', 'owner_address', 'owner_email', 'owner_facebook', 'owner_instagram');
             
+            $this->db->select('value');
             $this->db->from('config');
             $this->db->where_in('parameter', $contact);
+            $this->db->order_by('parameter');
             $query = $this->db->get();
             
             return $query->result_array();

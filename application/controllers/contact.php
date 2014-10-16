@@ -17,4 +17,24 @@ class Contact extends CI_Controller {
         $this->load->view('contact');
         $this->load->view('list_menu');
     }
+    public function send()
+    {
+        if (!$this->input->post('name') || !$this->input->post('email') || !$this->input->post('message')) { exit('error'); }
+        $this->load->library('email');
+        $this->load->model('send_mail');
+        
+        $this->send_mail->send($this->get_mail());
+      
+        $this->load->view('thanks');
+    }
+    
+    private function get_mail()
+    {
+        return array(
+            'topic' => 'Question from ' . $this->input->post('name'),
+            'email' => $this->get_config->get_email(),
+            'from' => $this->input->post('email'),
+            'body' => $this->input->post('message')
+        );
+    }
 }

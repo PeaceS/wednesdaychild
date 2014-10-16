@@ -36,6 +36,9 @@
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/buy_<?php echo $buy; ?>.css" />
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/buy_menu.css" />
         <?php } ?>
+        <?php if (isset($contact)) { ?>
+        <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/contact.css" />
+        <?php } ?>
 
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/lib/jquery-1.11.1.min.js"></script>
 
