@@ -8,9 +8,10 @@ class Confirm extends CI_Controller {
     public function index()
     {   
         $included['confirm'] = true;
+        $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
         
         $this->load->view('header', $included);
-        $this->load->view('main');
+        $this->load->view('main', $data);
         $this->load->view('faq');
         $this->load->view('list_menu');
     }
