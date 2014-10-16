@@ -28,6 +28,14 @@ class Confirm extends CI_Controller {
             $this->load->view('thanks');
         }
     }
+    public function update($reference, $status)
+    {
+        $this->load->model('set_transaction');
+        $this->set_transaction->update(array(
+            'ref' => $reference,
+            'status' => $status
+        ));
+    }
     
     private function load_config()
     {
@@ -48,7 +56,7 @@ class Confirm extends CI_Controller {
         $detail .= $this->input->post('bank') . ';;';
         $detail .= $this->input->post('time') . ';;';
         return array(
-            'confirm_file' => $result['full_path'],
+            'confirm_file' => substr($result['full_path'], 1),
             'confirm_reference' => $result['raw_name'],
             'confirm_detail' => $detail
         );

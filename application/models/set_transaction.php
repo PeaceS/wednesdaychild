@@ -9,4 +9,10 @@ class Set_transaction extends CI_Model{
         {
             $this->db->insert('transaction', $data); 
         }
+        public function update($data)
+        {
+            $transaction = array('transaction_status' => $data['status']);
+            $this->db->where('transaction_reference', $data['ref']);
+            $this->db->update('transaction', $transaction);
+        }
 }

@@ -6,7 +6,6 @@ class Pay extends CI_Controller {
         parent::__construct();
         if (!$this->session->userdata('wednesdaychild_cart') || !$this->session->userdata('wednesdaychild_shippingAddress')){ exit(false); }
         $this->load->model('get_product');
-        $this->invoiceNo = $this->get_invoice();
         
         $address = $this->get_session->list_shhippingAddress();
         $this->country = $address['country'];
@@ -56,6 +55,7 @@ class Pay extends CI_Controller {
     {
         $this->load->model('set_transaction');
         $this->set_transaction->insert_transaction(array(
+            'transaction_reference' => $this->get_invoice(),
             'transaction_products' => $this->session->userdata('wednesdaychild_cart'),
             'transaction_address' => $this->session->userdata('wednesdaychild_shippingAddress'),
             'transaction_fare' => $fare['totalPrice'],
@@ -97,11 +97,17 @@ class Pay extends CI_Controller {
     }
     private function get_invoice()
     {
+        $this->load->model('get_transaction');
         $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $randomString = '';
         for ($i = 0; $i < 8; $i++) {
             $randomString .= $characters[rand(0, strlen($characters) - 1)];
         }
+        
+        if ($this->get_transaction->check_duplicate($randomString)){
+            $randomString = $this->get_invoice();
+        }
+        
         return $randomString;
     }
 }

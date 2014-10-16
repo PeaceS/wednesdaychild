@@ -27,6 +27,10 @@ class Get_text extends CI_Model{
             $this->db->where('section', 'mail_notificationConfirm');
             $query = $this->db->get();
             
-            return $query->row()->text;
+            $result = $query->row()->text;
+            $replace = array('%file%', '%ref%');
+            $value = array(base_url($data['confirm_file']), $data['confirm_reference']);
+            
+            return str_replace($replace, $value, $result);
         }
 }
