@@ -14,7 +14,7 @@ function setup_eventHandle(){
     });
     $("#bankwire .next").click(function(){
         window.confirm = true;
-        $.post("/buy/bankwire/confirm", function(result){
+        $.post("/wednesdaychild/buy/bankwire/confirm", function(result){
             if (!result)
                 window.location = "/buy/1";
             else

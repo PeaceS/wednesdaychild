@@ -103,10 +103,7 @@ class Pay extends CI_Controller {
         for ($i = 0; $i < 8; $i++) {
             $randomString .= $characters[rand(0, strlen($characters) - 1)];
         }
-        
-        if ($this->get_transaction->check_duplicate($randomString)){
-            $randomString = $this->get_invoice();
-        }
+        if ($this->get_transaction->check_duplicate($randomString)){ $randomString = $this->get_invoice(); }
         
         return $randomString;
     }
