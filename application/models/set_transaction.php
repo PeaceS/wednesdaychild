@@ -12,7 +12,13 @@ class Set_transaction extends CI_Model{
         public function update($data)
         {
             $transaction = array('transaction_status' => $data['status']);
+            
             $this->db->where('transaction_reference', $data['ref']);
             $this->db->update('transaction', $transaction);
+        }
+        public function free($reference)
+        {
+            $this->db->where('transaction_reference', $reference);
+            $this->db->delete('transaction'); 
         }
 }

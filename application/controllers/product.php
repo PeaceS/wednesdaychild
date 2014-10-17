@@ -62,13 +62,36 @@ class Product extends CI_Controller {
     }
     private function get_others($data)
     {
-        if (count($data['product_size']) > 0){
+        if ($this->check_releaseTransaction($data['product_no'])){
+            return $data;
+        }else if (count($data['product_size']) > 0){
             redirect('/product/' . $data['product_size'][0]['product_no']);
         }else if (count($data['product_color']) > 0){
-            redirect('/product/' . $product = $data['product_color'][0]['product_no']);
+            redirect('/product/' . $data['product_color'][0]['product_no']);
         }
         
         $data['outOfStock'] = true;
         return $data;
+    }
+    private function check_releaseTransaction($product)
+    {
+        $this->load->model('get_transaction');
+        
+        $data = $this->get_transaction->out_of_payDate($product);
+        if (count($data) == 0){ return false; }
+        
+        $this->free_transaction($data);
+    }
+    private function free_transaction($data)
+    {
+        $this->load->model('set_transaction');
+        
+        foreach ($data as $item) {
+            $this->set_transaction->free($item['transaction_reference']);
+            $products = explode(";;", $item['transaction_products']);
+            foreach ($products as $product) { $this->get_product->free($product); }
+        }
+        
+        
     }
 }
