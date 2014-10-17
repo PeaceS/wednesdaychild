@@ -14,7 +14,7 @@ class Product extends CI_Controller {
         $data = $this->load_data($product);
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
         if ($data['product'] == null){ exit('product not found'); }
-        if (intval($data['product_stock']) == 0){ $data = $this->get_others($data); }
+        if (intval($data['product']['product_stock']) == 0){ $data = $this->get_others($data); }
         
         $this->load->view('header', $included);
         $this->load->view('main', $data);
