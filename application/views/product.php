@@ -11,7 +11,6 @@
                 <div id="product_outOfStock">out of stock</div>
                 <?php } else { ?>
                 <div id="product_price">
-                    <!--<a href="javascript:buy(<?php //echo $product['product_name']; ?>);"><label id="stock_check">stock check</label></a>-->
                     <div>Price : <?php echo $product['product_price']; ?> B</div>
                 </div>
                 <div class="product_select color">Color : 
