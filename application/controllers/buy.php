@@ -22,7 +22,10 @@ class Buy extends CI_Controller {
     }
     public function fillInAddress()
     {
+        $this->load->model('get_shipping');
+        
         $included['buy'] = 2;
+        $data['listCountry'] = $this->get_shipping->get_country();
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
         $data['shippingAddress'] = $this->get_session->list_shhippingAddress();
         

@@ -22,7 +22,17 @@
                 </tr>
                 <tr type="country">
                     <td>country *</td>
-                    <td><input validate="alphabet" value="<?php echo $shippingAddress['country']; ?>" /></td>
+                    <td>
+                        <select validate="require">
+                            <?php foreach ($listCountry as $item) { ?>
+                            <?php if ($shippingAddress['country'] == $item['shipping_country']) { ?>
+                            <option selected value="<?php echo $item['shipping_country']; ?>"><?php echo $item['shipping_country']; ?></option>
+                            <?php } else { ?>
+                            <option value="<?php echo $item['shipping_country']; ?>"><?php echo $item['shipping_country']; ?></option>
+                            <?php } ?>
+                            <?php } ?>
+                        </select>
+                    </td>
                 </tr>
                 <tr type="phone">
                     <td>phone *</td>

@@ -14,4 +14,12 @@ class Get_shipping extends CI_Model{
             
             return $query->row()->shipping_rate;
 	}
+        public function get_country()
+        {
+            $this->db->select('shipping_country');
+            $this->db->from('shipping');
+            $query = $this->db->get();
+            
+            return $query->result_array();
+        }
 }

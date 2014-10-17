@@ -29,7 +29,11 @@ function event_update_address(element){
     var validation = true;
     $.each($("#shipping table tr"), function(){
         var item = $(this).attr("type");
-        var value = $(this).find("input").val() !== undefined ? $(this).find("input").val() : $(this).find("textarea").val();
+        var value = $(this).find("input").val() !== undefined ?
+                    $(this).find("input").val() :
+                    $(this).find("textarea").val() !== undefined ?
+                    $(this).find("textarea").val() :
+                    $(this).find("select").val();
         
         data[item] = value;
         
