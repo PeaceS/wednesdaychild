@@ -9,10 +9,7 @@
                 <p>bank account</p>
                 <?php
                     $detail = explode(",", $contact[0]['value']);
-                    $detail[0] = ucwords($detail[0]);
                     $detail[1] = substr($detail[1], 0, 3) . "-" . substr($detail[1], 3, 1) . "-" . substr($detail[1], 4, 5) . "-" . substr($detail[1], -1, 1);
-                    $detail[2] = ucwords($detail[2]);
-                    $detail[3] = ucwords($detail[3]);
                 ?>
                 <p><?php echo $detail[0]; ?></p>
                 <p><?php echo $detail[1]; ?></p>
@@ -21,9 +18,9 @@
             <div id="message">
                 <label>leavemessage</label>
                 <?php echo form_open('contact/send'); ?>
-                    <input type="text" name="name" />
-                    <input type="text" name="email" />
-                    <textarea name="message"></textarea>
+                    <input type="text" name="name" placeholder="name" />
+                    <input type="text" name="email" placeholder="email" />
+                    <textarea name="message" placeholder="message"></textarea>
                     <label>send</label>
                 </form>
             </div>
