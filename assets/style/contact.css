@@ -40,7 +40,7 @@
     opacity: 0.75;
     filter: alpha(opacity=75); /* For IE8 and earlier */
 }
-#contact #message form label{
+#contact #message a label{
     display: block;
     float: right;
     background-color: #888888;

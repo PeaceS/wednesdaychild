@@ -8,8 +8,8 @@ function setup_default(){
 }
 
 function setup_eventHandle(){
-    $("#message form label").click(function(){
-        $("#message form").submit();
+    $("#message a label").click(function(){
+        event_send_mail();
     });
 }
 
@@ -24,5 +24,18 @@ function default_set_fixWidthTextarea(){
         "max-width": textarea.innerWidth(),
         "min-height": $("#message").height()/1.5,
         "max-height": $("#message").height()/1.5
+    });
+}
+function event_send_mail(){
+    var data = {
+        "name" : $("#message #name").val(),
+        "email" : $("#message #email").val(),
+        "message" : $("#message #body").val()
+    };
+    $.post("/contacts/send", data, function(result){
+        if (result === true){
+            alert("Sent!");
+            //pop up
+        }
     });
 }

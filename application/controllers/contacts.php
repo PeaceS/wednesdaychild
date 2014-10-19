@@ -25,8 +25,7 @@ class Contacts extends CI_Controller {
         $this->load->model('send_mail');
         
         $this->send_mail->send($this->get_mail());
-      
-        exit(1);
+        exit(true);
     }
     
     private function get_mail()

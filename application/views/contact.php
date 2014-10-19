@@ -17,11 +17,9 @@
             </div>
             <div id="message">
                 <label>leavemessage</label>
-                <?php echo form_open('/contacts/send'); ?>
-                    <input type="text" name="name" placeholder="name" />
-                    <input type="text" name="email" placeholder="email" />
-                    <textarea name="message" placeholder="message"></textarea>
-                    <a href="javascript:send();"><label>send</label></a>
-                </form>
+                <input type="text" id="name" placeholder="name" />
+                <input type="text" id="email" placeholder="email" />
+                <textarea id="body" placeholder="message"></textarea>
+                <a href="javascript:send();"><label>send</label></a>
             </div>
         </div>
