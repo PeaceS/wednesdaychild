@@ -40,3 +40,12 @@
     opacity: 0.75;
     filter: alpha(opacity=75); /* For IE8 and earlier */
 }
+#contact #message form label{
+    display: block;
+    float: right;
+    background-color: #888888;
+    width: 20%;
+    padding-bottom: 0.5%;
+    text-align: center;
+    cursor: pointer;
+}

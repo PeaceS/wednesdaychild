@@ -17,11 +17,11 @@
             </div>
             <div id="message">
                 <label>leavemessage</label>
-                <?php echo form_open('contact/send'); ?>
+                <?php echo form_open('/contact/send'); ?>
                     <input type="text" name="name" placeholder="name" />
                     <input type="text" name="email" placeholder="email" />
                     <textarea name="message" placeholder="message"></textarea>
-                    <label>send</label>
+                    <a href="javascript:send();"><label>send</label></a>
                 </form>
             </div>
         </div>

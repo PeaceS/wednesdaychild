@@ -60,4 +60,7 @@
         <?php if (isset($paypal)) { ?>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/paypal.js"></script>
         <?php } ?>
+        <?php if (isset($contact)) { ?>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/contact.js"></script>
+        <?php } ?>
 </head>
