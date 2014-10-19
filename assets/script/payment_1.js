@@ -52,7 +52,7 @@ function event_update_bag(next){
         data.push({"product" : $(this).attr("product"), "qty" : $(this).find(".qty input").val()});
     });
     
-    $.post("/wednesdaychild/update/bag", {"products" : data}, function(result){
+    $.post("/update/bag", {"products" : data}, function(result){
         alert(result);
         if (!isNaN(result)){
             if (!next){
