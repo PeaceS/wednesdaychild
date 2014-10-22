@@ -12,7 +12,7 @@ class Confirm extends CI_Controller {
         
         $this->load->view('header', $included);
         $this->load->view('main', $data);
-        $this->load->view('faq');
+        $this->load->view('confirm');
         $this->load->view('list_menu');
     }
     public function send()
