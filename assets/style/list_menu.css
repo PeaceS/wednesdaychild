@@ -32,4 +32,6 @@ ul#social li{
     float: right;
     margin: 0% 3.25%;
     padding: 2%;
+    width: 39.5%;
 }
+ul#social li img{ width: 100%; }
