@@ -25,7 +25,7 @@ class Confirm extends CI_Controller {
 
         if (!$this->upload->do_upload()){
             $error = array('error' => $this->upload->display_errors());
-            $this->status = $error;
+            $this->status = -1;
         } else {
             $data = $this->prepare_result($this->upload->data());
             $this->save_record($data);
