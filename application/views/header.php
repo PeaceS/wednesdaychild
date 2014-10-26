@@ -67,6 +67,6 @@
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/contact.js"></script>
         <?php } ?>
         <?php if (isset($confirm)) { ?>
-            <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/confirm.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/confirm.js"></script>
         <?php } ?>
 </head>

@@ -10,9 +10,8 @@ class Confirm extends CI_Controller {
     {
         $this->load->helper('form');
 
-        $included['confirm'] = true;
+        $included['confirm'] = $this->status;
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
-        $data['status'] = $this->status;
         
         $this->load->view('header', $included);
         $this->load->view('main', $data);
@@ -25,7 +24,7 @@ class Confirm extends CI_Controller {
 
         if (!$this->upload->do_upload('image')){
             $error = array('error' => $this->upload->display_errors());
-            $this->status = $error;
+            $this->status = -1;
         } else {
             $data = $this->prepare_result($this->upload->data());
             $this->save_record($data);
