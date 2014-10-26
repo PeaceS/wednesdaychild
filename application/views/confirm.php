@@ -1,3 +1,4 @@
+        <?php echo $status; ?>
         <div id="confirm" class="white_opacity">
             <label>payment confirm</label>
             <?php echo form_open('confirm/send'); ?>
@@ -26,11 +27,7 @@
                         <td>upload image : </td>
                         <td><input name="image" type="file" /></td>
                     </tr>
-                    <tr>
-                        <td colspan="2">
-                            <label>confirm</label>
-                        </td>
-                    </tr>
                 </table>
+                <a href="javascript:send()"><label>confirm</label></a>
             </form>
         </div>

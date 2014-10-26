@@ -39,6 +39,9 @@
         <?php if (isset($contact)) { ?>
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/contact.css" />
         <?php } ?>
+        <?php if (isset($confirm)) { ?>
+            <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/confirm.css" />
+        <?php } ?>
 
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/lib/jquery-1.11.1.min.js"></script>
 
@@ -62,5 +65,8 @@
         <?php } ?>
         <?php if (isset($contact)) { ?>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/contact.js"></script>
+        <?php } ?>
+        <?php if (isset($confirm)) { ?>
+            <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/confirm.js"></script>
         <?php } ?>
 </head>

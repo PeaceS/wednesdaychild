@@ -4,11 +4,15 @@ class Confirm extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+        $this->status = 0;
     }
     public function index()
-    {   
+    {
+        $this->load->helper('form');
+
         $included['confirm'] = true;
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
+        $data['status'] = $this->status;
         
         $this->load->view('header', $included);
         $this->load->view('main', $data);
@@ -21,13 +25,15 @@ class Confirm extends CI_Controller {
 
         if (!$this->upload->do_upload()){
             $error = array('error' => $this->upload->display_errors());
-            $this->load->view('upload_form', $error);
+            $this->status = $error;
         } else {
             $data = $this->prepare_result($this->upload->data());
             $this->save_record($data);
             $this->send_notification($data);
-            $this->load->view('thanks');
+            $this->status = 1;
         }
+
+        $this->index();
     }
     public function update($reference, $status)
     {

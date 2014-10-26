@@ -1,0 +1,34 @@
+#main{ background-image: url('../image/background_faq.jpg'); }
+#menu{ position: absolute; }
+#confirm{
+    position: absolute;
+    overflow: hidden;
+    top: 24%;
+    left: 29.5%;
+    width: 35%;
+    height: 50%;
+    padding: 2% 3%;
+}
+#confirm > label{
+    text-transform: uppercase;
+    font-size: 1vw;
+}
+#confirm table{
+    text-transform: capitalize;
+    font-size: 0.95vw;
+    width: 100%;
+    margin: 5% 0 3%;
+}
+#confirm table tr{ line-height: 230% }
+#confirm table input{ width: 100%; }
+#confirm form label{
+    font-family: BEBAS;
+    font-size: 1vw;
+    background-color: #888888;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 0.5%;
+    cursor: pointer;
+    float: right;
+    width: 25%;
+}
