@@ -1,7 +1,14 @@
-        <?php echo $status; ?>
+        <?php
+            if ($status != 0){
+                foreach ($status as $test) {
+                    echo $test;
+                }
+
+            }
+        ?>
         <div id="confirm" class="white_opacity">
             <label>payment confirm</label>
-            <?php echo form_open('confirm/send'); ?>
+            <?php echo form_open_multipart('confirm/send'); ?>
                 <table>
                     <tr>
                         <td>reference number : </td>

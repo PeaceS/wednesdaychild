@@ -23,9 +23,9 @@ class Confirm extends CI_Controller {
     {
         $this->load->library('upload', $this->load_config());
 
-        if (!$this->upload->do_upload()){
+        if (!$this->upload->do_upload('image')){
             $error = array('error' => $this->upload->display_errors());
-            $this->status = -1;
+            $this->status = $error;
         } else {
             $data = $this->prepare_result($this->upload->data());
             $this->save_record($data);
@@ -47,7 +47,7 @@ class Confirm extends CI_Controller {
     private function load_config()
     {
         return array(
-            'upload_path' => './assests/image/confirm/',
+            'upload_path' => './confirm_payments/',
             'allowed_types' => 'gif|jpg|png',
             'file_name' => $this->input->post('reference'),
             'overwrite' => true,
