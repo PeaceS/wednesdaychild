@@ -51,6 +51,23 @@
     right: 30%;
     bottom: 0%;
 }
+ul#social{
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    margin: 0;
+    padding: 0;
+    width: 5%;
+    height: 3%;
+}
+ul#social li{
+    display: block;
+    float: right;
+    margin: 0% 3.25%;
+    padding: 2%;
+    width: 39.5%;
+}
+ul#social li img{ width: 100%; }
 ul#list_menu{
     left: 29%;
     width: 42%;
