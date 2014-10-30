@@ -20,6 +20,7 @@ class Collection extends CI_Controller {
         $directory = "./assets/image/collection/" . $collection . "/";
 
         $included['collection'] = $collection;
+        $data['self'] = 'collection';
         $data['itemAmount'] = count(glob($directory . "*.jpg"));
         $data['listCollection'] = $listCollection;
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();

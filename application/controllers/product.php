@@ -25,6 +25,7 @@ class Product extends CI_Controller {
     
     private function load_data($product)
     {
+        $data['self'] = 'shop';
         $data['collection'] = substr($product, 0, 3);
         $data['listCollection'] = $this->get_collection->list_collection();
         $data['product'] = $this->transform_data($product);

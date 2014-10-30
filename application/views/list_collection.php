@@ -5,7 +5,7 @@
             <?php }else { ?>
             <li>
             <?php } ?>
-                <a href="/collection/<?php echo $row['collection_code']; ?>">collection <?php echo $row['collection_name']; ?></a>
+                <a href="/<?php echo $self . '/' . $row['collection_code']; ?>">collection <?php echo $row['collection_name']; ?></a>
             </li>
             <?php } ?>
         </ul>

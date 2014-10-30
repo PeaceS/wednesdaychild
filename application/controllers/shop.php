@@ -19,6 +19,7 @@ class Shop extends CI_Controller {
     private function load($collection, $listCollection)
     {
         $included['shop'] = true;
+        $data['self'] = 'shop';
         $data['collection'] = $collection;
         $data['listCollection'] = $listCollection;
         $data['listProduct'] = $this->get_product->list_product($collection);
