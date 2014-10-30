@@ -42,6 +42,9 @@
         <?php if (isset($confirm)) { ?>
             <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/confirm.css" />
         <?php } ?>
+        <?php if (isset($popup)) { ?>
+            <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/popup.css" />
+        <?php } ?>
 
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/lib/jquery-1.11.1.min.js"></script>
 
@@ -69,4 +72,7 @@
         <?php if (isset($confirm)) { ?>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/confirm.js"></script>
         <?php } ?>
+    <?php if (isset($popup)) { ?>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/popup.js"></script>
+    <?php } ?>
 </head>
