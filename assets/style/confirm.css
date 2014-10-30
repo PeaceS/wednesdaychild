@@ -1,12 +1,11 @@
 #main{ background-image: url('../image/background_faq.jpg'); }
-#menu{ position: absolute; }
 #confirm{
     position: absolute;
     overflow: hidden;
     top: 24%;
     left: 29.5%;
     width: 35%;
-    height: 50%;
+    height: 40%;
     padding: 2% 3%;
 }
 #confirm > label{
