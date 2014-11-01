@@ -21,9 +21,9 @@
 #shipping table tr.address td{ vertical-align: top; }
 #shipping table tr.validate_fail td:last-child{
     background-image: url('../image/icon_validate-warning.svg');
-    background-size: contain;
+    background-size: auto 60%;
     background-repeat: no-repeat;
-    background-position: right;
+    background-position: 97.5% 50%;
 }
 #shipping label{
     font-size: 1vw;
