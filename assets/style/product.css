@@ -59,7 +59,6 @@
     padding: 0.5% 7%;
     border: 2px solid #000000;
     float: left;
-    cursor: pointer;
 }
 #product div#select .product_select{ margin: 4% 0%; }
 #product div#select .product_select.color{ margin-bottom: 12%; }
@@ -68,6 +67,7 @@
     display: block;
     height: 8%;
     width: 7%;
+    cursor: pointer;
 }
 #product div#select .product_select.color span.selected{ border: 1px yellow solid; }
 #product div#select .product_select input{ width: 18% }

@@ -28,6 +28,7 @@ class Get_productDetail extends CI_Model{
             $this->db->select('product_color, product_no');
             $this->db->from('product');
             $this->db->like('product_no', substr($product, 0, 5), 'after');
+            $this->db->like('product_no', substr($product, -1), 'before');
             $this->db->where('product_stock >', 0);
             $this->db->group_by('product_color'); 
             $this->db->order_by('product_no', 'asc');

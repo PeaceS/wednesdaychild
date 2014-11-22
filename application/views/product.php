@@ -16,12 +16,14 @@
                 <div class="product_select color">Color : 
                     <div>
                         <?php foreach ($product_color as $color) { ?>
-                        <?php if (!strpos($color['product_color'], '.')) { ?>
-                        <span product="<?php echo $color['product_no'] ?>;" style="background-color: <?php echo $color['product_color'] ?>;" <?php if ($color['product_no'] == $product['product_no']) { ?>class="selected"<?php } ?>>
-                        <?php } else { ?>
-                        <span product="<?php echo $color['product_no'] ?>;" style="background-image: url(<?php echo base_url() . 'assets/image/color/' . $color['product_color'] ?>);" <?php if ($color['product_no'] == $product['product_no']) { ?>class="selected"<?php } ?>>
-                        <?php } ?>
-                        </span>
+                        <a href="/product/<?php echo $color['product_no']; ?>">
+                            <?php if (!strpos($color['product_color'], '.')) { ?>
+                            <span product="<?php echo $color['product_no'] ?>;" style="background-color: <?php echo $color['product_color'] ?>;" <?php if ($color['product_no'] == $product['product_no']) { ?>class="selected"<?php } ?>>
+                            <?php } else { ?>
+                            <span product="<?php echo $color['product_no'] ?>;" style="background-image: url(<?php echo base_url() . 'assets/image/color/' . $color['product_color'] ?>);" <?php if ($color['product_no'] == $product['product_no']) { ?>class="selected"<?php } ?>>
+                            <?php } ?>
+                            </span>
+                        </a>
                         <?php } ?>
                     </div>
                 </div>
