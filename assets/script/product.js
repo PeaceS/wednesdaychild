@@ -82,7 +82,7 @@ function event_change_product(product){
 function event_buy_product(product, amount){
     var data = {"product" : product, "qty" : amount};
     
-    $.post("/wednesdaychild/buy", data, function(result){
+    $.post("/buy", data, function(result){
         if (!isNaN(result)){
             alert("Add!");
             $("#menu_mybag amount").text(result);
