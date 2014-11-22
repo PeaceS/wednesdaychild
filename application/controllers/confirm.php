@@ -9,6 +9,7 @@ class Confirm extends CI_Controller {
     {
         $this->load->helper('form');
 
+        $included['confirm'] = true;
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
         
         $this->load->view('header', $included);

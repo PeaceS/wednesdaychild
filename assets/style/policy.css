@@ -20,8 +20,7 @@
     font-size: 0.9vw;
     overflow: hidden;
     text-align: left;
-    
-    background-color: gray;
+    background-image: url('../image/background_gray.png');
 }
 #policy #scroll div{
     overflow-x: hidden;

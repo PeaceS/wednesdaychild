@@ -1,11 +1,10 @@
-#main{ background-image: url('../image/background_girl.jpg'); }
 #confirm{
     position: absolute;
     overflow: hidden;
     top: 24%;
     left: 29.5%;
     width: 35%;
-    height: 40%;
+    height: 45%;
     padding: 2% 3%;
 }
 #confirm > label{

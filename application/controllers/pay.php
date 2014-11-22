@@ -17,7 +17,7 @@ class Pay extends CI_Controller {
         if ($this->checkStock($this->get_session->list_itemInBag())){
             $this->updateStock($this->get_session->list_itemWithQtyInBag());
             $this->saveTransaction($this->fareDetail);
-            //$this->get_session->free_itemInCart();
+            $this->get_session->free_itemInCart();
             $status = true;
         }
         if ($method == 'paypal' && $status == true){ $this->sendToPaypal(); }
