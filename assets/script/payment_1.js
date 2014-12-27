@@ -5,6 +5,7 @@ $(document).ready(function(){
 
 function setup_default(){
     default_set_price();
+    default_set_product_image();
 }
 
 function setup_eventHandle(){
@@ -35,6 +36,10 @@ function event_set_price(row){
     
     if (qty > row.find(".qty input").attr("max") || qty < row.find(".qty input").attr("min")) return false;
     row.find(".price").text((price * qty).toLocaleString());
+}
+function default_set_product_image(){
+    var firstProductImage = $(".item").first().find(".image span").css("background-image");
+    $("#bag #bag_background").css("background-image", firstProductImage);
 }
 function event_change_product(element){
     var product = element.attr("product") ? element.attr("product") : element.val();
