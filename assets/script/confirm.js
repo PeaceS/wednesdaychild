@@ -4,13 +4,7 @@ $(document).ready(function(){
 
 function setup_eventHandle(){
     $("#confirm form a label").click(function(){
-        event_send_confirm();
+	    $("form").submit();
+	    show_popup("Thank you for your information");
     });
-}
-
-// private function
-
-function event_send_confirm(){
-    alert("WTF");
-    $("form").submit();
 }

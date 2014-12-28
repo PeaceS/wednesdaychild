@@ -8,11 +8,11 @@ class Popup extends CI_Controller {
     public function confirm($status)
     {   
         $included['popup'] = true;
+        $data['status'] = $status == 'confirm'
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
         
         $this->load->view('header', $included);
         $this->load->view('main', $data);
-        $this->load->view('popup_' . $status);
         $this->load->view('list_menu');
     }
 }

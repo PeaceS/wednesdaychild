@@ -2,7 +2,13 @@
     <section id="blur">
         <div></div>
         <section>
-            <span></span>
+            <span>
+            <?php
+                if (isset($popup)) {
+                    echo $status == 'confirm' ? "thank you for purchased !" : "something went wrong";
+                }
+            ?>
+            </span>
         </section>
     </section>
     <div id="main">
