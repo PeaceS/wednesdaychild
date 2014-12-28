@@ -6,3 +6,5 @@
 */cache/!index.html
 */cache/!.htaccess
 /.idea/*
+.DS_Store
+assets/.DS_Store

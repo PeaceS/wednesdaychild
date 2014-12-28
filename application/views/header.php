@@ -47,6 +47,7 @@
         <?php } ?>
 
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/lib/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/overall.js"></script>
 
         <?php if (isset($home)) { ?>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/script/home.js"></script>

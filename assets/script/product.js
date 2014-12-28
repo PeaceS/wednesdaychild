@@ -84,7 +84,7 @@ function event_buy_product(product, amount){
     
     $.post("/buy", data, function(result){
         if (!isNaN(result)){
-            alert("Add!");
+            show_popup("Product: " + $("#product_name").text() + " added");
             $("#menu_mybag amount").text(result);
         }
     });
