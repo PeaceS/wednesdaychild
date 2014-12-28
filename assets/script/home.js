@@ -4,7 +4,7 @@ $(document).ready(function(){
 });
 
 function setup_default(){
-    
+    $("#social").remove();
 }
 
 function setup_eventHandle(){
