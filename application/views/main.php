@@ -5,7 +5,7 @@
             <span>
             <?php
                 if (isset($popup)) {
-                    echo $status == 'confirm' ? "thank you for purchased !" : "something went wrong";
+                    echo $confirm ? "thank you for purchased !" : "something went wrong";
                 }
             ?>
             </span>
