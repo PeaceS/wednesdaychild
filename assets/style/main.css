@@ -93,10 +93,10 @@ div.white_opacity{
 #blur section{
     position: absolute;
     background-color: #ffffff;
-    width: 500px;
-    height: 200px;
+    padding: 35px 50px;
     left: 50%;
-    top: 30%;
+    top: 35%;
+    text-transform: uppercase;
     -ms-transform: translate(-50%, -50%); /* IE 9 */
     -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
     transform: translate(-50%, -50%);

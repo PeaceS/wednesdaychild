@@ -1,7 +1,7 @@
 
 function show_popup(wording){
     $("#blur section span").text(wording);
-    $("#blur").fadeIn(3000, function(){
-    	$("#blur").fadeOut(2000);
+    $("#blur").fadeIn(1500, function(){
+    	$("#blur").fadeOut(1000);
     });
 }
