@@ -101,3 +101,5 @@ div.white_opacity{
     -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
     transform: translate(-50%, -50%);
 }
+#blur section span.confirm:before{ content: "thank you for purchased !"; }
+#blur section span.error:before{ content: "something went wrong"; }
