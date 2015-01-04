@@ -34,8 +34,7 @@ function event_send_mail(){
     };
     $.post("/contacts/send", data, function(result){
         if (result === true){
-            alert("Sent!");
-            //pop up
+            show_popup("Thank you for your information");
         }
     });
 }

@@ -5,6 +5,5 @@ $(document).ready(function(){
 function setup_eventHandle(){
     $("#confirm form a label").click(function(){
 	    $("form").submit();
-	    show_popup("Thank you for your information");
     });
 }
