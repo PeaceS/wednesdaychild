@@ -18,5 +18,5 @@ function default_set_redirect(){
             window.location = "/shop";
         else
             window.location = "/contacts";
-    }, 5000);
+    }, 3500);
 }
