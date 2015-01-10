@@ -1,17 +1,17 @@
 ul#list{
     position: absolute;
-    left: 3%;
-    bottom: 12%;
-    width: 94%;
-    margin: 0;
+    width: 600px;
+    margin: 15px 50px;
+    top: 475px;
     padding: 0;
 }
 ul#list li{
     display: block;
     float: left;
-    text-align: center;
     margin-right: 15px;
-    font-size: 1vw;
+    width: 185px;
     text-transform: capitalize;
+    text-align: left;
+    font-size: 14px;
 }
-ul#list li.selected{ border-bottom: #000000 solid 1px; }
+ul#list li.selected{ text-decoration: underline; }

@@ -1,11 +1,8 @@
-#main{ background-image: url('../image/background_wall.jpg'); }
 #shop{
-    position: absolute;
     overflow: hidden;
-    top: 19%;
-    left: 3%;
-    width: 92%;
-    height: 62%;
+    margin: 125px 50px;
+    width: 1100px;
+    height: 350px;
 }
 #shop #scroll{
     width: 102.5%;

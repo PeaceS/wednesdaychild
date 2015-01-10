@@ -1,6 +1,13 @@
 ul#list_menu{
     position: absolute;
-    bottom: 10px;
+    transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0); /* IE 9 */
+    -webkit-transform: translate(-50%, 0); /* Chrome, Safari, Opera */
+    left: 50%;
+    bottom: 20px;
+    width: 534px;
+    padding: 0;
+    margin: 0;
 }
 ul#list_menu li{
     display: block;

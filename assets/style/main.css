@@ -1,22 +1,28 @@
 #main{
     position: fixed;
-    top: 5%;
-    left: 3%;
-    width: 94%;
-    height: 90%;
+    transform: translate(-50%, -40%);
+    -ms-transform: translate(-50%, -40%); /* IE 9 */
+    -webkit-transform: translate(-50%, -40%); /* Chrome, Safari, Opera */
+    top: 40%;
+    left: 50%;
+    width: 1200px;
+    height: 600px;
     overflow: hidden;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('../image/background_girl.jpg');
+    background-image: url('../image/background_wall.jpg');
 }
 #main label#logo{
     display: block;
     position: absolute;
-    left: 40.5%;
-    top: 2%;
-    width: 19%;
-    height: 13.5%;
+    transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0); /* IE 9 */
+    -webkit-transform: translate(-50%, 0); /* Chrome, Safari, Opera */
+    top: 2.5%;
+    left: 50%;
+    width: 220px;
+    height: 83px;
     background-image: url('../image/home_logo.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -25,54 +31,45 @@
 }
 #main div#top_menu{
     position: absolute;
-    top: 12%;
-    right: 3%;
-    height: 6%;
-    width: 20%;
+    top: 75px;
+    right: 35px;
+    height: 40px;
+    width: 200px;
     font-family: AmericanTypewriter-Condensed;
     text-transform: uppercase;
-    font-size: 1.2vw;
+    font-size: 16px;
     z-index: 1;
 }
-#main div#top_menu span{
-    position: absolute;
+#main div#top_menu p{
+    margin: 0;
+    line-height: 20px;
+    text-align: right;
+}
+#main div#top_menu span:hover{
     cursor: pointer;
-    right: 0%;
-    bottom: 0%;
+    text-decoration: underline;
 }
-#main div#top_menu span#menu_purchaseConfirm{
-    right: 0%;
-    bottom: 50%;
-}
-#main div#top_menu span#menu_faq{
-    right: 65%;
-    bottom: 0%;
-}
-#main div#top_menu span#menu_policy{
-    right: 30%;
-    bottom: 0%;
+#main div#top_menu span{
+    padding-left: 15px;
 }
 ul#social{
     position: absolute;
-    bottom: 2%;
-    right: 2%;
+    bottom: 10px;
+    right: 35px;
+    width: 60px;
+    height: 25px;
     margin: 0;
     padding: 0;
-    width: 5%;
-    height: 3%;
 }
 ul#social li{
     display: block;
-    float: right;
-    margin: 0% 3.25%;
-    padding: 2%;
-    width: 39.5%;
+    float: left;
+    margin: 0 2.5px;
+    padding: 0;
+    width: 25px;
+    height: 25px;
 }
 ul#social li img{ width: 100%; }
-ul#list_menu{
-    left: 29%;
-    width: 42%;
-}
 div.white_opacity{
     background-image: url('../image/background_transparent.png');
 }
@@ -97,9 +94,9 @@ div.white_opacity{
     left: 50%;
     top: 35%;
     text-transform: uppercase;
+    transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%); /* IE 9 */
     -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
-    transform: translate(-50%, -50%);
 }
 #blur section span.confirm:before{ content: "thank you for purchased !"; }
 #blur section span.error:before{ content: "something went wrong"; }
