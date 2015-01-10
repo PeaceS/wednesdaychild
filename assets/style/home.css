@@ -1,9 +1,10 @@
 #home_banner{
     position: fixed;
-    top: 5%;
-    left: 25%;
-    width: 50%;
-    height: 90%;
+    top: 40%;
+    left: 50%;
+    width: 650px;
+    height: 600px;
+    transform: translate(-50%, -40%);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -11,16 +12,17 @@
 #home_banner label{
     display: block;
     position: absolute;
-    left: 25%;
-    top: 6.5%;
-    width: 50%;
-    height: 20%;
+    left: 150px;
+    top: 65px;
+    width: 334px;
+    height: 126px;
+    margin: 0 8px;
     background-image: url('../image/home_logo.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
 }
 ul#list_menu{
-    left: 10.5%;
-    width: 79%;
+    padding: 0 58px;
+    width: 534px;
 }

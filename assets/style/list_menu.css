@@ -1,20 +1,18 @@
 ul#list_menu{
     position: absolute;
-    bottom: 3%;
-    margin: 0;
-    padding: 0;
+    bottom: 10px;
 }
 ul#list_menu li{
     display: block;
     float: left;
     text-align: center;
-    margin: 0% 3.25%;
+    margin: 0 20px;
     background-color: #000000;
-    padding: 0% 2% 0.5%;
+    padding: 0 10px 3px;
 }
 ul#list_menu li a{
-    font-size: 1.55vw;
     text-transform: uppercase;
     font-family: BEBAS;
+    font-size: 21px;
     color: #FFFFFF;
 }
