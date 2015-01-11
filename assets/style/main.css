@@ -30,9 +30,7 @@
     z-index: 1;
 }
 #main div#top_menu{
-    position: absolute;
-    top: 75px;
-    right: 35px;
+    margin: 75px 35px 10px 965px;
     height: 40px;
     width: 200px;
     font-family: AmericanTypewriter-Condensed;
