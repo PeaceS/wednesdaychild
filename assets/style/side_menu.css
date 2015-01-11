@@ -1,18 +1,20 @@
 ul#menu{
     position: absolute;
     width: 35px;
-    height: 160px;
-    margin: 95px 0;
     padding: 0;
     z-index: 2;
-    top: 125px;
     right: 35px;
 }
+ul#menu.on-collection{ bottom: 50px; }
+ul#menu.on-shop{
+    top: 125px;
+    margin: 95px 0;
+}
+ul#menu.on-shop li{ margin: 20px 0; }
 ul#menu li{
     display: inline-block;
     width: 35px;
     height: 40px;
-    margin: 20px 0;
     cursor: pointer;
     background-size: contain;
     background-position: center;
@@ -20,3 +22,4 @@ ul#menu li{
 }
 ul#menu li#up{ background-image: url('../image/icon_arrow-up.svg'); }
 ul#menu li#down{ background-image: url('../image/icon_arrow-down.svg'); }
+ul#menu li#mode{ background-image: url('../image/icon_grid.svg'); }

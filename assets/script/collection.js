@@ -9,10 +9,10 @@ function setup_default(){
 
 function setup_eventHandle(){
     $("#menu #up").click(function(){
-        event_slide_collection(0);
+        event_slide_collection("up");
     });
     $("#menu #down").click(function(){
-        event_slide_collection(1);
+        event_slide_collection("down");
     });
     $("#menu #mode").click(function(){
         event_changeMode_collection();
@@ -30,7 +30,7 @@ function event_slide_collection(direction){
     var nextScrollPosition = currentScrollPosition;
     
     if ($("#collection").hasClass("scrolling")) return false;
-    if (direction === 0)
+    if (direction === "up")
         nextScrollPosition -= maximumScroll * 0.8;
     else
         nextScrollPosition += maximumScroll * 0.8;
@@ -42,10 +42,9 @@ function event_slide_collection(direction){
 }
 function event_changeMode_collection(){
     $("#collection").animate({
-        marginLeft:"5%",
-        marginTop:"2.5%",
-        width:"90%",
-        height:"90%",
+        margin:"50px 100px",
+        width:"1000px",
+        height:"500px",
         opacity:0
     }, 500, function(){
         if ($(this).hasClass("gridView"))
@@ -53,10 +52,9 @@ function event_changeMode_collection(){
         else
             $(this).addClass("gridView");
         $(this).animate({
-            marginLeft:"0%",
-            marginTop:"0%",
-            width:"102.5%",
-            height:"100%",
+            margin:"0",
+            width:"1216px",
+            height:"600px",
             opacity:1
         }, 750);
     });
