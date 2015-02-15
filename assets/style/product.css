@@ -1,92 +1,119 @@
 #main{ background-image: url('../image/background_wall.jpg'); }
 #product{
-    position: absolute;
-    top: 19%;
-    left: 3%;
-    width: 71.5%;
-    height: 62%;
+    position: relative;
     overflow: hidden;
+    margin-left: 50px;
+    margin-right: 25px;
+    width: 850px;
+    height: 350px;
+    font-size: 14px;
+}
+#product div.image{ width: 300px; }
+#product div.image span{
+    display: block;
+    background-size: cover;
+    background-position: 0% 0%;
+    width: 100%;
+    height: 100%;
+}
+#product div.normal{
+    float: left;
+    height: 340px;
+    padding: 5px;
+    cursor: zoom-in;
+}
+#product div.zoom{
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+    height: 350px;
+}
+#product div.zoom span{
+    position: absolute;
+    width: 500%;
+    height: 500%;
 }
 #product div#detail{
-    position: absolute;
-    height: 45%;
-    width: 26%;
-    left: 35%;
+    height: 180px;
+    width: 225px;
     overflow-x: hidden;
-    padding: 2% 7% 0% 2%;
-    font-size: 0.9vw;
+    padding-left: 5px;
+    padding-right: 30px;
+    margin: 10px 0;
 }
 #product div#detail #product_name{
-    margin: 0%;
-    font-size: 1.5vw;
+    margin: 0;
+    font-size: 24px;
 }
 #product div#detail #product_no{
-    margin: 1% 0% 3%;
-    font-size: 1vw;
+    margin: 2px 0;
+    font-size: 16px;
     text-transform: uppercase;
 }
 #product div#detail .product_detail{
-    text-indent: 30%;
-    line-height: 100%;
-    margin-bottom: 3%;
+    margin: 10px 0;
+    text-indent: 15px;
+    line-height: 16px;
+    word-wrap: break-all;
 }
 #product div#detail .product_detail ul{
-    text-indent: 0%;
-    margin: 0%;
-    padding-left: 0%;
+    text-indent: 0;
+    margin: 0;
+    padding-left: 0;
     list-style-type: none;
 }
 #product div#select{
-    position: absolute;
-    height: 55%;
-    width: 26%;
-    top: 40%;
-    left: 35%;
-    overflow: hidden;
-    padding: 2% 7% 0% 2%;
-    font-size: 0.9vw;
+    float: left;
+    height: 145px;
+    width: 225px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+#product div#select div{ height: 20px; }
+#product div#select p{
+    padding: 5px 0;
+    height: 20px;
+    margin: 0;
 }
 #product div#select #product_outOfStock{
     text-transform: uppercase;
 }
-#product div#select #product_price{
-    text-align: right;
-    margin: 4% 0%;
+#product div#select #product_price{ text-align: right; }
+#product div#select #product_price div{ padding: 1px; }
+#product div#select .product_select.color div{
+    display: inline-block;
+    margin-bottom: -6px;
 }
-#product div#select #product_price div{ padding: 1%; }
-#product div#select #product_price label#stock_check{
-    text-transform: capitalize;
-    padding: 0.5% 7%;
-    border: 2px solid #000000;
-    float: left;
-}
-#product div#select .product_select{ margin: 4% 0%; }
-#product div#select .product_select.color{ margin-bottom: 12%; }
 #product div#select .product_select.color span{
     float: left;
     display: block;
-    height: 8%;
-    width: 7%;
+    height: 15px;
+    width: 15px;
     cursor: pointer;
 }
 #product div#select .product_select.color span.selected{ border: 1px yellow solid; }
-#product div#select .product_select input{ width: 18% }
+#product div#select .product_select input{ width: 45px }
 #product div#select .product_action{
-    height: 25%;
-    width: 100%;
+    height: 45px;
+    width: 225px;
 }
-#product div#select .product_action td:first-child{ width: 40%; }
+#product div#select .product_action td:first-child{
+    width: 100px;
+    vertical-align: bottom;
+}
 #product div#select .product_action label{
     display: block;
     text-align: center;
     text-transform: uppercase;
     font-family: BEBAS;
-    font-size: 0.75vw;
+    font-size: 15px;
     background-color: #888888;
-    width: 100%;
-    padding: 1%;
-    padding-bottom: 3%;
+    width: 85px;
+    padding: 0 5px 4px;
     cursor: pointer;
+    border-bottom: 1px solid #676767;
+    border-right: 1px solid #676767;
 }
 #product div#select .product_action div{
     width: 35%;
@@ -97,31 +124,6 @@
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
-}
-#product div.image{
-    position: absolute;
-    width: 35%;
-}
-#product div.image span{
-    display: block;
-    background-size: cover;
-    background-position: 0% 0%;
-    width: 100%;
-    height: 100%;
-}
-#product div.normal{
-    height: 97.5%;
-    padding: 0.5%
-}
-#product div.zoom{
-    right: 0%;
-    height: 100%;
-    overflow: hidden;
-}
-#product div.zoom span{
-    position: absolute;
-    width: 500%;
-    height: 500%;
 }
 #relate{
     position: absolute;
