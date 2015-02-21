@@ -42,9 +42,13 @@
                     <td>email *</td>
                     <td><input validate="email" value="<?php echo $shippingAddress['email']; ?>" /></td>
                 </tr>
+                <tr class="required_field">
+                    <td>*required field</td>
+                    <td>
+                        <div id="menu">
+                            <a href="javascript:back();"><label class="back">back</label></a>
+                            <a href="javascript:next();"><label class="next">next</label></a>
+                        </div>
+                    </td>
+                </tr>
             </table>
-            <label>*required field</label>
-            <div id="menu">
-                <a href="javascript:back();"><label class="back">back</label></a>
-                <a href="javascript:next();"><label class="next">next</label></a>
-            </div>

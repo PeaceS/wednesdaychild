@@ -1,43 +1,51 @@
 #shipping{
-    position: absolute;
-    overflow: hidden;
+    width: 460px;
+    height: 380px;
+    padding: 10px 20px;
+    margin: 0 350px;
     text-transform: capitalize;
-    top: 19%;
-    left: 30.5%;
-    width: 35%;
-    height: 62%;
-    padding: 1% 0% 1% 2%;
 }
-#shipping table{
-    width: 100%;
-    font-size: 1vw;
+#shipping table{ font-size: 14px; }
+#shipping table tr{ line-height: 30px; }
+#shipping table tr:last-child{
+    height: 45px;
+    line-height: 20px;
+    vertical-align: bottom;
 }
-#shipping table tr td:first-child{ width: 30%; }
-#shipping table tr{ line-height: 200%; }
-#shipping table tr input{ width: 90%; }
+#shipping table tr td{ padding: 0; }
+#shipping table tr td:first-child{ width: 160px; }
+#shipping table tr td:last-child{ width: 300px; }
+#shipping table tr input, select{ height: 23px; }
+#shipping table tr input:hover,
+#shipping table tr textarea:hover,
+#shipping table tr select:hover{
+    border: 1px solid #999;
+}
+#shipping table tr input,
+#shipping table tr textarea,
+#shipping table tr select{
+    width: 270px;
+    color: #666;
+    padding: 0 5px;
+    font-size: 14px;
+    font-family: AmericanTypewriter;
+}
 #shipping table tr textarea{
-    width: 90%;
+    padding-top: 5px;
+    height: 100px;
+    resize: none;
 }
 #shipping table tr.address td{ vertical-align: top; }
+#shipping table tr.validate_fail input,
+#shipping table tr.validate_fail textarea{
+    border: 1px solid red;
+}
 #shipping table tr.validate_fail td:last-child{
     background-image: url('../image/icon_validate-warning.svg');
-    background-size: auto 60%;
+    background-size: 20px 20px;
     background-repeat: no-repeat;
-    background-position: 97.5% 50%;
-}
-#shipping label{
-    font-size: 1vw;
-    position: absolute;
-    bottom: 10%;
+    background-position: 275px 5px;
 }
 #shipping #menu{
-    height: 5%;
-    width: 57%;
-    bottom: 9%;
-    right: 6%;
-}
-#shipping #menu label{ width: 30%; }
-#shipping #menu .next{
-    position: absolute;
-    right: 0%;
+    width: 270px;
 }

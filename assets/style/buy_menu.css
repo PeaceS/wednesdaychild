@@ -1,6 +1,7 @@
 #menu label{
     display: block;
     width: 90px;
+    height: 18px;
     text-align: center;
     text-transform: uppercase;
     font-family: BEBAS;
