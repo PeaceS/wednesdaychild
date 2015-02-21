@@ -34,7 +34,7 @@
     overflow-x: hidden;
     height: 260px;
     width: 100%;
-    padding-right: 16px;
+    padding-right: 17px;
 }
 #bag #scroll #sub_scroll table tr{ line-height: 35px; }
 #bag #scroll #sub_scroll table tr.remove{ display: none; }
