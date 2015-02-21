@@ -1,18 +1,20 @@
         <div id="bag" class="white_opacity">
             <span id="bag_background"></span>
             <div id="scroll">
-                My Bags
+                <table>
+                    <tr><td colspan="7">My Bags</td></tr>
+                    <tr>
+                        <td width="50px"></td>
+                        <td width="380px">Item Name</td>
+                        <td width="75px">Size</td>
+                        <td width="50px">Color</td>
+                        <td width="75px">Quantity</td>
+                        <td width="100px">Price(s)</td>
+                        <td width="50px"></td>
+                    </tr>
+                </table>
                 <div id="sub_scroll">
                     <table>
-                        <tr>
-                            <td width="12%">Item Pics</td>
-                            <td width="42%">Item Name</td>
-                            <td width="6%">Size</td>
-                            <td width="7%">Color</td>
-                            <td width="12%">Quantity</td>
-                            <td width="14%">Price(s)</td>
-                            <td width="7%">Remove</td>
-                        </tr>
                         <?php foreach ($bag as $item) { ?>
                         <?php if ($item['stock'] == 0) { ?>
                         <tr class="item preremove" product="<?php echo $item['product']; ?>">
@@ -22,7 +24,7 @@
                         <tr class="item" product="<?php echo $item['product']; ?>">
                         <?php } ?>
                             <td class="image"><span style="background-image: url('<?php echo $item['image']; ?>');"></span></td>
-                            <td><?php echo $item['name']; ?></td>
+                            <td class="name"><?php echo $item['name']; ?></td>
                             <td class="size">
                                 <select>
                                     <?php foreach ($item['size'] as $size) { ?>
