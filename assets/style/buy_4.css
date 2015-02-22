@@ -1,20 +1,4 @@
-#payment_method > label{
-    font-weight: bold;
-    display: block;
-    height: 20px;
-}
-#payment_method table{
-    width: 95px;
-    height: 75px;
-    font-size: 14px;
-    margin-top: 15px;
-}
-#payment_method table tr{ line-height: 30px; }
-#payment_method table tr td{
-    text-align: center;
-    border: #000 1px solid;
-    cursor: pointer;
-}
+#payment_method table.payment_select{ height: 75px; }
 #payment_method div#menu{
     height: 20px;
     width: 100px;

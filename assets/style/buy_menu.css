@@ -28,3 +28,51 @@
     margin: 0 350px;
     text-transform: capitalize;
 }
+.payment #scroll{
+    height: 330px;
+    width: 100%;
+    overflow: hidden;
+}
+.payment > label{
+    font-weight: bold;
+    display: block;
+    height: 20px;
+}
+.payment table.payment_select{
+    width: 95px;
+    font-size: 14px;
+    margin-top: 15px;
+}
+.payment table.payment_select tr{ line-height: 30px; }
+.payment table.payment_select tr td{
+    text-align: center;
+    border: #000 1px solid;
+    cursor: pointer;
+}
+.payment #scroll #sub_scroll{
+    overflow-x: hidden;
+    width: 100%;
+    height: 270px;
+    padding-right: 17px;
+}
+.payment ul#menu{
+    position: absolute;
+    width: 25px;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    top: 150px;
+    right: 20px;
+}
+.payment ul#menu li{
+    display: block;
+    height: 40px;
+    margin: 5px 0;
+    cursor: pointer;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.payment ul#menu li#up{ background-image: url('../image/icon_arrow-up.svg'); }
+.payment ul#menu li#down{ background-image: url('../image/icon_arrow-down.svg'); } 
