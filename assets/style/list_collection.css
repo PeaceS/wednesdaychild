@@ -12,6 +12,5 @@ ul#list li{
     width: 185px;
     text-transform: capitalize;
     text-align: left;
-    font-size: 14px;
 }
 ul#list li.selected{ text-decoration: underline; }

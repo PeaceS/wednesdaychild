@@ -1,4 +1,4 @@
-        <div id="summary" class="white_opacity">
+        <div id="summary" class="payment white_opacity">
             <div id="scroll">
                 <table>
                     <tr><td colspan="5">Purchased List</td></tr>

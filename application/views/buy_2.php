@@ -1,4 +1,4 @@
-        <div id="shipping" class="white_opacity">
+        <div id="shipping" class="payment white_opacity">
             <table>
                 <tr type="first">
                     <td>first name *</td>

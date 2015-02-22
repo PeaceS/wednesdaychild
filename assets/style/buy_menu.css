@@ -2,7 +2,6 @@
     display: block;
     width: 90px;
     height: 18px;
-    font-size: 14px;
     text-align: center;
     text-transform: uppercase;
     font-family: BEBAS;
@@ -21,3 +20,11 @@
     cursor: default;
 }
 #payment_menu a.selected{ text-decoration: underline; }
+.payment{
+    position: relative;
+    width: 460px;
+    height: 380px;
+    padding: 10px 20px;
+    margin: 0 350px;
+    text-transform: capitalize;
+}
