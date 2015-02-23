@@ -3,16 +3,15 @@
     padding-right: 50px;
 }
 #bankwire table.payment_select{ height: 35px; }
+#bankwire #scroll,
+#bankwire #scroll #sub_scroll{
+    height: 250px;
+}
 #bankwire #scroll #sub_scroll p:first-child{ text-transform: uppercase; }
 #bankwire #scroll #sub_scroll p b{ color: #444; }
 #bankwire div#menu{
-    height: 5%;
-    width: 40%;
-    bottom: 10%;
-    right: 8%;
-}
-#bankwire div#menu label{ width: 40%; }
-#bankwire div#menu .next{
-    position: absolute;
-    right: 0%;
+    height: 20px;
+    width: 200px;
+    margin-top: 15px;
+    margin-left: 225px;
 }
