@@ -18,10 +18,10 @@
             </p>
         </div>
         <ul id="social">
-            <li><a href="https://www.instagram.com/wednesday_child">
+            <li><a href="https://www.instagram.com/wednesday_child" target="_blank">
                     <img src="<?php echo base_url(); ?>assets/image/icon_instagram.svg" title="instagram" />
                 </a></li>
-            <li><a href="https://www.facebook.com/wednesdaychildshop">
+            <li><a href="https://www.facebook.com/wednesdaychildshop" target="_blank">
                     <img src="<?php echo base_url(); ?>assets/image/icon_facebook.svg" title="facebook" />
                 </a></li>
         </ul>
