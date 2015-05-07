@@ -1,50 +1,15 @@
+#main{ background: #ffffff; }
 #collection{
-    width: 102.5%;
-    height: 100%;
+    padding-right: 17px;
+    width: 1200px;
+    height: 600px;
     overflow-x: hidden;
 }
 #collection div{
-    width: 100%;
-    height: 100%;
-    margin-bottom: 3%;
+    width: 1200px;
+    height: 600px;
+    margin-bottom: 35px;
     float: left;
     background-size: cover;
     background-position: center;
 }
-#collection span.tear{
-    display: none;
-    //display: block;
-    position: absolute;
-    z-index: 1;
-}
-#collection span#tear1{
-    width: 30%;
-    height: 40%;
-    top: 58%;
-    right: 2%;
-    
-    background: white;
-}
-#collection ul#menu{
-    width: 3%;
-    height: 30%;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    z-index: 2;
-    bottom: 3%;
-    right: 3%;
-}
-#collection ul#menu li{
-    display: block;
-    width: 100%;
-    height: 25%;
-    margin: 25% 0%;
-    cursor: pointer;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-#collection ul#menu li#up{ background-image: url('../image/icon_arrow-up.svg'); }
-#collection ul#menu li#down{ background-image: url('../image/icon_arrow-down.svg'); }
-#collection ul#menu li#mode{ background-image: url('../image/icon_grid.svg'); }

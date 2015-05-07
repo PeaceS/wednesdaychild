@@ -7,7 +7,7 @@
                 <?php } ?>
             </div>
         </div>
-        <ul id="menu">
+        <ul id="menu" class="on-shop">
             <li id="up" title="scroll up"></li>
             <li id="down" title="scroll down"></li>
         </ul>

@@ -1,6 +1,6 @@
-        <div id="payment_method" class="white_opacity">
+        <div id="payment_method" class="payment white_opacity">
             <label>Payment Method</label>
-            <table>
+            <table class="payment_select">
                 <tr><td id="bankwire"><a href="/buy/bankwire">Bank Wire</a></td></tr>
                 <tr><td id="paypal"><a href="/wednesdaychild/buy/paypal">Paypal</a></td></tr>
             </table>
