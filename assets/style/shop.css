@@ -12,10 +12,10 @@
     height: 100%;
     overflow-x: hidden;
 }
-#shop #scroll img{
-    width: 18%;
+#shop #scroll span{
+    width: 200px;
     margin: 0 10px 20px;
     float: left;
 }
-#shop #scroll img.col0{ margin-left: 0%; }
-#shop #scroll img.col4{ margin-right: 0%; }
+#shop #scroll span.col0{ margin-left: 0%; }
+#shop #scroll span.col4{ margin-right: 0%; }
