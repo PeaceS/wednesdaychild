@@ -1,7 +1,6 @@
         <div id="product" class="white_opacity" no="<?php echo $product_no; ?>">
             <div id="detail">
                 <p id="product_name"><?php echo $product['product_name']; ?></p>
-                <p id="product_no"><?php echo $product['product_no']; ?></p>
                 <div class="product_detail"><?php echo $product['product_detail']; ?></div>
                 <div class="product_detail"><?php echo $product['product_fabric']; ?></div>
                 <div class="product_detail"><?php echo $product['product_fit']; ?></div>
@@ -12,20 +11,6 @@
                 <?php } else { ?>
                 <div id="product_price">
                     <div>Price : <?php echo $product['product_price']; ?> B</div>
-                </div>
-                <div class="product_select color">Color : 
-                    <div>
-                        <?php foreach ($product_color as $color) { ?>
-                        <a href="/product/<?php echo $color['product_no']; ?>">
-                            <?php if (!strpos($color['product_color'], '.')) { ?>
-                            <span product="<?php echo $color['product_no'] ?>;" style="background-color: <?php echo $color['product_color'] ?>;" <?php if ($color['product_no'] == $product['product_no']) { ?>class="selected"<?php } ?>>
-                            <?php } else { ?>
-                            <span product="<?php echo $color['product_no'] ?>;" style="background-image: url(<?php echo base_url() . 'assets/image/color/' . $color['product_color'] ?>);" <?php if ($color['product_no'] == $product['product_no']) { ?>class="selected"<?php } ?>>
-                            <?php } ?>
-                            </span>
-                        </a>
-                        <?php } ?>
-                    </div>
                 </div>
                 <p class="product_select qty">Quantity : <input type="number" value="1" min="1" max="<?php echo $product['product_stock']; ?>"></p>
                 <p class="product_select">Size Avaliable : <select>
@@ -48,10 +33,10 @@
                 </table>
             </div>
             <div class="image normal">
-                <span title="image 0" style="background-image: url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[0]['image_url']; ?>);"></span>
+                <span title="image 0" style="background-image: url('<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[0]['image_url']; ?>');"></span>
             </div>
             <div class="image zoom">
-                <span style="background-image: url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[0]['image_zoom']; ?>);"></span>
+                <span style="background-image: url('<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[0]['image_zoom']; ?>');"></span>
             </div>
         </div>
         <div id="relate" class="white_opacity">
