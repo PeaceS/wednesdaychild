@@ -1,15 +1,10 @@
         <div id="product" class="white_opacity" no="<?php echo $product_no; ?>">
-            <div class="image normal">
-                <span title="image 0" style="background-image: url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[0]['image_url']; ?>);"></span>
-            </div>
-            <div class="image zoom">
-                <span style="background-image: url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[0]['image_zoom']; ?>);"></span>
-            </div>
             <div id="detail">
                 <p id="product_name"><?php echo $product['product_name']; ?></p>
                 <div class="product_detail"><?php echo $product['product_detail']; ?></div>
                 <div class="product_detail"><?php echo $product['product_fabric']; ?></div>
                 <div class="product_detail"><?php echo $product['product_fit']; ?></div>
+                <div class="product_detail"><?php echo $product['product_measurement']; ?></div>
             </div>
             <div id="select">
                 <?php if (isset($outOfStock)) { ?>

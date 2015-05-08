@@ -25,41 +25,55 @@ class Product extends CI_Controller {
     
     private function load_data($product)
     {
-        $data['self'] = 'shop';
-        $data['collection'] = substr($product, 0, 3);
-        $data['listCollection'] = $this->get_collection->list_collection();
-        $data['product'] = $this->transform_data($product);
-        $data['product_no'] = $product;
-        $data['product_image'] = $this->get_productDetail->get_image($product);
-        $data['product_color'] = $this->get_productDetail->get_color($product);
-        $data['product_size'] = $this->get_productDetail->get_size($product);
-        $data['product_related'] = $this->get_product->list_related($product);
+        $data['self']                   = 'shop';
+        $data['collection']             = substr($product, 0, 3);
+        $data['listCollection']         = $this->get_collection->list_collection();
+        $data['product']                = $this->transform_data($product);
+        $data['product_no']             = $product;
+        $data['product_image']          = $this->get_productDetail->get_image($product);
+        $data['product_color']          = $this->get_productDetail->get_color($product);
+        $data['product_size']           = $this->get_productDetail->get_size($product);
+        $data['product_related']        = $this->get_product->list_related($product);
         
         return $data;
     }
     private function transform_data($product)
     {
-        $data = $this->get_productDetail->get_product($product);
+        $data                           = $this->get_productDetail->get_product($product);
         if (count($data) == 0){ return null; }
-        $data['product_detail'] = $this->apply_bulletPoint($data['product_detail']);
-        $data['product_fabric'] = $this->apply_bulletPoint($data['product_fabric']);
-        $data['product_fit'] = $this->apply_bulletPoint($data['product_fit']);
-        $data['product_price'] = number_format($data['product_price'], 2, '.', ',');
+        $data['product_detail']         = $this->apply_bulletPoint($data['product_detail']);
+        $data['product_fabric']         = $this->apply_bulletPoint($data['product_fabric']);
+        $data['product_fit']            = $this->apply_bulletPoint($data['product_fit']);
+        $data['product_measurement']    = $this->apply_table($data['product_measurement']);
+        $data['product_price']          = number_format($data['product_price'], 2, '.', ',');
         
         return $data;
     }
     private function apply_bulletPoint($data)
     {
-        if (strpos($data, ',-')){
+        if (substr($data, 0, 2) == '- '){
             $output = '<ul>';
-            foreach (explode(',', $data) as $row ){
-                $output .= '<li>' . $row . '</li>';
+            foreach (explode("- ", $data) as $row){
+                if (trim($row) != ''){ $output .= '<li>- ' . trim($row) . '</li>'; }
             }
             $output .= '</ul>';
             return $output;
         }
         
         return $data;
+    }
+    private function apply_table($data)
+    {
+        $output = '<table>';
+        foreach (explode(",", $data) as $row) {
+            $output .= '<tr>';
+            foreach (explode("-", $row) as $col) {
+                $output .= '<td>' . trim($col) . '</td>';
+            }
+            $output .= '</tr>';
+        }
+        $output .= '</table>';
+        return $output;
     }
     private function get_others($data)
     {
