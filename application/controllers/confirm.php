@@ -28,10 +28,10 @@ class Confirm extends CI_Controller {
             $data = $this->prepare_result($this->upload->data());
             $this->save_record($data);
             $this->send_notification($data);
-            $status = 'sent';
+            $status = 'confirm';
         }
 
-        redirect('/popup/confirm/' . $status, 'refresh');
+        redirect('/popup/payment/' . $status, 'refresh');
     }
     public function update($reference, $status)
     {

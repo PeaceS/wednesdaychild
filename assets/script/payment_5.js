@@ -18,7 +18,7 @@ function setup_eventHandle(){
             if (!result)
                 window.location = "/buy/1";
             else
-                window.location = "/shop";
+                window.location = "/confirm";
         });
     });
 }

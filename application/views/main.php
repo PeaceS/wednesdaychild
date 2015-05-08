@@ -1,4 +1,10 @@
 <body>
+    <section id="blur">
+        <div></div>
+        <section>
+            <span class="<?php if (isset($popup)) { echo $confirm ? "confirm" : "error"; } ?>"></span>
+        </section>
+    </section>
     <div id="main">
         <label id="logo"></label>
         <div id="top_menu">

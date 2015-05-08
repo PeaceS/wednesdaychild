@@ -1,1 +1,0 @@
-        <div id="popup" class="white_opacity sent">thank you for purchased!</div>
