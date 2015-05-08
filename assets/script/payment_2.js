@@ -1,11 +1,6 @@
 $(document).ready(function(){
-    setup_default();
     setup_eventHandle();
 });
-
-function setup_default(){
-    default_set_fixWidthTextarea();
-}
 
 function setup_eventHandle(){
     $("#shipping #menu .back, #shipping #menu .next").click(function(){
@@ -15,19 +10,10 @@ function setup_eventHandle(){
 
 // private function
 
-function default_set_fixWidthTextarea(){
-    var textarea = $("#shipping table textarea");
-    
-    textarea.css({
-        "min-width": textarea.innerWidth(),
-        "min-height": textarea.height(),
-        "max-height": textarea.height()
-    });
-}
 function event_update_address(element){
     var data = new Object();
     var validation = true;
-    $.each($("#shipping table tr"), function(){
+    $.each($("#shipping table tr").not(".required_field"), function(){
         var item = $(this).attr("type");
         var value = $(this).find("input").val() !== undefined ?
                     $(this).find("input").val() :

@@ -1,20 +1,25 @@
 ul#list_menu{
     position: absolute;
-    bottom: 3%;
-    margin: 0;
+    transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0); /* IE 9 */
+    -webkit-transform: translate(-50%, 0); /* Chrome, Safari, Opera */
+    left: 50%;
+    bottom: 20px;
+    width: 534px;
     padding: 0;
+    margin: 0;
 }
 ul#list_menu li{
     display: block;
     float: left;
     text-align: center;
-    margin: 0% 3.25%;
+    margin: 0 20px;
     background-color: #000000;
-    padding: 0% 2% 0.5%;
+    padding: 0 10px 3px;
 }
 ul#list_menu li a{
-    font-size: 1.55vw;
     text-transform: uppercase;
     font-family: BEBAS;
+    font-size: 21px;
     color: #FFFFFF;
 }

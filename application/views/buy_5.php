@@ -1,28 +1,25 @@
-        <div id="bankwire" class="white_opacity">
+        <div id="bankwire" class="payment white_opacity">
+            <label>Payment Method</label>
+            <table class="payment_select">
+                <tr><td>Bank Wire</td></tr>
+            </table>
             <div id="scroll">
                 <div id="sub_scroll">
-                    <label>Payment Method</label>
-                    <table>
-                        <tr><td>Bank Wire</td></tr>
-                    </table>
-                    <div>
-                        <p class="upper">please send us a bank wire with:</p>
-                        <p>- An amount of <?php echo $totalAmount; ?> THB</p>
-                        <p>- To one of these accounts:</p>
-                        <?php foreach ($bankDetail as $account) {
-                            $detail = explode(",", $account['value']);
-                            $detail[0] = ucwords($detail[0]);
-                            $detail[1] = substr($detail[1], 0, 3) . "-" . substr($detail[1], 3, 1) . "-" . substr($detail[1], 4, 5) . "-" . substr($detail[1], -1, 1);
-                            $detail[2] = ucwords($detail[2]);
-                            $detail[3] = ucwords($detail[3]);
-                        ?>
-                        <p>
-                            the account owner of <?php echo $detail[0]; ?><br>
-                            with these details account number <?php echo $detail[1]; ?> saving account.<br>
-                            to <?php echo $detail[2]; ?>, <?php echo $detail[3]; ?> branch
-                        </p>
-                        <?php } ?>
-                    </div>
+                    <p>please send us a bank wire with:</p>
+                    <p>- An amount of <?php echo $totalAmount; ?> THB</p>
+                    <p>- To one of these accounts:</p>
+                    <?php foreach ($bankDetail as $account) {
+                        $detail = explode(",", $account['value']);
+                        $detail[0] = ucwords($detail[0]);
+                        $detail[1] = substr($detail[1], 0, 3) . "-" . substr($detail[1], 3, 1) . "-" . substr($detail[1], 4, 5) . "-" . substr($detail[1], -1, 1);
+                        $detail[2] = ucwords($detail[2]);
+                        $detail[3] = ucwords($detail[3]);
+                    ?>
+                    <p>
+                        the account owner of <b><?php echo $detail[0]; ?></b> with these details: account number <b><?php echo $detail[1]; ?></b> saving account.<br>
+                        to <b><?php echo $detail[2]; ?>, <?php echo $detail[3]; ?></b> branch
+                    </p>
+                    <?php } ?>
                 </div>
             </div>
             <ul id="menu">

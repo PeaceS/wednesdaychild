@@ -1,14 +1,12 @@
-#main{ background-image: url('../image/background_wall.jpg'); }
 #shop{
-    position: absolute;
     overflow: hidden;
-    top: 19%;
-    left: 3%;
-    width: 92%;
-    height: 62%;
+    margin: 0 50px;
+    width: 1100px;
+    height: 350px;
 }
 #shop #scroll{
-    width: 102.5%;
+    padding-right: 17px;
+    width: 1100px;
     height: 100%;
     overflow-x: hidden;
 }

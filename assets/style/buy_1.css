@@ -1,61 +1,71 @@
 #bag{
-    position: absolute;
+    position: relative;
     overflow: hidden;
-    top: 19%;
-    left: 8%;
-    width: 84%;
-    height: 62%;
+    width: 1100px;
+    height: 370px;
+    margin: 0 50px;
 }
 #bag span#bag_background{
-    position: absolute;
     display: block;
-    height: 90%;
-    width: 27%;
-    top: 3%;
-    left: 1%;
-    background-position: center; 
+    float: left;
+    height: 340px;
+    width: 300px;
+    margin: 5px;
+    background-size: cover;
+    background-position: 0 center;
 }
 #bag #scroll{
-    position: absolute;
-    height: 81%;
-    width: 70%;
-    top: 3%;
-    left: 29%;
+    height: 310px;
+    width: 780px;
+    padding: 5px;
     overflow: hidden;
-    font-size: 1vw;
+}
+#bag #scroll > table{
+    font-size: 14px;
+    height: 50px;
+}
+#bag #scroll > table td{ padding: 0; }
+#bag #scroll > table tr:first-child{
+    height: 30px;
+    vertical-align: top;
 }
 #bag #scroll #sub_scroll{
     overflow-x: hidden;
+    height: 260px;
     width: 100%;
-    padding-right: 2.5%;
+    padding-right: 17px;
 }
-#bag #scroll #sub_scroll table{
-    width: 100%;
-    font-size: 1vw;
-}
-#bag #scroll #sub_scroll table tr{ line-height: 200%; }
+#bag #scroll #sub_scroll table tr{ line-height: 35px; }
 #bag #scroll #sub_scroll table tr.remove{ display: none; }
 #bag #scroll #sub_scroll table tr.hilight{ background-color: #f3f467 }
-#bag #scroll #sub_scroll table td{ height: 100%; }
+#bag #scroll #sub_scroll table td{
+    font-size: 14px;
+    padding: 0;
+}
+#bag #scroll #sub_scroll table td.image{ width: 50px; }
+#bag #scroll #sub_scroll table td.name{ width: 380px; }
+#bag #scroll #sub_scroll table td.size{ width: 75px; }
+#bag #scroll #sub_scroll table td.color{ width: 50px; }
+#bag #scroll #sub_scroll table td.qty{ width: 75px; }
+#bag #scroll #sub_scroll table td.price{ width: 100px; }
+#bag #scroll #sub_scroll table td.remove{ width: 50px; }
 #bag #scroll #sub_scroll table span{
     display: block;
-    height: 60%;
-    width: 40%;
+    height: 30px;
+    width: 30px;
 }
 #bag #scroll #sub_scroll table span.color{ display: none; }
 #bag #scroll #sub_scroll table span.color.selected{ display: block; }
-#bag #scroll #sub_scroll table td.qty input{
-    width: 50%;
-}
+#bag #scroll #sub_scroll table td.qty input{ width: 45px; }
 #bag #scroll #sub_scroll table td.image span{
     background-size: cover;
-    background-position: 0%;
+    background-position: 0 center;
     background-repeat: no-repeat;
-    height: 90%;
 }
 #menu{
-    width: 70%;
-    bottom: 7%;
-    left: 29%;
+    float: left;
+    width: 750px;
+    height: 20px;
+    padding: 5px;
+    padding-bottom: 0px;
 }
-#menu label{ width: 12%; }
