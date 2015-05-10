@@ -27,14 +27,14 @@
                         <td><a href="javascript:buy(<?php echo $product['product_name']; ?>);"><label>add to bag</label></a></td>
                         <td id="product_image">
                             <?php for($i = count($product_image) - 1; $i > 0; $i--) { ?>
-                            <div title="image <?php echo $i; ?>" style="background-image: url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[$i]['image_url']; ?>);" zoom="url(<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[$i]['image_zoom']; ?>)">&nbsp;</div>
+                            <div title="image <?php echo $i + 1; ?>" style="background-image: url('<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[$i]['image_url']; ?>');" zoom="url('<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[$i]['image_zoom']; ?>')">&nbsp;</div>
                             <?php } ?>
                         </td>
                     </tr>
                 </table>
             </div>
             <div class="image normal">
-                <span title="image 0" style="background-image: url('<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[0]['image_url']; ?>');"></span>
+                <span title="image 1" style="background-image: url('<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[0]['image_url']; ?>');"></span>
             </div>
             <div class="image zoom">
                 <span style="background-image: url('<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[0]['image_zoom']; ?>');"></span>
