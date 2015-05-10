@@ -38,13 +38,14 @@
     list-style-type: none;
 }
 #product div#select{
+    display: none;
+    background-color: rgba(0,0,0,0.75);
+    color: #fff;
     position: absolute;
     left: 300px;
-    height: 145px;
-    width: 225px;
-    margin-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 10px;
+    bottom: 0;
+    width: 250px;
+    padding: 10px;
 }
 #product div#select div{ height: 20px; }
 #product div#select p{
@@ -55,21 +56,26 @@
 #product div#select #product_outOfStock{
     text-transform: uppercase;
 }
-#product div#select #product_price{ text-align: right; }
-#product div#select #product_price div{ padding: 1px; }
-#product div#select .product_select.color div{
-    display: inline-block;
-    margin-bottom: -6px;
+#product div#select #product_price{
+    text-align: right;
+    float: right;
+    width: 50%;
+    margin-top: 10px;
+    font-size: 20px;
 }
-#product div#select #product_price div{ padding: 1%; }
+#product div#select #product_price div{ padding: 1px; }
 #product div#select #product_price label#stock_check{
     text-transform: capitalize;
     padding: 0.5% 7%;
     border: 2px solid #000000;
     float: left;
 }
-#product div#select .product_select{ margin: 4% 0%; }
-#product div#select .product_select input{ width: 18% }
+#product div#select .product_select{ margin: 5px 0; }
+#product div#select .product_select.qty{ width: 50%; }
+#product div#select .product_select input{ width: 35px; }
+#product div#select .product_select input,
+#product div#select .product_select select{ margin-left: 10px; }
+#product div#select .product_select option{ border: 0; }
 #product div#select .product_action{
     height: 45px;
     width: 225px;
@@ -79,6 +85,7 @@
     width: 105px;
     vertical-align: middle;
 }
+#product div#select .product_action #product_image div{ border: 1px solid #fff; }
 #product div#select .product_action label{
     display: block;
     text-align: center;
@@ -98,9 +105,10 @@
     height: 40px;
     float: right;
     margin: 0 5px;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    border: 1px solid #fff;
     cursor: pointer;
 }
 #product div.image{
@@ -116,7 +124,7 @@
     height: 100%;
 }
 #product div.normal{
-    height: 365px;
+    height: 340px;
     padding: 5px;
 }
 #product div.zoom{

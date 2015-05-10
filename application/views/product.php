@@ -11,10 +11,10 @@
                 <div id="product_outOfStock">out of stock</div>
                 <?php } else { ?>
                 <div id="product_price">
-                    <div>Price : <?php echo $product['product_price']; ?> B</div>
+                    <div><?php echo $product['product_price']; ?> B</div>
                 </div>
-                <p class="product_select qty">Quantity : <input type="number" value="1" min="1" max="<?php echo $product['product_stock']; ?>"></p>
-                <p class="product_select">Size Avaliable : <select>
+                <p class="product_select qty">Quantity <input type="number" value="1" min="1" max="<?php echo $product['product_stock']; ?>"></p>
+                <p class="product_select">Size <select>
                     <?php foreach ($product_size as $size) { ?>
                     <option value="<?php echo $size['product_no']; ?>" <?php if ($size['product_no'] == $product['product_no']) { ?>selected="true"<?php } ?>>
                         <?php echo $size['product_size']; ?>
