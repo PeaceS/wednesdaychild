@@ -6,6 +6,9 @@
                 <div class="product_detail"><?php echo $product['product_fit']; ?></div>
                 <div class="product_detail"><?php echo $product['product_measurement']; ?></div>
             </div>
+            <div id="buy_product">
+                ^ Click to Buy
+            </div>
             <div id="select">
                 <?php if (isset($outOfStock)) { ?>
                 <div id="product_outOfStock">out of stock</div>
