@@ -17,4 +17,18 @@ class Faq extends CI_Controller {
         $this->load->view('faq');
         $this->load->view('list_menu');
     }
+
+    private function apply_bulletPoint($data)
+    {
+        if (substr($data, 0, 2) == '- '){
+            $output = '<ul>';
+            foreach (explode("- ", $data) as $row){
+                if (trim($row) != ''){ $output .= '<li>- ' . trim($row) . '</li>'; }
+            }
+            $output .= '</ul>';
+            return $output;
+        }
+
+        return $data;
+    }
 }
