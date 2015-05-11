@@ -12,7 +12,7 @@
     height: 300px;
     width: 300px;
     
-    background-color: red; 
+    background-image: url('../image/faq.jpg');
 }
 #faq span label{
     text-transform: uppercase;
