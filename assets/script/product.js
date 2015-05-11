@@ -4,7 +4,7 @@ $(document).ready(function(){
 });
 
 function setup_default(){
-    
+
 }
 
 function setup_eventHandle(){
@@ -26,6 +26,12 @@ function setup_eventHandle(){
     $(".product_action label").click(function(){
         var amount = $(".product_select.qty input").val();
         event_buy_product($("#product").attr("no"), amount);
+    });
+    $("#buy_product").mouseover(function(){
+        event_show_select();
+    });
+    $("#detail").mouseover(function(){
+        event_hide_select();
     });
 }
 
@@ -82,10 +88,22 @@ function event_change_product(product){
 function event_buy_product(product, amount){
     var data = {"product" : product, "qty" : amount};
     
-    $.post("/wednesdaychild/buy", data, function(result){
+    $.post("/buy", data, function(result){
         if (!isNaN(result)){
             show_popup("the item has added to cart");
             $("#menu_mybag amount").text(result);
         }
+    });
+}
+function event_show_select(){
+    $("#buy_product").addClass("hide");
+    $("#select").slideToggle(500, function(){
+        $("#detail").addClass("hideScroll");
+    });
+}
+function event_hide_select(){
+    $("#select").slideUp(350, function(){
+        $("#detail").removeClass("hideScroll");
+        $("#buy_product").removeClass("hide");
     });
 }

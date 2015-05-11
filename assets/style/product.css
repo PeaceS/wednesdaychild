@@ -10,12 +10,17 @@
 }
 #product div#detail{
     position: absolute;
-    height: 280px;
+    height: 300px;
     width: 270px;
     left: 300px;
     overflow-x: hidden;
     margin-top: 15px;
     font-size: 14px;
+}
+#product div#detail.hideScroll{
+    overflow-y: hidden;
+    padding-right: 15px;
+    width: 255px;
 }
 #product div#detail table tr:first-child{ font-size: 12px; }
 #product div#detail table tr td{
@@ -37,6 +42,19 @@
     padding-left: 0%;
     list-style-type: none;
 }
+#product div#buy_product{
+    position: absolute;
+    left: 300px;
+    bottom: 0;
+    width: 270px;
+    height: 20px;
+    padding: 3px 0;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.75);
+    color: #fff;
+}
+#product div#buy_product.hide{ display: none; }
 #product div#select{
     display: none;
     background-color: rgba(0,0,0,0.75);
