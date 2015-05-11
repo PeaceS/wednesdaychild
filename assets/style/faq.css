@@ -11,15 +11,16 @@
     display: block;
     height: 300px;
     width: 300px;
-    
     background-image: url('../image/faq.jpg');
+    background-size: cover;
+    background-position: center center;
 }
 #faq span label{
     text-transform: uppercase;
     text-align: center;
     font-family: BEBAS;
     font-size: 150px;
-    color: #FFFFFF;
+    color: rgba(255,255,255,0.75);
     display: inline-block;
     width: 300px;
     padding-bottom: 22px;
