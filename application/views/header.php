@@ -7,7 +7,6 @@
 
     <?php if (isset($home)) { ?>
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/home.css" />
-        <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/banner/banner_<?php echo $home; ?>.css" />
     <?php } else { ?>
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/style/main.css" />
     <?php } ?>

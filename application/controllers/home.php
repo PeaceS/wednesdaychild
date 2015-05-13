@@ -3,10 +3,10 @@
 class Home extends CI_Controller {
     public function index()
     {
-        $directory = "./assets/style/banner/";
+        $directory = "./assets/image/home/";
 
-        $bannerStyleAmount = count(glob($directory . "banner_*.css"));
-        $included['home'] = rand(1, $bannerStyleAmount);
+        $bannerImage = count(glob($directory . "home_*.jpg"));
+        $included['home'] = "home_" . rand(1, $bannerImage) . ".jpg";
 
         $this->load->view('header', $included);
         $this->load->view('home');

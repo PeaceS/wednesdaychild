@@ -7,9 +7,8 @@
     left: 50%;
     width: 650px;
     height: 600px;
-    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-size: 6500px;
 }
 #home_banner label{
     display: block;
@@ -27,3 +26,13 @@
     background-repeat: no-repeat;
     background-position: center center;
 }
+#home_banner.path0{ background-position: 0 0; }
+#home_banner.path1{ background-position: -650px 0; }
+#home_banner.path2{ background-position: -1300px 0; }
+#home_banner.path3{ background-position: -1950px 0; }
+#home_banner.path4{ background-position: -2600px 0; }
+#home_banner.path5{ background-position: -3250px 0; }
+#home_banner.path6{ background-position: -3900px 0; }
+#home_banner.path7{ background-position: -4550px 0; }
+#home_banner.path8{ background-position: -5200px 0; }
+#home_banner.path9{ background-position: -5850px 0; }
