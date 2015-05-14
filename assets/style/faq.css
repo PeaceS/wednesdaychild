@@ -40,7 +40,18 @@
     width: 650px;
     height: 100%;
 }
-#faq #scroll #sub_scroll div{
-    text-indent: 25px;
-    margin: 5px;
+#faq #scroll #sub_scroll div{ margin: 5px; }
+#faq #scroll #sub_scroll div.question:first-child{ margin-top: 5px; }
+#faq #scroll #sub_scroll div.question{
+    margin-top: 25px;
+    font-weight: bold;
+}
+#faq #scroll #sub_scroll div.answer{
+    padding: 0 10px;
+    text-indent: 15px;
+}
+#faq #scroll #sub_scroll div.answer ul{ padding: 0; }
+#faq #scroll #sub_scroll div.answer li{
+    list-style-type: none;
+    margin-bottom: 5px;
 }

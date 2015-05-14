@@ -9,7 +9,7 @@ class Faq extends CI_Controller {
     public function index()
     {   
         $included['faq'] = true;
-        $data['faq'] = $this->get_text->get_faq();
+        $data['faq'] = $this->transform_data($this->get_text->get_faq());
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
         
         $this->load->view('header', $included);
@@ -18,6 +18,19 @@ class Faq extends CI_Controller {
         $this->load->view('list_menu');
     }
 
+    private function transform_data($data)
+    {
+        $output = array();
+
+        foreach ($data as $faq) {
+            array_push($output, array(
+                'question' => explode("??", $faq['text'])[0],
+                'answer' => $this->apply_bulletPoint(explode("??", $faq['text'])[1])
+            ));
+        }
+
+        return $output;
+    }
     private function apply_bulletPoint($data)
     {
         if (substr($data, 0, 2) == '- '){
