@@ -1,0 +1,58 @@
+#collection .item0{ background-image: url('../../image/collection/w14/10616388_433363903468823_5431004167651647672_n.jpg'); }
+#collection .item1{ background-image: url('../../image/collection/w14/10670265_433363993468814_5350694369703539333_n.jpg'); }
+#collection .item2{ background-image: url('../../image/collection/w14/CNV000007.jpg'); }
+#collection .item3{ background-image: url('../../image/collection/w14/CNV000010.jpg'); }
+#collection .item4{ background-image: url('../../image/collection/w14/CNV000012_c.jpg'); }
+#collection .item5{ background-image: url('../../image/collection/w14/CNV000012-1 (dragged).jpg'); }
+#collection .item6{ background-image: url('../../image/collection/w14/CNV000013.jpg'); }
+#collection .item7{ background-image: url('../../image/collection/w14/CNV000013.JPG .jpg'); }
+#collection .item8{ background-image: url('../../image/collection/w14/CNV000014.jpg'); }
+#collection .item9{ background-image: url('../../image/collection/w14/CNV000019_b.jpg'); }
+#collection .item10{ background-image: url('../../image/collection/w14/CNV000022.jpg'); }
+#collection .item11{ background-image: url('../../image/collection/w14/CNV000023.jpg'); }
+#collection .item12{ background-image: url('../../image/collection/w14/CNV000025.jpg'); }
+#collection .item13{ background-image: url('../../image/collection/w14/CNV000026.jpg'); }
+#collection .item14{ background-image: url('../../image/collection/w14/CNV000028.jpg'); }
+#collection .item15{ background-image: url('../../image/collection/w14/CNV000030.jpg'); }
+#collection .item16{ background-image: url('../../image/collection/w14/CNV000031.jpg'); }
+#collection .item17{ background-image: url('../../image/collection/w14/CNV000032.jpg'); }
+#collection .item18{ background-image: url('../../image/collection/w14/CNV000036.jpg'); }
+#collection .item19{ background-image: url('../../image/collection/w14/CNV000039.jpg'); }
+
+#collection.gridView div{
+	width: 582px;
+    height: 190px;
+	margin-bottom: 20px;
+}
+#collection.gridView .item0,
+#collection.gridView .item3,
+#collection.gridView .item5,
+#collection.gridView .item8,
+#collection.gridView .item10,
+#collection.gridView .item11,
+#collection.gridView .item14,
+#collection.gridView .item18{
+	margin-right: 20px;
+}
+#collection.gridView .item4,
+#collection.gridView .item9,
+#collection.gridView .item15,
+#collection.gridView .item17{
+	float: right;
+}
+#collection.gridView .item0,
+#collection.gridView .item4,
+#collection.gridView .item5,
+#collection.gridView .item7,
+#collection.gridView .item9,
+#collection.gridView .item13,
+#collection.gridView .item15,
+#collection.gridView .item16,
+#collection.gridView .item17,
+#collection.gridView .item18{ 
+    height: 400px;
+}
+#collection.gridView .item7,
+#collection.gridView .item13{
+	width: 1185px;
+}

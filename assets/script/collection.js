@@ -44,7 +44,7 @@ function event_changeMode_collection(){
     $("#collection").animate({
         margin:"50px 100px",
         width:"1000px",
-        height:"500px",
+        height:"300px",
         opacity:0
     }, 500, function(){
         if ($(this).hasClass("gridView"))
@@ -53,8 +53,8 @@ function event_changeMode_collection(){
             $(this).addClass("gridView");
         $(this).animate({
             margin:"0",
-            width:"1216px",
-            height:"600px",
+            width:"1200px",
+            height:"400px",
             opacity:1
         }, 750);
     });
