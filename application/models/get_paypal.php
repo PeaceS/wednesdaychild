@@ -32,7 +32,7 @@ class Get_paypal extends CI_Model{
             foreach ($data['itemInBag'] as $item){
                 foreach ($data['itemDetail'] as $detail) {
                     if ($item == $detail['product_no']){
-                        $result['item_name_' . $counter] = $detail['product_name'] . '-' . $detail['product_no'];
+                        $result['item_name_' . $counter] = $detail['product_name'];
                         $result['amount_' . $counter] = $detail['product_price'];
                         $result['shipping_' . $counter] = intval($detail['product_weight']) * doubleval($data['shippingRate']);
                         $result['shipping2_' . $counter] = intval($detail['product_weight']) * doubleval($data['shippingRate']);

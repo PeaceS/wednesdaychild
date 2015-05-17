@@ -13,8 +13,8 @@ class Pay extends CI_Controller {
     public function payment($method)
     {
         $this->method = $method;
-        
-        if ($this->checkStock($this->get_session->list_itemInBag())){
+
+        if ($this->checkStock($this->get_session->list_itemWithQtyInBag())){
             $this->updateStock($this->get_session->list_itemWithQtyInBag());
             $this->saveTransaction($this->fareDetail);
             $this->get_session->free_itemInCart();
@@ -26,7 +26,7 @@ class Pay extends CI_Controller {
     
     private function checkStock($productInBag)
     {
-        $productStock = $this->get_product->get_listStock($productInBag);
+        $productStock = $this->get_product->get_listStock($this->get_session->list_itemInBag());
         foreach ($productInBag as $product) {
             foreach ($productStock as $productDetail) {
                 if ($product['product'] == $productDetail['product_no'] &&
