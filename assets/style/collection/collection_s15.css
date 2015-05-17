@@ -1,0 +1,40 @@
+#collection .item0{ background-image: url('../../image/collection/s15/9ZgEb.jpg'); }
+#collection .item1{ background-image: url('../../image/collection/s15/92vWb.jpg'); }
+#collection .item2{ background-image: url('../../image/collection/s15/aP0Em.jpg'); }
+#collection .item3{ background-image: url('../../image/collection/s15/CNV000001.jpg'); }
+#collection .item4{ background-image: url('../../image/collection/s15/CNV000009.jpg'); }
+#collection .item5{ background-image: url('../../image/collection/s15/CNV000012.jpg'); }
+#collection .item6{ background-image: url('../../image/collection/s15/CNV000013_b.jpg'); }
+#collection .item7{ background-image: url('../../image/collection/s15/CNV000016.jpg'); }
+#collection .item8{ background-image: url('../../image/collection/s15/CNV000017.jpg'); }
+#collection .item9{ background-image: url('../../image/collection/s15/CNV000029.jpg'); }
+#collection .item10{ background-image: url('../../image/collection/s15/CNV000037.jpg'); }
+#collection .item11{ background-image: url('../../image/collection/s15/CNV000047.jpg'); }
+#collection .item12{ background-image: url('../../image/collection/s15/CNV000048.jpg'); }
+
+#collection.gridView div{
+	width: 582px;
+    height: 190px;
+	margin-bottom: 20px;
+}
+#collection.gridView .item0,
+#collection.gridView .item3,
+#collection.gridView .item4,
+#collection.gridView .item7,
+#collection.gridView .item10{
+	margin-right: 20px;
+}
+#collection.gridView .item2,
+#collection.gridView .item9,
+#collection.gridView .item12{
+	float: right;
+}
+#collection.gridView .item0,
+#collection.gridView .item2,
+#collection.gridView .item4,
+#collection.gridView .item7,
+#collection.gridView .item9,
+#collection.gridView .item11,
+#collection.gridView .item12{ 
+    height: 400px;
+}
