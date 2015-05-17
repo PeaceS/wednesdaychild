@@ -10,7 +10,7 @@
                         <td width="50px">Color</td>
                         <td width="75px">Quantity</td>
                         <td width="100px">Price(s)</td>
-                        <td width="50px"></td>
+                        <td width="20px"></td>
                     </tr>
                 </table>
                 <div id="sub_scroll">

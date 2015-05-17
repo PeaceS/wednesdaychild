@@ -14,8 +14,8 @@ class Buy extends CI_Controller {
         if ($included['buy'] == 3){
             if ($this->get_session->check_shippingAddress() == false) { exit('Access deny'); }
             $data['shippingAddress'] = $this->get_session->list_shhippingAddress();
-            $data['shippingCost'] = $this->calculateShippingCost($data['bag']);
-            $data['totalPrice'] = $this->calculateTotalPrice($data['bag']) + $data['shippingCost'];
+            $data['shippingCost'] = number_format($this->calculateShippingCost($data['bag']), 2, '.', ',');
+            $data['totalPrice'] = number_format($this->calculateTotalPrice($data['bag']) + $data['shippingCost'], 2, '.', ',');
         }
         
         $this->loadView($included, $data);
@@ -50,7 +50,7 @@ class Buy extends CI_Controller {
         $bag = $this->getListItemInBag();
         
         $data['itemCountInBag'] = $this->get_session->get_itemCountInBag();
-        $data['totalAmount'] = number_format($this->calculateShippingCost($bag) + $this->calculateTotalPrice($bag));
+        $data['totalAmount'] = number_format($this->calculateShippingCost($bag) + $this->calculateTotalPrice($bag), 2, '.', ',');
         $data['bankDetail'] = $this->get_config->get_bankwireDetail();
 
         $this->loadView($included, $data);

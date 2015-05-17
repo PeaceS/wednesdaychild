@@ -11,8 +11,9 @@
     height: 340px;
     width: 300px;
     margin: 5px;
-    background-size: cover;
+    background-size: contain;
     background-position: 0 center;
+    background-repeat: no-repeat;
 }
 #bag #scroll{
     height: 310px;
@@ -20,22 +21,29 @@
     padding: 5px;
     overflow: hidden;
 }
+#bag #scroll table{
+    border-collapse: collapse;
+    margin-right: 30px;
+}
 #bag #scroll > table{
     font-size: 14px;
     height: 50px;
+    border-bottom: 1px solid #444;
+    margin-bottom: 15px;
 }
 #bag #scroll > table td{ padding: 0; }
-#bag #scroll > table tr:first-child{
-    height: 30px;
-    vertical-align: top;
-}
+#bag #scroll > table tr{ height: 30px; }
+#bag #scroll > table tr:first-child{ vertical-align: top; }
 #bag #scroll #sub_scroll{
     overflow-x: hidden;
     height: 260px;
     width: 100%;
     padding-right: 17px;
 }
-#bag #scroll #sub_scroll table tr{ line-height: 35px; }
+#bag #scroll #sub_scroll table tr{
+    line-height: 35px;
+    cursor: pointer;
+}
 #bag #scroll #sub_scroll table tr.remove{ display: none; }
 #bag #scroll #sub_scroll table tr.hilight{ background-color: #f3f467 }
 #bag #scroll #sub_scroll table td{
@@ -48,19 +56,22 @@
 #bag #scroll #sub_scroll table td.color{ width: 50px; }
 #bag #scroll #sub_scroll table td.qty{ width: 75px; }
 #bag #scroll #sub_scroll table td.price{ width: 100px; }
-#bag #scroll #sub_scroll table td.remove{ width: 50px; }
-#bag #scroll #sub_scroll table span{
-    display: block;
-    height: 30px;
-    width: 30px;
+#bag #scroll #sub_scroll table td.remove{ width: 20px; }
+#bag #scroll #sub_scroll table td.remove a:hover{ color: red; }
+#bag #scroll #sub_scroll table span{ display: block; }
+#bag #scroll #sub_scroll table span.color{
+    display: none;
+    height: 20px;
+    width: 20px;
 }
-#bag #scroll #sub_scroll table span.color{ display: none; }
 #bag #scroll #sub_scroll table span.color.selected{ display: block; }
 #bag #scroll #sub_scroll table td.qty input{ width: 45px; }
 #bag #scroll #sub_scroll table td.image span{
-    background-size: cover;
+    background-size: contain;
     background-position: 0 center;
     background-repeat: no-repeat;
+    height: 40px;
+    width: 35px;
 }
 #menu{
     float: left;

@@ -23,7 +23,7 @@ function default_set_price(){
         var qty = $(this).find(".qty").text();
         var price = parseFloat($(this).find(".price").attr("price"));
 
-        $(this).find(".price").text((price * qty).toLocaleString());
+        $(this).find(".price").text((price * qty).toFixed(2).toLocaleString());
     });
 }
 function event_slide_summary(direction){

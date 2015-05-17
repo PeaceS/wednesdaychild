@@ -39,7 +39,7 @@ function event_set_price(row){
     var price = parseFloat(row.find(".price").attr("price"));
     
     if (qty > row.find(".qty input").attr("max") || qty < row.find(".qty input").attr("min")) return false;
-    row.find(".price").text((price * qty).toLocaleString());
+    row.find(".price").text((price * qty).toFixed(2).toLocaleString());
 }
 function event_hilight_row(row){
     row.addClass("hilight");
@@ -68,12 +68,10 @@ function event_update_bag(next){
     });
     
     $.post("/update/bag", {"products" : data}, function(result){
-        alert(result);
         if (!isNaN(result)){
-            if (!next){
-                alert("Update!");
+            if (!next)
                 window.location = "/buy/1";
-            }else
+            else
                 window.location = "/buy/2";
         }
     });
