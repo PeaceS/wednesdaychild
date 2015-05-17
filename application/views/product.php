@@ -49,7 +49,7 @@
                 <div>
                     <?php foreach ($product_related as $related) { ?>
                     <a href="/product/<?php echo $related['related_no']; ?>">
-                        <span style="background-image: url(<?php echo base_url() . 'assets/image/product/' . substr($related['related_no'], 0, 3) . '/' . $related['image_url']; ?>);"></span>
+                        <span style="background-image: url('<?php echo base_url() . 'assets/image/product/' . substr($related['related_no'], 0, 3) . '/' . $related['image_url']; ?>');"></span>
                     </a>
                     <?php } ?>
                 </div>

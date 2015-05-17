@@ -11,7 +11,7 @@ class Get_product extends CI_Model{
         $this->db->from('product');
         $this->db->join('product_image', 'product.product_no = product_image.product_no');
         $this->db->like('product.product_no', $collection, 'after');
-        $this->db->like('product.product_no', '00', 'before');
+        $this->db->like('product.product_no', '0', 'before');
         $this->db->where('product_image.image_no', 0);
         $this->db->order_by('product.product_no', 'asc');
         $query = $this->db->get();
