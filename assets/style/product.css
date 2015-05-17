@@ -74,12 +74,18 @@
 }
 #product div#select #product_outOfStock{
     text-transform: uppercase;
+    font-size: 20px;
+    color: #fff;
+    position: absolute;
+    top: 21px;
+    left: 35px;
+    width: 120px;
 }
 #product div#select #product_price{
     text-align: right;
     float: right;
     width: 50%;
-    margin-top: 10px;
+    margin: 10px 0;
     font-size: 20px;
 }
 #product div#select #product_price div{ padding: 1px; }

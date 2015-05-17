@@ -11,11 +11,12 @@
             </div>
             <div id="select">
                 <?php if (isset($outOfStock)) { ?>
-                <div id="product_outOfStock">out of stock</div>
-                <?php } else { ?>
+                <span id="product_outOfStock">out of stock</span>
+                <?php } ?>
                 <div id="product_price">
                     <div><?php echo $product['product_price']; ?> B</div>
                 </div>
+                <?php if (!isset($outOfStock)) { ?>
                 <p class="product_select qty">Quantity <input type="number" value="1" min="1" max="<?php echo $product['product_stock']; ?>"></p>
                 <p class="product_select">Size <select>
                     <?php foreach ($product_size as $size) { ?>
@@ -27,7 +28,11 @@
                 <?php } ?>
                 <table class="product_action">
                     <tr>
-                        <td><a href="javascript:buy(<?php echo $product['product_name']; ?>);"><label>add to bag</label></a></td>
+                        <td>
+                            <?php if (!isset($outOfStock)) { ?>
+                            <a href="javascript:buy(<?php echo $product['product_name']; ?>);"><label>add to bag</label></a>
+                            <?php } ?>
+                        </td>
                         <td id="product_image">
                             <?php for($i = count($product_image) - 1; $i > 0; $i--) { ?>
                             <div title="image <?php echo $i + 1; ?>" style="background-image: url('<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[$i]['image_url']; ?>');" zoom="url('<?php echo base_url() . 'assets/image/product/' . $collection . '/' . $product_image[$i]['image_zoom']; ?>')">&nbsp;</div>
