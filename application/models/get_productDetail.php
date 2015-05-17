@@ -17,7 +17,7 @@ class Get_productDetail extends CI_Model{
         {
             $this->db->select('image_no, image_url, image_zoom');
             $this->db->from('product_image');
-            $this->db->like('product_no', substr($product, 0, 6), 'after');
+            $this->db->where('product_no', $product);
             $query = $this->db->get();
             
             return $query->result_array();
